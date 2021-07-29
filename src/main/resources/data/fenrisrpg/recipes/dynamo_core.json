@@ -8,13 +8,9 @@
   ],
   "key":
   {
-    "c":
-    {
-      "tag": "forge:bronze_rod"
-    },
     "e":
     {
-      "item": "fenrisrpg:essence"
+      "item": "fenrisrpg:essence_ingot"
     },
     "b":
     {
