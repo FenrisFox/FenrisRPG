@@ -12,7 +12,6 @@
     "fenrisrpg:ruby_hammer",
     "fenrisrpg:sapphire_hammer",
     "fenrisrpg:essence_hammer",
-    "fenrisrpg:dynamo_core_hammer",
-    "fenrisrpg:ruby_core_hammer"
+    "fenrisrpg:dynamo_core_hammer"
   ]
 }

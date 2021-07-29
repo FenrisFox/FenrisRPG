@@ -12,7 +12,6 @@
     "fenrisrpg:ruby_dagger",
     "fenrisrpg:sapphire_dagger",
     "fenrisrpg:essence_dagger",
-    "fenrisrpg:dynamo_core_dagger",
-    "fenrisrpg:ruby_core_dagger"
+    "fenrisrpg:dynamo_core_dagger"
   ]
 }
