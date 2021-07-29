@@ -8,8 +8,16 @@
       "item": "minecraft:nether_star"
     },
     {
-      "item": "fenrisrpg:essence_ingot",
-      "count": 4
+      "item": "fenrisrpg:essence_ingot"
+    },
+    {
+      "item": "fenrisrpg:essence_ingot"
+    },
+    {
+      "item": "fenrisrpg:essence_ingot"
+    },
+    {
+      "item": "fenrisrpg:essence_ingot"
     }
   ],
   "result":
