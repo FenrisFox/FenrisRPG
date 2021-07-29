@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "fenrisrpg:items/core_vessel_chestplate"
+  }
+}
