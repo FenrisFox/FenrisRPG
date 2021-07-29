@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "entries": [
+    "fenrisrpg:block_crush",
+    "fenrisrpg:enchantment_block_crush",
+    "fenrisrpg:entity_crush",
+    "fenrisrpg:enchantment_entity_crush",
+    "fenrisrpg:entity_slash_bonus",
+    "fenrisrpg:entity_slash",
+    "fenrisrpg:block_smelt",
+    "fenrisrpg:entity_stab"
+  ]
+}

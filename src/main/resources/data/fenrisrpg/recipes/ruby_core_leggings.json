@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:smithing",
+
+  "base":{
+    "tag": "forge:silver_leggings"
+  },
+
+  "addition": {
+    "tag": "forge:ruby"
+  },
+
+  "result":
+  {
+    "item": "fenrisrpg:ruby_core_leggings",
+    "count": 1
+  }
+}

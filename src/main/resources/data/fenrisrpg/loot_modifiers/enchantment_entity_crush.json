@@ -1,0 +1,22 @@
+{
+  "type": "fenrisrpg:tool_modifier",
+  "conditions": [
+    {
+      "condition": "minecraft:damage_source_properties",
+      "predicate": {
+        "direct_entity": {
+          "equipment": {
+            "mainhand": {
+              "enchantment": "fenrisrpg:crushing"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "action": {
+    "recipe": {
+      "type": "fenrisrpg:crushing"
+    }
+  }
+}

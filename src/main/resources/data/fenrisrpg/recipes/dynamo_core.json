@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "cec",
+    "ebe",
+    "cec"
+  ],
+  "key":
+  {
+    "c":
+    {
+      "tag": "forge:bronze_rod"
+    },
+    "e":
+    {
+      "item": "fenrisrpg:essence"
+    },
+    "b":
+    {
+      "item": "fenrisrpg:essence_block"
+    }
+  },
+  "result":
+  {
+    "item": "fenrisrpg:dynamo_core",
+    "count": 1
+  }
+}

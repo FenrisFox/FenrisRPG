@@ -1,0 +1,28 @@
+modLoader="javafml" #mandatory
+
+loaderVersion="[31,)" #mandatory This is typically bumped every Minecraft version by Forge. See our download page for lists of versions.
+
+[[mods]] #mandatory
+
+modId="fcore" #mandatory
+
+version="1.16.4-1.0.0" #mandatory
+
+displayName="Fenris RPG" #mandatory
+
+logoFile="" #optional
+
+credits="Thanks to everyone who gets to read this" #optional
+
+authors="FenrisFox86" #optional
+
+description='''
+    This Mod adds Bronze, Silver and Rubies to the game.
+    You're going to need it as a core mod for all of my mods,
+    if you don't have any other Mods that add these materials to the ore dictionary.
+
+    But even if you don't need this mod, it can be really fun to play with,
+    because additionally to the normal ones, you can now also craft special material-combined tools with
+    higher enchantability and mining Level 4.
+'''
+

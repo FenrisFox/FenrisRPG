@@ -1,0 +1,21 @@
+{
+  "type": "fenrisrpg:tool_modifier",
+  "conditions": [
+    {
+      "condition": "minecraft:match_tool",
+      "predicate": {
+        "enchantments": [
+          {
+            "enchantment": "fenrisrpg:smelting",
+            "levels": 1
+          }
+        ]
+      }
+    }
+  ],
+  "action": {
+    "recipe": {
+      "type": "minecraft:smelting"
+    }
+  }
+}

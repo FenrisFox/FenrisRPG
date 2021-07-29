@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "xxx",
+    "xxx",
+    "xxx"
+  ],
+  "key":
+  {
+    "x":
+    {
+      "tag": "forge:bronze_nugget"
+    }
+  },
+  "result":
+  {
+    "item": "fenrisrpg:bronze_ingot",
+    "count": 1
+  }
+}

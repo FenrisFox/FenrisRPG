@@ -1,0 +1,12 @@
+{
+  "type": "fenrisrpg:crushing",
+
+  "input": {
+    "tag": "forge:cobblestone"
+  },
+
+  "output": {
+    "item": "minecraft:gravel",
+    "count": 2
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "rrr",
+    "rrr",
+    "rrr"
+  ],
+  "key":
+  {
+    "r":
+    {
+      "item": "fenrisrpg:essence_ingot"
+    }
+  },
+  "result":
+  {
+    "item": "fenrisrpg:essence_block",
+    "count": 1
+  }
+}

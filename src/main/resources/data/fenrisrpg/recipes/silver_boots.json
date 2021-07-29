@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "   ",
+    "r r",
+    "r r"
+  ],
+  "key":
+  {
+    "r":
+    {
+      "tag": "forge:silver_ingot"
+    }
+  },
+  "result":
+  {
+    "item": "fenrisrpg:silver_boots",
+    "count": 1
+  }
+}

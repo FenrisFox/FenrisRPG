@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "  r",
+    " r ",
+    "s  "
+  ],
+  "key":
+  {
+    "r":
+    {
+      "tag": "forge:ruby"
+    },
+    "s":
+    {
+      "item": "minecraft:stick"
+    }
+  },
+  "result":
+  {
+    "item": "fenrisrpg:ruby_katana",
+    "count": 1
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "tag": "forge:silver_ore"
+  },
+  "result": "fenrisrpg:silver_ingot",
+  "experience": 1.0,
+  "cookingtime": 200
+}

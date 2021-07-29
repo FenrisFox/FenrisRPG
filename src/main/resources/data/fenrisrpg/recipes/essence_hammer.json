@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:smithing",
+
+  "base":{
+    "tag": "fenrisrpg:gem_hammer"
+  },
+
+  "addition": {
+    "item": "fenrisrpg:essence_ingot"
+  },
+
+  "result":
+  {
+    "item": "fenrisrpg:essence_hammer",
+    "count": 1
+  }
+}

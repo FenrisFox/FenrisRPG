@@ -1,0 +1,10 @@
+{
+  "type": "fenrisrpg:crushing",
+  "input": {
+    "item": "minecraft:gravel"
+  },
+  "output": {
+    "item": "minecraft:sand",
+    "count": 1
+  }
+}

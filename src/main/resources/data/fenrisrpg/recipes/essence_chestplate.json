@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:smithing",
+
+  "base":{
+    "tag": "fenrisrpg:gem_chestplate"
+  },
+
+  "addition": {
+    "item": "fenrisrpg:essence_ingot"
+  },
+
+  "result":
+  {
+    "item": "fenrisrpg:essence_chestplate",
+    "count": 1
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "rrr",
+    "rsr",
+    "rrr"
+  ],
+  "key":
+  {
+    "r":
+    {
+      "item": "fenrisrpg:essence"
+    },
+    "s":
+    {
+      "item": "minecraft:nether_star"
+    }
+  },
+  "result":
+  {
+    "item": "fenrisrpg:essence_ingot",
+    "count": 8
+  }
+}

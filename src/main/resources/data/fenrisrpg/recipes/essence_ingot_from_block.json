@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "fenrisrpg:essence_block"
+    }
+  ],
+  "result":
+  {
+    "item": "fenrisrpg:essence_ingot",
+    "count": 9
+  }
+}

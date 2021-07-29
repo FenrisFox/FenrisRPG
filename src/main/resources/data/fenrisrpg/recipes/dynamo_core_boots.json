@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:smithing",
+
+  "base":{
+    "item": "fenrisrpg:core_vessel_boots"
+  },
+
+  "addition": {
+    "item": "fenrisrpg:dynamo_core"
+  },
+
+  "result":
+  {
+    "item": "fenrisrpg:dynamo_core_boots",
+    "count": 1
+  }
+}

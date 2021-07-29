@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "rrr",
+    "rrr",
+    " s "
+  ],
+  "key":
+  {
+    "r":
+    {
+      "tag": "forge:cobblestone"
+    },
+    "s":
+    {
+      "item": "minecraft:stick"
+    }
+  },
+  "result":
+  {
+    "item": "fenrisrpg:stone_hammer",
+    "count": 1
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "rrr",
+    "r r",
+    "r r"
+  ],
+  "key":
+  {
+    "r":
+    {
+      "tag": "forge:sapphire"
+    }
+  },
+  "result":
+  {
+    "item": "fenrisrpg:sapphire_leggings",
+    "count": 1
+  }
+}

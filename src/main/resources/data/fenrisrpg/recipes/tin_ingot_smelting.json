@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "fenrisrpg:cassiterite"
+  },
+  "result": "fenrisrpg:tin",
+  "experience": 1.0,
+  "cookingtime": 200
+}

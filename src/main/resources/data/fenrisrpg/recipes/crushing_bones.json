@@ -1,0 +1,10 @@
+{
+  "type": "fenrisrpg:crushing",
+  "input": {
+    "item": "minecraft:bone"
+  },
+  "output": {
+    "item": "minecraft:bone_meal",
+    "count": 3
+  }
+}

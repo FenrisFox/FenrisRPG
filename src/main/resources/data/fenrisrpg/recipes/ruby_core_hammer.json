@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:smithing",
+
+  "base":{
+    "item": "fenrisrpg:silver_hammer"
+  },
+
+  "addition": {
+    "tag": "forge:ruby"
+  },
+
+  "result":
+  {
+    "item": "fenrisrpg:ruby_core_hammer",
+    "count": 1
+  }
+}

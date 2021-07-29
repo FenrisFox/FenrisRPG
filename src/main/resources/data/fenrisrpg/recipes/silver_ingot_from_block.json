@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "forge:silver_block"
+    }
+  ],
+  "result":
+  {
+    "item": "fenrisrpg:silver_ingot",
+    "count": 9
+  }
+}

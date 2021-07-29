@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "xxx",
+    "xxx",
+    "xxx"
+  ],
+  "key":
+  {
+    "x":
+    {
+      "tag": "forge:ruby"
+    }
+  },
+  "result":
+  {
+    "item": "fenrisrpg:ruby_block",
+    "count": 1
+  }
+}

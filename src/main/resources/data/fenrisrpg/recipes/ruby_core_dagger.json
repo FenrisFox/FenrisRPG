@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:smithing",
+
+  "base":{
+    "item": "fenrisrpg:silver_dagger"
+  },
+
+  "addition": {
+    "tag": "forge:ruby"
+  },
+
+  "result":
+  {
+    "item": "fenrisrpg:ruby_core_dagger",
+    "count": 1
+  }
+}

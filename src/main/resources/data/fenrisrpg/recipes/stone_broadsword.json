@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "rr ",
+    "rr ",
+    " s "
+  ],
+  "key":
+  {
+    "r":
+    {
+      "tag": "forge:cobblestone"
+    },
+    "s":
+    {
+      "item": "minecraft:stick"
+    }
+  },
+  "result":
+  {
+    "item": "fenrisrpg:stone_broadsword",
+    "count": 1
+  }
+}

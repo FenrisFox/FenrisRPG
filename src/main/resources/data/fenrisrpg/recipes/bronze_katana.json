@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "  r",
+    " r ",
+    "s  "
+  ],
+  "key":
+  {
+    "r":
+    {
+      "tag": "forge:bronze_ingot"
+    },
+    "s":
+    {
+      "item": "minecraft:stick"
+    }
+  },
+  "result":
+  {
+    "item": "fenrisrpg:bronze_katana",
+    "count": 1
+  }
+}

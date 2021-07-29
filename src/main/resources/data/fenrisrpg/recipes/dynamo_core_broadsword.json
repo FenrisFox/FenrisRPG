@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:smithing",
+
+  "base":{
+    "item": "fenrisrpg:core_vessel_broadsword"
+  },
+
+  "addition": {
+    "item": "fenrisrpg:dynamo_core"
+  },
+
+  "result":
+  {
+    "item": "fenrisrpg:dynamo_core_broadsword",
+    "count": 1
+  }
+}
