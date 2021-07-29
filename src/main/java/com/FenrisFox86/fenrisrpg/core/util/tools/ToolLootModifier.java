@@ -51,7 +51,6 @@ public class ToolLootModifier extends LootModifier {
                         int count = stack.getCount();
                         int final_count = count * f;
                         Item item = recipe.getResultItem().getItem();
-                        System.out.println("FenrisRPG crushing output: " + final_count);
 
                         if (final_count > 0) {
                             for (int i = 0; i < final_count / item.getMaxStackSize(); i++) {
