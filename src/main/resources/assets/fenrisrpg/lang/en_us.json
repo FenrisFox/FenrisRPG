@@ -28,7 +28,7 @@
   "tooltip.fenrisrpg.dynamo_core_boots.desc": "§o§7Give you an extreme Jump boost and make you completely resistant to fall damage",
   "tooltip.fenrisrpg.dynamo_core_helmet.lore": "§5This helmet repairs itself when moving fast! Its core emits a strange kind of energy",
   "tooltip.fenrisrpg.dynamo_core_helmet.desc": "§o§7Gives you a luck effect.",
-  "tooltip.fenrisrpg.core_vessel_items.lore": "§5An Item created from vessel bronze. It seems so empty and doesn't have any functionality.",
+  "tooltip.fenrisrpg.core_vessel_items.lore": "§5An Item created from vessel bronze. It seems empty and doesn't have any functionality.",
   "tooltip.fenrisrpg.core_vessel_items.desc": "§o§7Add a core to a Vessel in the Smithing Table",
 
   "item.fenrisrpg.ruby": "Ruby",

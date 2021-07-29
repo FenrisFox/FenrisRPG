@@ -95,7 +95,7 @@ public class ItemInit {
         CASSITERITE = addItem("cassiterite"),
         GALENITE = addItem("galenite"),
 
-        CORE_VESSEL = addItem("core_vessel", new CoreVesselItem()),
+        CORE_VESSEL = addItem("core_vessel"),
         CORE_VESSEL_HELMET = addItem("core_vessel_helmet", new CoreVesselItem()),
         CORE_VESSEL_CHESTPLATE = addItem("core_vessel_chestplate", new CoreVesselItem()),
         CORE_VESSEL_LEGGINGS = addItem("core_vessel_leggings", new CoreVesselItem()),
