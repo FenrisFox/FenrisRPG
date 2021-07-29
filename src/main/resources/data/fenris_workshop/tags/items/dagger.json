@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "fenris_workshop:wood_dagger",
+    "fenris_workshop:stone_dagger",
+    "fenris_workshop:iron_dagger",
+    "fenris_workshop:gold_dagger",
+    "fenris_workshop:diamond_dagger",
+    "fenris_workshop:netherite_dagger",
+    "fenris_workshop:bronze_dagger",
+    "fenris_workshop:silver_dagger",
+    "fenris_workshop:ruby_dagger",
+    "fenris_workshop:sapphire_dagger",
+    "fenris_workshop:essence_dagger",
+    "fenris_workshop:dynamo_core_dagger"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "fenris_workshop:wood_broadsword",
+    "fenris_workshop:stone_broadsword",
+    "fenris_workshop:iron_broadsword",
+    "fenris_workshop:gold_broadsword",
+    "fenris_workshop:diamond_broadsword",
+    "fenris_workshop:netherite_broadsword",
+    "fenris_workshop:bronze_broadsword",
+    "fenris_workshop:silver_broadsword",
+    "fenris_workshop:ruby_broadsword",
+    "fenris_workshop:sapphire_broadsword",
+    "fenris_workshop:essence_broadsword",
+    "fenris_workshop:dynamo_core_broadsword"
+  ]
+}

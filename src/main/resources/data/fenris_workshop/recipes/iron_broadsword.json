@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "cr ",
+    "cr ",
+    " s "
+  ],
+  "key":
+  {
+    "c":
+    {
+      "item": "minecraft:iron_ingot"
+    },
+    "r":
+    {
+      "tag": "forge:iron_rod"
+    },
+    "s":
+    {
+      "item": "minecraft:stick"
+    }
+  },
+  "result":
+  {
+    "item": "fenris_workshop:iron_broadsword",
+    "count": 1
+  }
+}

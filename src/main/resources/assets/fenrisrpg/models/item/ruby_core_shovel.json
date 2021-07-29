@@ -1,6 +1,0 @@
-{
-  "parent": "item/handheld",
-  "textures": {
-    "layer0": "fenrisrpg:items/ruby_core_shovel"
-  }
-}

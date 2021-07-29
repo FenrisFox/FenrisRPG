@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "fenris_workshop:galenite"
+  },
+  "result": "fenris_workshop:lead",
+  "experience": 1.0,
+  "cookingtime": 200
+}

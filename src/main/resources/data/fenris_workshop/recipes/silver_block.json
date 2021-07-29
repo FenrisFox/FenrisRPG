@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "xxx",
+    "xxx",
+    "xxx"
+  ],
+  "key":
+  {
+    "x":
+    {
+      "tag": "forge:silver_ingot"
+    }
+  },
+  "result":
+  {
+    "item": "fenris_workshop:silver_block",
+    "count": 1
+  }
+}

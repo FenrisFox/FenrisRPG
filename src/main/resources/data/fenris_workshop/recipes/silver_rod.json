@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "   ",
+    "x  ",
+    "x  "
+  ],
+  "key":
+  {
+    "x":
+    {
+      "tag": "forge:silver_ingot"
+    }
+  },
+  "result":
+  {
+    "item": "fenris_workshop:silver_rod",
+    "count": 4
+  }
+}

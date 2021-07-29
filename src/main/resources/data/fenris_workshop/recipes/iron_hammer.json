@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "rrr",
+    "rrr",
+    " s "
+  ],
+  "key":
+  {
+    "r":
+    {
+      "item": "minecraft:iron_ingot"
+    },
+    "s":
+    {
+      "item": "minecraft:stick"
+    }
+  },
+  "result":
+  {
+    "item": "fenris_workshop:iron_hammer",
+    "count": 1
+  }
+}

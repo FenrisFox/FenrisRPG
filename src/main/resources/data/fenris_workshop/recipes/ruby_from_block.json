@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "forge:ruby_block"
+    }
+  ],
+  "result":
+  {
+    "item": "fenris_workshop:ruby",
+    "count": 9
+  }
+}

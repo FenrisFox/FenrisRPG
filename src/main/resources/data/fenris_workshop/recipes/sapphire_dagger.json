@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "   ",
+    " r ",
+    " s "
+  ],
+  "key":
+  {
+    "r":
+    {
+      "tag": "forge:sapphire"
+    },
+    "s":
+    {
+      "item": "minecraft:stick"
+    }
+  },
+  "result":
+  {
+    "item": "fenris_workshop:sapphire_dagger",
+    "count": 1
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    " rr",
+    " s ",
+    " s "
+  ],
+  "key":
+  {
+    "r":
+    {
+      "tag": "forge:bronze_ingot"
+    },
+    "s":
+    {
+      "item": "minecraft:stick"
+    }
+  },
+  "result":
+  {
+    "item": "fenris_workshop:bronze_hoe",
+    "count": 1
+  }
+}

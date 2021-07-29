@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:smithing",
+
+  "base":{
+    "item": "fenris_workshop:core_vessel_hoe"
+  },
+
+  "addition": {
+    "item": "fenris_workshop:dynamo_core"
+  },
+
+  "result":
+  {
+    "item": "fenris_workshop:dynamo_core_hoe",
+    "count": 1
+  }
+}

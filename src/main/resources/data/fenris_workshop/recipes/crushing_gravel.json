@@ -1,0 +1,10 @@
+{
+  "type": "fenris_workshop:crushing",
+  "input": {
+    "item": "minecraft:gravel"
+  },
+  "output": {
+    "item": "minecraft:sand",
+    "count": 1
+  }
+}

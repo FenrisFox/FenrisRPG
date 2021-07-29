@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "   ",
+    "r r",
+    "r r"
+  ],
+  "key":
+  {
+    "r":
+    {
+      "tag": "forge:sapphire"
+    }
+  },
+  "result":
+  {
+    "item": "fenris_workshop:sapphire_boots",
+    "count": 1
+  }
+}

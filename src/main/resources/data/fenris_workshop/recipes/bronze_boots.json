@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "   ",
+    "r r",
+    "r r"
+  ],
+  "key":
+  {
+    "r":
+    {
+      "tag": "forge:bronze_ingot"
+    }
+  },
+  "result":
+  {
+    "item": "fenris_workshop:bronze_boots",
+    "count": 1
+  }
+}

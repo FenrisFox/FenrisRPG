@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "rrr",
+    "rrr",
+    " s "
+  ],
+  "key":
+  {
+    "r":
+    {
+      "item": "minecraft:diamond"
+    },
+    "s":
+    {
+      "item": "minecraft:stick"
+    }
+  },
+  "result":
+  {
+    "item": "fenris_workshop:diamond_hammer",
+    "count": 1
+  }
+}

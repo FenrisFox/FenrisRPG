@@ -1,0 +1,10 @@
+{
+  "type": "fenris_workshop:slashing",
+  "input": {
+    "item": "minecraft:iron_ingot"
+  },
+  "output": {
+    "item": "minecraft:iron_nugget",
+    "count": 9
+  }
+}

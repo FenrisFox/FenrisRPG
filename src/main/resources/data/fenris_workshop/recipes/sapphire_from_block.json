@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "forge:sapphire_block"
+    }
+  ],
+  "result":
+  {
+    "item": "fenris_workshop:sapphire",
+    "count": 9
+  }
+}

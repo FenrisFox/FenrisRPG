@@ -1,0 +1,24 @@
+{
+  "name": "entity_slash_bonus",
+  "type": "fenris_workshop:tool_modifier",
+  "conditions": [
+    {
+      "condition": "minecraft:damage_source_properties",
+      "predicate": {
+        "direct_entity": {
+          "equipment": {
+            "mainhand": {
+              "tag": "fenris_workshop:broadsword"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "action": {
+    "bonus": {
+      "count": 1,
+      "item": "minecraft:stick"
+    }
+  }
+}

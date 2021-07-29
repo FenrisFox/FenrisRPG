@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    " e ",
+    "ese",
+    "be "
+  ],
+  "key":
+  {
+    "e":
+    {
+      "item": "fenris_workshop:essence_ingot"
+    },
+    "b":
+    {
+      "item": "fenris_workshop:core_vessel"
+    },
+    "s":
+    {
+      "item": "minecraft:nether_star"
+    }
+  },
+  "result":
+  {
+    "item": "fenris_workshop:dynamo_core",
+    "count": 1
+  }
+}

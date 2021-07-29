@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    " rr",
+    " s ",
+    " s "
+  ],
+  "key":
+  {
+    "r":
+    {
+      "item": "fenris_workshop:vessel_bronze_ingot"
+    },
+    "s":
+    {
+      "item": "minecraft:stick"
+    }
+  },
+  "result":
+  {
+    "item": "fenris_workshop:core_vessel_hoe",
+    "count": 1
+  }
+}
