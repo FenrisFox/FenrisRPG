@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "  r",
+    " r ",
+    "s  "
+  ],
+  "key":
+  {
+    "r":
+    {
+      "item": "fenrisrpg:vessel_bronze_ingot"
+    },
+    "s":
+    {
+      "item": "minecraft:stick"
+    }
+  },
+  "result":
+  {
+    "item": "fenrisrpg:core_vessel_katana",
+    "count": 1
+  }
+}

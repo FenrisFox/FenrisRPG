@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "fenrisrpg:core_vessel"
+    },
+    {
+      "item": "minecraft:nether_star"
+    },
+    {
+      "item": "fenrisrpg:essence_ingot",
+      "count": 4
+    }
+  ],
+  "result":
+  {
+    "item": "fenrisrpg:dynamo_core",
+    "count": 1
+  }
+}

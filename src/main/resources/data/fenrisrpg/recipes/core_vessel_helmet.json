@@ -3,19 +3,19 @@
   "pattern":
   [
     "rrr",
-    "rrr",
-    "rrr"
+    "r r",
+    "   "
   ],
   "key":
   {
     "r":
     {
-      "item": "fenrisrpg:essence"
+      "item": "fenrisrpg:vessel_bronze_ingot"
     }
   },
   "result":
   {
-    "item": "fenrisrpg:essence_ingot",
+    "item": "fenrisrpg:core_vessel_helmet",
     "count": 1
   }
 }

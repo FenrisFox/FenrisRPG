@@ -2,9 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "pattern":
   [
-    "cec",
-    "ebe",
-    "cec"
+    " e ",
+    "ese",
+    "be "
   ],
   "key":
   {
@@ -18,7 +18,11 @@
     },
     "b":
     {
-      "item": "fenrisrpg:essence_block"
+      "item": "fenrisrpg:core_vessel"
+    },
+    "s":
+    {
+      "item": "minecraft:nether_star"
     }
   },
   "result":

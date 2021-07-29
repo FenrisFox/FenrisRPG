@@ -4,18 +4,22 @@
   [
     "rrr",
     "rrr",
-    "rrr"
+    " s "
   ],
   "key":
   {
     "r":
     {
-      "item": "fenrisrpg:essence"
+      "item": "fenrisrpg:vessel_bronze_ingot"
+    },
+    "s":
+    {
+      "item": "minecraft:stick"
     }
   },
   "result":
   {
-    "item": "fenrisrpg:essence_ingot",
+    "item": "fenrisrpg:core_vessel_hammer",
     "count": 1
   }
 }

@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "pattern":
   [
-    "rrr",
+    "r r",
     "rrr",
     "rrr"
   ],
@@ -10,12 +10,12 @@
   {
     "r":
     {
-      "item": "fenrisrpg:essence"
+      "item": "fenrisrpg:vessel_bronze_ingot"
     }
   },
   "result":
   {
-    "item": "fenrisrpg:essence_ingot",
+    "item": "fenrisrpg:core_vessel_chestplate",
     "count": 1
   }
 }

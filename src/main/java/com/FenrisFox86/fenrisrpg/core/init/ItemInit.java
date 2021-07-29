@@ -112,6 +112,7 @@ public class ItemInit {
 
         BRONZE_INGOT = addItem("bronze_ingot"),
         BRONZE_NUGGET = addItem("bronze_nugget"),
+        VESSEL_BRONZE_INGOT = addItem("vessel_bronze_ingot"),
         SILVER_INGOT = addItem("silver_ingot"),
         SILVER_NUGGET = addItem("silver_nugget"),
         COPPER_INGOT = addItem("copper_ingot"),

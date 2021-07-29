@@ -1,6 +1,7 @@
 package com.FenrisFox86.fenrisrpg.common.items;
 
 import com.FenrisFox86.fenrisrpg.FenrisRPG;
+import com.FenrisFox86.fenrisrpg.core.init.ItemInit;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.client.util.InputMappings;
@@ -30,6 +31,16 @@ public class DynamoCore extends Item{
 
     @Override
     public boolean isFoil(ItemStack stack) { return true; }
+
+    @Override
+    public ItemStack getContainerItem(ItemStack itemStack) {
+        return new ItemStack(ItemInit.CORE_VESSEL.get(), 1);
+    }
+
+    @Override
+    public boolean hasContainerItem(ItemStack stack) {
+        return true;
+    }
 
     @Override
     @OnlyIn(Dist.CLIENT)
