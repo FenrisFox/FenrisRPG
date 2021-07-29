@@ -53,7 +53,7 @@ public class ToolLootModifier extends LootModifier {
                         Item item = recipe.getResultItem().getItem();
                         System.out.println("FenrisRPG crushing output: " + final_count);
 
-                        if (final_count != 0) {
+                        if (final_count > 0) {
                             for (int i = 0; i < final_count / item.getMaxStackSize(); i++) {
                                 generatedLoot.add(new ItemStack(item, item.getMaxStackSize()));
                             }

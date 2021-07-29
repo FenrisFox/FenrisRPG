@@ -33,9 +33,9 @@ public class OreGeneration {
                     BlockInit.CASSITERITE_BLOCK.get().defaultBlockState(),
                     8, 0, 69, 20);
 
-            generateBlock(event.getGeneration(), OreFeatureConfig.FillerBlockType.NATURAL_STONE,
+            /*generateBlock(event.getGeneration(), OreFeatureConfig.FillerBlockType.NATURAL_STONE,
                     BlockInit.GALENITE_BLOCK.get().defaultBlockState(),
-                    8, 0, 69, 20);
+                    8, 0, 69, 20);*/
 
             generateBlock(event.getGeneration(), OreFeatureConfig.FillerBlockType.NATURAL_STONE,
                     BlockInit.SILVER_ORE_BLOCK.get().defaultBlockState(),
