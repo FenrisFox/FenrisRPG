@@ -95,6 +95,7 @@ public class ItemInit {
         CASSITERITE = addItem("cassiterite"),
         GALENITE = addItem("galenite"),
 
+        CORE_VESSEL = addItem("core_vessel"),
         CORE_VESSEL_HELMET = addItem("core_vessel_helmet"),
         CORE_VESSEL_CHESTPLATE = addItem("core_vessel_chestplate"),
         CORE_VESSEL_LEGGINGS = addItem("core_vessel_leggings"),
@@ -114,7 +115,6 @@ public class ItemInit {
         SILVER_INGOT = addItem("silver_ingot"),
         SILVER_NUGGET = addItem("silver_nugget"),
         COPPER_INGOT = addItem("copper_ingot"),
-        COPPER_NUGGET = addItem("copper_nugget"),
 
         ESSENCE = addItem("essence"),
         ESSENCE_INGOT = addItem("essence_ingot"),
