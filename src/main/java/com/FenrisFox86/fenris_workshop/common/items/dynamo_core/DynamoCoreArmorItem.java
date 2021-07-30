@@ -1,4 +1,4 @@
-package com.FenrisFox86.fenris_workshop.common.items;
+package com.FenrisFox86.fenris_workshop.common.items.dynamo_core;
 
 import com.FenrisFox86.fenris_workshop.FenrisWorkshop;
 import net.minecraft.entity.Entity;

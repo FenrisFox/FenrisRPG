@@ -1,5 +1,6 @@
-package com.FenrisFox86.fenris_workshop.common.items;
+package com.FenrisFox86.fenris_workshop.common.items.dynamo_core;
 
+import com.FenrisFox86.fenris_workshop.common.items.Tooltips;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.client.util.InputMappings;

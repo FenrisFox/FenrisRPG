@@ -1,6 +1,8 @@
-package com.FenrisFox86.fenris_workshop.common.items;
+package com.FenrisFox86.fenris_workshop.common.items.dynamo_core;
 
 import com.FenrisFox86.fenris_workshop.FenrisWorkshop;
+import com.FenrisFox86.fenris_workshop.common.items.SingleHandedSwordItem;
+import com.FenrisFox86.fenris_workshop.common.items.Tooltips;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.client.util.InputMappings;
@@ -21,9 +23,9 @@ import org.lwjgl.glfw.GLFW;
 
 import java.util.List;
 
-public class DynamoCoreBroadsword extends BroadswordItem {
+public class DynamoCoreKatana extends SingleHandedSwordItem {
 
-    public DynamoCoreBroadsword(IItemTier tier, int attackDamageIn, float attackMOVEMENT_SPEEDIn) {
+    public DynamoCoreKatana(IItemTier tier, int attackDamageIn, float attackMOVEMENT_SPEEDIn) {
         super(tier, attackDamageIn, attackMOVEMENT_SPEEDIn, new Properties().tab(FenrisWorkshop.MOD_TAB));
     }
 
@@ -37,8 +39,8 @@ public class DynamoCoreBroadsword extends BroadswordItem {
     public void appendHoverText(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
         super.appendHoverText(stack, worldIn, tooltip, flagIn);
         if(InputMappings.isKeyDown(Minecraft.getInstance().getWindow().getWindow(), GLFW.GLFW_KEY_LEFT_SHIFT)) {
-            tooltip.add(new TranslationTextComponent("tooltip.fenris_workshop.dynamo_core_broadsword.lore"));
-            tooltip.add(new TranslationTextComponent("tooltip.fenris_workshop.dynamo_core_broadsword.desc"));
+            tooltip.add(new TranslationTextComponent("tooltip.fenris_workshop.dynamo_core_katana.lore"));
+            tooltip.add(new TranslationTextComponent("tooltip.fenris_workshop.dynamo_core_katana.desc"));
         } else {
             tooltip.add(Tooltips.HOLD_SHIFT);
         }
@@ -48,8 +50,6 @@ public class DynamoCoreBroadsword extends BroadswordItem {
     public boolean onLeftClickEntity(ItemStack stack, PlayerEntity player, Entity entity) {
         if(entity.isAlive()) {
             ((LivingEntity) entity).addEffect(new EffectInstance(Effects.GLOWING, 100));
-            ((LivingEntity) entity).removeEffect(Effects.DAMAGE_BOOST);
-            ((LivingEntity) entity).removeEffect(Effects.MOVEMENT_SPEED);
             ((LivingEntity) entity).setSecondsOnFire(1);
         }
         return false;
@@ -58,7 +58,7 @@ public class DynamoCoreBroadsword extends BroadswordItem {
     @Override
     public void inventoryTick(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
         if(worldIn.getDayTime()%20 == 0) {
-            if(stack.getItem() instanceof DynamoCoreBroadsword && entityIn instanceof PlayerEntity) {
+            if(stack.getItem() instanceof DynamoCoreKatana && entityIn instanceof PlayerEntity) {
                 if(entityIn.isSprinting()) {
                     LivingEntity living = (LivingEntity) entityIn;
                     if (living.getOffhandItem() == stack) {

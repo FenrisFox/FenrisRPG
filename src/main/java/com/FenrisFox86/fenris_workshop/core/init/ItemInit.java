@@ -2,6 +2,7 @@ package com.FenrisFox86.fenris_workshop.core.init;
 
 import com.FenrisFox86.fenris_workshop.FenrisWorkshop;
 import com.FenrisFox86.fenris_workshop.common.items.*;
+import com.FenrisFox86.fenris_workshop.common.items.dynamo_core.*;
 import com.FenrisFox86.fenris_workshop.core.util.tools.ModArmorMaterial;
 import com.FenrisFox86.fenris_workshop.core.util.tools.ModItemTier;
 import net.minecraft.inventory.EquipmentSlotType;

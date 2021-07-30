@@ -1,13 +1,14 @@
-package com.FenrisFox86.fenris_workshop.common.items;
+package com.FenrisFox86.fenris_workshop.common.items.dynamo_core;
 
 import com.FenrisFox86.fenris_workshop.FenrisWorkshop;
+import com.FenrisFox86.fenris_workshop.common.items.Tooltips;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.client.util.InputMappings;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.AxeItem;
+import net.minecraft.item.HoeItem;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.EffectInstance;
@@ -23,9 +24,9 @@ import org.lwjgl.glfw.GLFW;
 
 import java.util.List;
 
-public class DynamoCoreAxe extends AxeItem {
+public class DynamoCoreHoe extends HoeItem {
 
-    public DynamoCoreAxe(IItemTier tier, int attackDamageIn, float attackMOVEMENT_SPEEDIn) {
+    public DynamoCoreHoe(IItemTier tier, int attackDamageIn, float attackMOVEMENT_SPEEDIn) {
         super(tier, attackDamageIn, attackMOVEMENT_SPEEDIn, new Properties().tab(FenrisWorkshop.MOD_TAB));
     }
 
@@ -39,8 +40,8 @@ public class DynamoCoreAxe extends AxeItem {
     public void appendHoverText(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
         super.appendHoverText(stack, worldIn, tooltip, flagIn);
         if(InputMappings.isKeyDown(Minecraft.getInstance().getWindow().getWindow(), GLFW.GLFW_KEY_LEFT_SHIFT)) {
-            tooltip.add(new TranslationTextComponent("tooltip.fenris_workshop.dynamo_core_axe.lore"));
-            tooltip.add(new TranslationTextComponent("tooltip.fenris_workshop.dynamo_core_axe.desc"));
+            tooltip.add(new TranslationTextComponent("tooltip.fenris_workshop.dynamo_core_hoe.lore"));
+            tooltip.add(new TranslationTextComponent("tooltip.fenris_workshop.dynamo_core_hoe.desc"));
         } else {
             tooltip.add(Tooltips.HOLD_SHIFT);
         }
@@ -70,7 +71,7 @@ public class DynamoCoreAxe extends AxeItem {
     @Override
     public void inventoryTick(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
         if(worldIn.getDayTime()%20 == 0) {
-            if(stack.getItem() instanceof DynamoCoreAxe && entityIn instanceof PlayerEntity) {
+            if(stack.getItem() instanceof DynamoCoreHoe && entityIn instanceof PlayerEntity) {
                 if(entityIn.isSprinting()) {
                     LivingEntity living = (LivingEntity) entityIn;
                     if (living.getOffhandItem() == stack) {

@@ -1,13 +1,16 @@
-package com.FenrisFox86.fenris_workshop.common.items;
+package com.FenrisFox86.fenris_workshop.common.items.dynamo_core;
 
 import com.FenrisFox86.fenris_workshop.FenrisWorkshop;
+import com.FenrisFox86.fenris_workshop.common.items.Tooltips;
+import com.FenrisFox86.fenris_workshop.core.init.ItemInit;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.client.util.InputMappings;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.*;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
 import net.minecraft.util.ActionResult;
@@ -21,14 +24,22 @@ import org.lwjgl.glfw.GLFW;
 
 import java.util.List;
 
-public class DynamoCoreSword extends SwordItem implements IDynamoCoreItem {
+public class DynamoCore extends Item{
 
-    public DynamoCoreSword(IItemTier tier, int attackDamageIn, float attackMOVEMENT_SPEEDIn) {
-        super(tier, attackDamageIn, attackMOVEMENT_SPEEDIn, new Properties().tab(FenrisWorkshop.MOD_TAB));
+    public DynamoCore() {
+        super(new Item.Properties().tab(FenrisWorkshop.MOD_TAB).durability(256));
     }
 
     @Override
-    public boolean isFoil(ItemStack stack) {
+    public boolean isFoil(ItemStack stack) { return true; }
+
+    @Override
+    public ItemStack getContainerItem(ItemStack itemStack) {
+        return new ItemStack(ItemInit.CORE_VESSEL.get(), 1);
+    }
+
+    @Override
+    public boolean hasContainerItem(ItemStack stack) {
         return true;
     }
 
@@ -37,8 +48,8 @@ public class DynamoCoreSword extends SwordItem implements IDynamoCoreItem {
     public void appendHoverText(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
         super.appendHoverText(stack, worldIn, tooltip, flagIn);
         if(InputMappings.isKeyDown(Minecraft.getInstance().getWindow().getWindow(), GLFW.GLFW_KEY_LEFT_SHIFT)) {
-            tooltip.add(new TranslationTextComponent("tooltip.fenris_workshop.dynamo_core_sword.lore"));
-            tooltip.add(new TranslationTextComponent("tooltip.fenris_workshop.dynamo_core_sword.desc"));
+            tooltip.add(new TranslationTextComponent("tooltip.fenris_workshop.dynamo_core.lore"));
+            tooltip.add(new TranslationTextComponent("tooltip.fenris_workshop.dynamo_core.desc"));
         } else {
             tooltip.add(Tooltips.HOLD_SHIFT);
         }
@@ -47,30 +58,19 @@ public class DynamoCoreSword extends SwordItem implements IDynamoCoreItem {
     @Override
     public ActionResult<ItemStack> use(World worldIn, PlayerEntity playerIn, Hand handIn) {
         if(!playerIn.getCooldowns().isOnCooldown(this)) {
-            playerIn.addEffect(new EffectInstance(Effects.DAMAGE_BOOST, 500, 3));
-            playerIn.addEffect(new EffectInstance(Effects.REGENERATION, 500, 3));
+            playerIn.addEffect(new EffectInstance(Effects.JUMP, 500, 1));
+            playerIn.addEffect(new EffectInstance(Effects.MOVEMENT_SPEED, 500, 4));
             playerIn.getCooldowns().addCooldown(this,60);
-            playerIn.getItemInHand(handIn).hurtAndBreak(8, playerIn, p -> p.broadcastBreakEvent(p.getUsedItemHand()));
+            playerIn.getItemInHand(handIn).hurtAndBreak(16, playerIn, p -> p.broadcastBreakEvent(p.getUsedItemHand()));
             return ActionResult.success(playerIn.getItemInHand(handIn));
         }
         return ActionResult.fail(playerIn.getItemInHand(handIn));
     }
 
     @Override
-    public boolean onLeftClickEntity(ItemStack stack, PlayerEntity player, Entity entity) {
-        if(entity.isAlive()) {
-            ((LivingEntity) entity).addEffect(new EffectInstance(Effects.GLOWING, 200));
-            ((LivingEntity) entity).removeEffect(Effects.DAMAGE_BOOST);
-            ((LivingEntity) entity).removeEffect(Effects.REGENERATION);
-            ((LivingEntity) entity).setSecondsOnFire(1);
-        }
-        return false;
-    }
-
-    @Override
     public void inventoryTick(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
         if(worldIn.getDayTime()%20 == 0) {
-            if(stack.getItem() instanceof DynamoCoreSword && entityIn instanceof PlayerEntity) {
+            if(stack.getItem() instanceof DynamoCore && entityIn instanceof PlayerEntity) {
                 if(entityIn.isSprinting()) {
                     LivingEntity living = (LivingEntity) entityIn;
                     if (living.getOffhandItem() == stack) {
