@@ -7,7 +7,9 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Hand;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
+import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -17,7 +19,7 @@ import net.minecraftforge.fml.common.Mod;
 public class ItemDamageHandlers {
 
     @SubscribeEvent
-    public static void DamageHandFire(LivingDamageEvent event) {
+    public static void DamageHandFire(LivingAttackEvent event) {
 
         LivingEntity target = event.getEntityLiving();
         Entity source = event.getSource().getDirectEntity();
@@ -26,7 +28,7 @@ public class ItemDamageHandlers {
             if (source instanceof PlayerEntity) {
 
                 PlayerEntity attacker = (PlayerEntity) event.getSource().getDirectEntity();
-                ItemStack stack = CapabilityReader.getFenrisState(attacker, "offhand_used") > 1 ? attacker.getOffhandItem() : attacker.getMainHandItem();
+                ItemStack stack = CapabilityReader.getFenrisState(attacker, "offhand_used") >= 1 ? attacker.getOffhandItem() : attacker.getMainHandItem();
 
                 MinecraftForge.EVENT_BUS.post(new ItemDamageEvent(stack, target, attacker));
 

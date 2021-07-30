@@ -67,7 +67,6 @@ public class SingleHandedSwordItem extends TieredItem implements IVanishable {
 
     public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker, Hand hand) {
         if (hand == Hand.OFF_HAND && attacker instanceof PlayerEntity) {
-            CapabilityReader.setFenrisState((PlayerEntity)attacker, "offhand_used", 1f);
         }
         stack.hurtAndBreak(1, attacker, (entity) -> {
             attacker.broadcastBreakEvent(hand);
@@ -101,7 +100,7 @@ public class SingleHandedSwordItem extends TieredItem implements IVanishable {
         if (offStack.getItem() instanceof SingleHandedSwordItem) {
             SingleHandedSwordItem offItem = (SingleHandedSwordItem) offStack.getItem();
 
-            if (offStack == stack) {
+            if (hand == Hand.OFF_HAND) {
                 offItem.hurtEnemy(stack, target, playerIn, hand);
                 target.hurt(DamageSource.playerAttack(playerIn), offItem.getAttackDamageBonus());
 
