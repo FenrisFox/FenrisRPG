@@ -10,11 +10,11 @@
   {
     "c":
     {
-      "tag": "forge:silver_ingot"
+      "tag": "forge:ingots/silver"
     },
     "r":
     {
-      "tag": "forge:silver_rod"
+      "tag": "forge:rods/silver"
     },
     "s":
     {

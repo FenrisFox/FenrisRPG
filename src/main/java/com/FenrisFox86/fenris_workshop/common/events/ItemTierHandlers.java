@@ -1,15 +1,17 @@
 package com.FenrisFox86.fenris_workshop.common.events;
 
+import com.FenrisFox86.fenris_workshop.FenrisWorkshop;
 import com.FenrisFox86.fenris_workshop.core.util.tools.ModItemTier;
-import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.Entity;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.TieredItem;
+import net.minecraft.tags.EntityTypeTags;
+import net.minecraft.tags.Tag;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-import java.util.UUID;
 
 @Mod.EventBusSubscriber
 public class ItemTierHandlers {
@@ -19,9 +21,9 @@ public class ItemTierHandlers {
         if (event.getItem().getItem() instanceof TieredItem) {
             IItemTier tier = ((TieredItem) event.getItem().getItem()).getTier();
             if (tier == ModItemTier.SILVER) {
-                event.getTarget().hurt(DamageSource.mobAttack(event.getAttacker()), event.getItem().getDamageValue());
-
+                //Check for Tag and deal additional damage
             }
+            EntityTypeTags
         }
     }
 }

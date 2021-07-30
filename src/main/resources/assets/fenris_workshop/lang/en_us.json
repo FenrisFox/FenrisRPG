@@ -45,7 +45,7 @@
   "block.fenris_workshop.sapphire_ore": "Sapphire Ore",
   "block.fenris_workshop.essence_ore": "Ancient Essence Ore",
   "block.fenris_workshop.cassiterite_block": "Cassiterite Block",
-  "block.fenris_workshop.galenite_block": "Galenite Block",
+  "block.fenris_workshop.galenite_block": "Galena Block",
   "block.fenris_workshop.dolomite": "Dolomite",
   "block.fenris_workshop.dolomite_sand": "Dolomite Sand",
 
@@ -69,7 +69,7 @@
   "item.fenris_workshop.tin": "Tin",
   "item.fenris_workshop.cassiterite": "Cassiterite",
   "item.fenris_workshop.lead": "Lead",
-  "item.fenris_workshop.galenite": "Galenite",
+  "item.fenris_workshop.galenite": "Galena",
 
   "item.fenris_workshop.core_vessel_sword": "Sword Core Vessel",
   "item.fenris_workshop.core_vessel_axe": "Axe Core Vessel",

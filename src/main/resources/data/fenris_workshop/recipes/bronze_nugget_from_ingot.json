@@ -3,14 +3,11 @@
   "ingredients": [
     {
       "tag": "forge:ingots/bronze"
-    },
-    {
-      "item": "fenris_workshop:pyrite"
     }
   ],
   "result":
   {
-    "item": "fenris_workshop:vessel_bronze_ingot",
-    "count": 1
+    "item": "fenris_workshop:bronze_nugget",
+    "count": 9
   }
 }

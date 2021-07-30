@@ -4,7 +4,7 @@
     "minecraft:zombie",
     "minecraft:skeleton",
     "minecraft:wither_skeleton",
-    "minecraft:ghast",
-    "minecraft:blaze"
+    "minecraft:husk",
+    "minecraft:stray"
   ]
 }

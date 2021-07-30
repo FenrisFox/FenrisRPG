@@ -1,7 +1,7 @@
 {
   "type": "minecraft:smelting",
   "ingredient": {
-    "item": "fenris_workshop:cassiterite"
+    "tag": "forge:ores/tin"
   },
   "result": "fenris_workshop:tin",
   "experience": 1.0,
