@@ -8,6 +8,8 @@
   "tooltip.fenris_workshop.dynamo_core_sword.desc": "§o§7Right click to gain strength and healing effects. Normal attacks set enemies on fire, make them glow and Remove certain effects effects.",
   "tooltip.fenris_workshop.dynamo_core_axe.lore": "§5This axe repairs itself when moving fast! Its core emits a strange kind of energy.",
   "tooltip.fenris_workshop.dynamo_core_axe.desc": "§o§7Right click to gain a super strong haste effect. Normal attacks set enemies on fire, make them glow and Remove certain effects.",
+  "tooltip.fenris_workshop.dynamo_core_pickaxe.lore": "§5This pickaxe repairs itself when moving fast! Its core emits a strange kind of energy.",
+  "tooltip.fenris_workshop.dynamo_core_pickaxe.desc": "§o§7Right click to gain haste and speed. Normal attacks set enemies on fire, make them glow and Remove certain effects.",
   "tooltip.fenris_workshop.dynamo_core_hoe.lore": "§5This hoe repairs itself when moving fast! Its core emits a strange kind of energy",
   "tooltip.fenris_workshop.dynamo_core_hoe.desc": "§o§7Right click to gain positive effects. Normal attacks set enemies on fire, make them glow and Remove certain effects.",
   "tooltip.fenris_workshop.dynamo_core_shovel.lore": "§5This shovel repairs itself when moving fast! Its core emits a strange kind of energy",
@@ -31,6 +33,22 @@
   "tooltip.fenris_workshop.core_vessel_items.lore": "§5An Item created from vessel bronze. It seems empty and doesn't have any functionality.",
   "tooltip.fenris_workshop.core_vessel_items.desc": "§o§7Add a core to a Vessel in the Smithing Table",
 
+  "block.fenris_workshop.ruby_block": "Block of Ruby",
+  "block.fenris_workshop.bronze_block": "Block of Bronze",
+  "block.fenris_workshop.silver_block": "Block of Silver",
+  "block.fenris_workshop.sapphire_block": "Block of Sapphire",
+  "block.fenris_workshop.essence_block": "Block of ancient Essence",
+
+  "block.fenris_workshop.ruby_ore": "Ruby Ore",
+  "block.fenris_workshop.copper_ore": "Copper Ore",
+  "block.fenris_workshop.silver_ore": "Silver Ore",
+  "block.fenris_workshop.sapphire_ore": "Sapphire Ore",
+  "block.fenris_workshop.essence_ore": "Ancient Essence Ore",
+  "block.fenris_workshop.cassiterite_block": "Cassiterite Block",
+  "block.fenris_workshop.galenite_block": "Galenite Block",
+  "block.fenris_workshop.dolomite": "Dolomite",
+  "block.fenris_workshop.dolomite_sand": "Dolomite Sand",
+
   "item.fenris_workshop.ruby": "Ruby",
   "item.fenris_workshop.sapphire": "Sapphire",
   "item.fenris_workshop.dynamo_core": "Dynamo Core",
@@ -48,21 +66,10 @@
   "item.fenris_workshop.bronze_rod": "Bronze Rod",
   "item.fenris_workshop.gold_rod": "Gold Rod",
   "item.fenris_workshop.pyrite": "Pyrite",
-
   "item.fenris_workshop.tin": "Tin",
   "item.fenris_workshop.cassiterite": "Cassiterite",
-  "item.fenris_workshop.cassiterite_block": "Cassiterite Block",
-  "block.fenris_workshop.cassiterite_block": "Cassiterite Block",
-
   "item.fenris_workshop.lead": "Lead",
   "item.fenris_workshop.galenite": "Galenite",
-  "item.fenris_workshop.galenite_block": "Galenite Block",
-  "block.fenris_workshop.galenite_block": "Galenite Block",
-
-  "item.fenris_workshop.dolomite": "Dolomite",
-  "item.fenris_workshop.dolomite_sand": "Dolomite Sand",
-  "block.fenris_workshop.dolomite": "Dolomite",
-  "block.fenris_workshop.dolomite_sand": "Dolomite Sand",
 
   "item.fenris_workshop.core_vessel_sword": "Sword Core Vessel",
   "item.fenris_workshop.core_vessel_axe": "Axe Core Vessel",
@@ -206,18 +213,6 @@
   "item.fenris_workshop.diamond_hammer": "Diamond Hammer",
   "item.fenris_workshop.diamond_katana": "Diamond Katana",
   "item.fenris_workshop.diamond_broadsword": "Diamond Broadsword",
-
-  "block.fenris_workshop.ruby_block": "Block of Ruby",
-  "block.fenris_workshop.bronze_block": "Block of Bronze",
-  "block.fenris_workshop.silver_block": "Block of Silver",
-  "block.fenris_workshop.sapphire_block": "Block of Sapphire",
-  "block.fenris_workshop.essence_block": "Block of ancient Essence",
-
-  "block.fenris_workshop.ruby_ore": "Ruby Ore",
-  "block.fenris_workshop.copper_ore": "Copper Ore",
-  "block.fenris_workshop.silver_ore": "Silver Ore",
-  "block.fenris_workshop.sapphire_ore": "Sapphire Ore",
-  "block.fenris_workshop.essence_ore": "Ancient Essence Ore",
 
   "enchantment.fenris_workshop.dynamo_repair": "Dynamo Charge",
   "enchantment.fenris_workshop.spectral": "Spectral",
