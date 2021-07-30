@@ -19,7 +19,6 @@ public class ItemTierHandlers {
         if (event.getItem().getItem() instanceof TieredItem) {
             IItemTier tier = ((TieredItem) event.getItem().getItem()).getTier();
             if (tier == ModItemTier.SILVER) {
-                event.getAttacker().sendMessage(new StringTextComponent("Silver"), UUID.randomUUID());
                 event.getTarget().hurt(DamageSource.mobAttack(event.getAttacker()), event.getItem().getDamageValue());
 
             }

@@ -7,7 +7,6 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Hand;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
@@ -19,7 +18,7 @@ import net.minecraftforge.fml.common.Mod;
 public class ItemDamageHandlers {
 
     @SubscribeEvent
-    public static void DamageHandFire(LivingAttackEvent event) {
+    public static void DamageHandFire(LivingHurtEvent event) {
 
         LivingEntity target = event.getEntityLiving();
         Entity source = event.getSource().getDirectEntity();
