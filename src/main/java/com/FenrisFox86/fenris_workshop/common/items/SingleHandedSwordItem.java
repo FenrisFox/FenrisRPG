@@ -26,12 +26,12 @@ public class SingleHandedSwordItem extends TieredItem implements IVanishable {
     private final float attackDamage;
     private final Multimap<Attribute, AttributeModifier> attributeModifiers;
 
-    public SingleHandedSwordItem(IItemTier tier, int attackDamageIn, float attackMOVEMENT_SPEEDIn, Item.Properties builderIn) {
+    public SingleHandedSwordItem(IItemTier tier, int attackDamageIn, float attackSpeedIn, Item.Properties builderIn) {
         super(tier, builderIn);
         this.attackDamage = (float)attackDamageIn + tier.getAttackDamageBonus();
         Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
         builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Weapon modifier", (double)this.attackDamage, AttributeModifier.Operation.ADDITION));
-        builder.put(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Weapon modifier", (double)attackMOVEMENT_SPEEDIn, AttributeModifier.Operation.ADDITION));
+        builder.put(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Weapon modifier", (double)attackSpeedIn, AttributeModifier.Operation.ADDITION));
         this.attributeModifiers = builder.build();
     }
 
@@ -66,6 +66,9 @@ public class SingleHandedSwordItem extends TieredItem implements IVanishable {
     }
 
     public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker, Hand hand) {
+        if (hand == Hand.OFF_HAND && attacker instanceof PlayerEntity) {
+            CapabilityReader.setFenrisState((PlayerEntity)attacker, "offhand_used", 1f);
+        }
         stack.hurtAndBreak(1, attacker, (entity) -> {
             attacker.broadcastBreakEvent(hand);
         });
@@ -93,15 +96,14 @@ public class SingleHandedSwordItem extends TieredItem implements IVanishable {
     //Allows double wielding
     @Override
     public ActionResultType interactLivingEntity(ItemStack stack, PlayerEntity playerIn, LivingEntity target, Hand hand) {
+        CapabilityReader.setFenrisState(playerIn, "offhand_used", 1f);
         ItemStack offStack = playerIn.getItemInHand(Hand.OFF_HAND);
         if (offStack.getItem() instanceof SingleHandedSwordItem) {
             SingleHandedSwordItem offItem = (SingleHandedSwordItem) offStack.getItem();
 
             if (offStack == stack) {
-                CapabilityReader.setFenrisState((PlayerEntity) playerIn, "offhand_used", 1f);
-
-                target.hurt(DamageSource.playerAttack(playerIn), offItem.getAttackDamageBonus());
                 offItem.hurtEnemy(stack, target, playerIn, hand);
+                target.hurt(DamageSource.playerAttack(playerIn), offItem.getAttackDamageBonus());
 
                 return ActionResultType.SUCCESS;
             } else {

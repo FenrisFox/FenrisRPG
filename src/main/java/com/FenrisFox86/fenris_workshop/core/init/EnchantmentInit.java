@@ -2,7 +2,7 @@ package com.FenrisFox86.fenris_workshop.core.init;
 
 import com.FenrisFox86.fenris_workshop.FenrisWorkshop;
 import com.FenrisFox86.fenris_workshop.common.enchantments.*;
-import com.FenrisFox86.fenris_workshop.common.events.ItemHitEvent;
+import com.FenrisFox86.fenris_workshop.common.events.ItemDamageEvent;
 import com.FenrisFox86.fenris_workshop.common.capabilities.CapabilityReader;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -160,8 +160,8 @@ public class EnchantmentInit {
     }
 
     @SubscribeEvent
-    public static void OnItemHit(ItemHitEvent event) {
-        event.getEntity().setSecondsOnFire(5);
+    public static void OnItemHit(ItemDamageEvent event) {
+        event.getAttacker().setSecondsOnFire(5);
     }
 
     @SubscribeEvent
@@ -225,8 +225,7 @@ public class EnchantmentInit {
             }
 
             if (event.getSource().getEntity() instanceof PlayerEntity) {
-                CapabilityReader.setFenrisState((PlayerEntity) event.getSource().getEntity(),
-                        "offhand_used", 0f);
+
             }
         }
     }

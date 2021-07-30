@@ -21,7 +21,7 @@ import java.util.List;
 
 @Mod.EventBusSubscriber
 public class FenrisStateRefresh {
-    public static final ResourceLocation COMBAT_STATE_CAP = new ResourceLocation(FenrisWorkshop.MOD_ID, "last_hand_used");
+    public static final ResourceLocation COMBAT_STATE_CAP = new ResourceLocation(FenrisWorkshop.MOD_ID, "combat_state");
 
     @SubscribeEvent
     public static void OnCapabilityAttach(final AttachCapabilitiesEvent<Entity> event) {

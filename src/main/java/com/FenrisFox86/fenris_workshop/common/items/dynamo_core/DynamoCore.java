@@ -39,7 +39,7 @@ public class DynamoCore extends Item{
     }
 
     @Override
-    public boolean hasContainerItem(ItemStack stack) {
+    public boolean hasCraftingRemainingItem() {
         return true;
     }
 
