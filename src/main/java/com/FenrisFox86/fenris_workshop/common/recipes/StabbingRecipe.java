@@ -9,10 +9,10 @@ import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.ResourceLocation;
 
-public class StabbingRecipe extends ConversionRecipe {
+public class StabbingRecipe extends AbstractConversionRecipe {
 
-    public static final ConversionRecipe.Serializer<StabbingRecipe> SERIALIZER = new ConversionRecipe
-            .Serializer<StabbingRecipe>("stabbing", StabbingRecipe::new);
+    public static final AbstractConversionRecipe.Serializer<CrushingRecipe> SERIALIZER = new AbstractConversionRecipe
+            .Serializer<CrushingRecipe>("stabbing", CrushingRecipe::new);
 
     final Ingredient input;
     final int min_output;

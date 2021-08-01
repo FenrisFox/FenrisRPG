@@ -49,6 +49,8 @@
   "block.fenris_workshop.dolomite": "Dolomite",
   "block.fenris_workshop.dolomite_sand": "Dolomite Sand",
 
+  "block.fenris_workshop.crusher": "Crusher",
+
   "item.fenris_workshop.ruby": "Ruby",
   "item.fenris_workshop.sapphire": "Sapphire",
   "item.fenris_workshop.dynamo_core": "Dynamo Core",
@@ -169,7 +171,6 @@
   "item.fenris_workshop.ruby_core_boots": "Ruby Core Boots",
   "item.fenris_workshop.ruby_core_helmet": "Ruby Core Helmet",
 
-
   "item.fenris_workshop.dynamo_core_sword": "Dynamo Sword",
   "item.fenris_workshop.dynamo_core_axe": "Dynamo Axe",
   "item.fenris_workshop.dynamo_core_pickaxe": "Dynamo Pickaxe",
@@ -222,5 +223,7 @@
   "enchantment.fenris_workshop.dark_contract": "Dark Contract",
   "enchantment.fenris_workshop.vampiric_repair": "Vampiric Mending",
   "enchantment.fenris_workshop.smelting": "Heating Touch",
-  "enchantment.fenris_workshop.crushing": "Crushing Force"
+  "enchantment.fenris_workshop.crushing": "Crushing Force",
+
+  "container.fenris_workshop.crusher": "Crusher"
 }

@@ -2,6 +2,7 @@ package com.FenrisFox86.fenris_workshop.core.init;
 
 import com.FenrisFox86.fenris_workshop.FenrisWorkshop;
 import com.FenrisFox86.fenris_workshop.common.blocks.*;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -58,6 +59,7 @@ public class BlockInit {
                 3, ToolType.PICKAXE, SoundType.STONE, 10)),
         GALENITE_BLOCK = addBlock("galenite_block", new OreBlockBase(Material.STONE, 4.0F, 4.0F,
                 3, ToolType.PICKAXE, SoundType.STONE, 10)),
+        ESSENCE_ORE_BLOCK = addBlock("essence_ore", new EssenceOreBlock()),
 
-        ESSENCE_ORE_BLOCK = addBlock("essence_ore", new EssenceOreBlock());
+        CRUSHER_BLOCK = addBlock("crusher", new CrusherBlock(Block.Properties.of(Material.STONE).strength(2f).sound(SoundType.STONE).harvestLevel(1).harvestTool(ToolType.PICKAXE)));
 }

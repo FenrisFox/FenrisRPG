@@ -18,7 +18,7 @@ import net.minecraftforge.registries.ForgeRegistryEntry;
 
 import javax.annotation.Nullable;
 
-public abstract class ConversionRecipe implements IRecipe<IInventory> {
+public abstract class AbstractConversionRecipe implements IRecipe<IInventory> {
 
     final Ingredient input;
     final int min_output;
@@ -27,7 +27,7 @@ public abstract class ConversionRecipe implements IRecipe<IInventory> {
     final Item output_item;
     final ResourceLocation id;
 
-    public ConversionRecipe(ResourceLocation id, Ingredient input, Item output_item, int min_output, int max_output, float chance) {
+    public AbstractConversionRecipe(ResourceLocation id, Ingredient input, Item output_item, int min_output, int max_output, float chance) {
         this.input = input;
         this.output_item = output_item;
         this.id = id;
@@ -44,6 +44,10 @@ public abstract class ConversionRecipe implements IRecipe<IInventory> {
     @Override
     public ItemStack assemble(IInventory inv) {
         return getResultItem();
+    }
+
+    public int getConversionTime() {
+        return 200;
     }
 
     @Override
@@ -72,9 +76,9 @@ public abstract class ConversionRecipe implements IRecipe<IInventory> {
         return nonnulllist;
     }
 
-    public static class Serializer<T extends ConversionRecipe>
+    public static class Serializer<T extends AbstractConversionRecipe>
             extends ForgeRegistryEntry<IRecipeSerializer<?>>
-            implements IRecipeSerializer<ConversionRecipe> {
+            implements IRecipeSerializer<AbstractConversionRecipe> {
 
         public final Serializer.IFactory<T> factory;
 
@@ -122,7 +126,7 @@ public abstract class ConversionRecipe implements IRecipe<IInventory> {
         }
 
         @Override
-        public void toNetwork(PacketBuffer buffer, ConversionRecipe recipe) {
+        public void toNetwork(PacketBuffer buffer, AbstractConversionRecipe recipe) {
             recipe.input.toNetwork(buffer);
             CompoundNBT output = new CompoundNBT();
             output.putString("item", recipe.output_item.toString());
@@ -134,7 +138,7 @@ public abstract class ConversionRecipe implements IRecipe<IInventory> {
             //buffer.writeItemStack(recipe.output_item);
         }
 
-        interface IFactory<T extends ConversionRecipe> {
+        interface IFactory<T extends AbstractConversionRecipe> {
             T create(ResourceLocation recipeId, Ingredient input, Item output, int min, int max, float chance);
         }
     }

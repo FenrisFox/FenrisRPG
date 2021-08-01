@@ -17,7 +17,7 @@
   ],
   "action": {
     "bonus": {
-      "count": 1,
+      "count": 0,
       "item": "minecraft:stick"
     }
   }

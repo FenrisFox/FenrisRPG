@@ -1,25 +1,19 @@
 package com.FenrisFox86.fenris_workshop.core.util.tools;
 
-import com.FenrisFox86.fenris_workshop.common.recipes.ConversionRecipe;
-import com.FenrisFox86.fenris_workshop.common.recipes.RecipeType;
 import com.FenrisFox86.fenris_workshop.core.init.RecipeInit;
 import com.google.gson.JsonObject;
-import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.FurnaceRecipe;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.loot.LootContext;
 import net.minecraft.loot.conditions.ILootCondition;
-import net.minecraft.tileentity.FurnaceTileEntity;
 import net.minecraft.util.JSONUtils;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
 import net.minecraftforge.common.loot.LootModifier;
 import net.minecraftforge.registries.ForgeRegistries;
-import org.lwjgl.system.CallbackI;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -74,7 +68,10 @@ public class ToolLootModifier extends LootModifier {
                     count -= add_count;
                 }
             }
-            generatedLoot.add(new ItemStack(bonus_item, count));
+            if (count > 0) {
+                generatedLoot.add(new ItemStack(bonus_item, count));
+
+            }
         }
         return generatedLoot;
     }

@@ -1,13 +1,7 @@
 package com.FenrisFox86.fenris_workshop.core.init;
 
-import com.FenrisFox86.fenris_workshop.common.recipes.CrushingRecipe;
-import com.FenrisFox86.fenris_workshop.common.recipes.RecipeType;
-import com.FenrisFox86.fenris_workshop.common.recipes.SlashingRecipe;
-import com.FenrisFox86.fenris_workshop.common.recipes.StabbingRecipe;
-import net.minecraft.item.crafting.IRecipe;
-import net.minecraft.item.crafting.IRecipeSerializer;
-import net.minecraft.item.crafting.IRecipeType;
-import net.minecraft.item.crafting.RecipeManager;
+import com.FenrisFox86.fenris_workshop.common.recipes.*;
+import net.minecraft.item.crafting.*;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 import net.minecraftforge.event.RegistryEvent;
@@ -19,20 +13,20 @@ import java.util.Map;
 public class RecipeInit {
 
     public static final IRecipeType<CrushingRecipe> CRUSHING_RECIPE = new RecipeType<CrushingRecipe>("crushing");
-    public static final IRecipeType<SlashingRecipe> SLASHING_RECIPE = new RecipeType<SlashingRecipe>("slashing");
-    public static final IRecipeType<StabbingRecipe> STABBING_RECIPE = new RecipeType<StabbingRecipe>("stabbing");
+    public static final IRecipeType<CrushingRecipe> SLASHING_RECIPE = new RecipeType<CrushingRecipe>("slashing");
+    public static final IRecipeType<CrushingRecipe> STABBING_RECIPE = new RecipeType<CrushingRecipe>("stabbing");
 
     public static final Map<IRecipeSerializer<?>, RecipeType<?>> RECIPE_MAP = new HashMap<IRecipeSerializer<?>, RecipeType<?>>() {};
 
     public static void registerRecipes(RegistryEvent.Register<IRecipeSerializer<?>> event) {
 
         RECIPE_MAP.put(CrushingRecipe.SERIALIZER, (RecipeType<?>) CRUSHING_RECIPE);
-        RECIPE_MAP.put(SlashingRecipe.SERIALIZER, (RecipeType<?>) SLASHING_RECIPE);
-        RECIPE_MAP.put(StabbingRecipe.SERIALIZER, (RecipeType<?>) STABBING_RECIPE);
+        RECIPE_MAP.put(CrushingRecipe.SERIALIZER, (RecipeType<?>) SLASHING_RECIPE);
+        RECIPE_MAP.put(CrushingRecipe.SERIALIZER, (RecipeType<?>) STABBING_RECIPE);
 
         registerRecipe(event, CRUSHING_RECIPE, CrushingRecipe.SERIALIZER);
-        registerRecipe(event, SLASHING_RECIPE, SlashingRecipe.SERIALIZER);
-        registerRecipe(event, STABBING_RECIPE, StabbingRecipe.SERIALIZER);
+        registerRecipe(event, SLASHING_RECIPE, CrushingRecipe.SERIALIZER);
+        registerRecipe(event, STABBING_RECIPE, CrushingRecipe.SERIALIZER);
     }
 
     private static void registerRecipe(
