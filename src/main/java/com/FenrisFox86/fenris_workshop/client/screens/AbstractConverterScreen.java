@@ -9,13 +9,15 @@ import net.minecraft.inventory.container.ClickType;
 import net.minecraft.inventory.container.Slot;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import org.spongepowered.asm.mixin.Overwrite;
 
 @OnlyIn(Dist.CLIENT)
 public abstract class AbstractConverterScreen<T extends AbstractConverterContainer> extends ContainerScreen<T> {
     private boolean widthTooNarrow;
-    private final ResourceLocation texture;
+    public final ResourceLocation texture;
     private final ITextComponent name;
     private final PlayerInventory playerInv;
 
@@ -42,9 +44,10 @@ public abstract class AbstractConverterScreen<T extends AbstractConverterContain
         this.renderTooltip(matrixStack, mouseX, mouseY);
     }
 
-    @Override
-    protected void renderLabels(MatrixStack matrixStack, int x, int y) {
-        this.font.draw(matrixStack, this.name, (float) this.titleLabelX, (float) this.titleLabelY, 4210752);
+    @Overwrite
+    protected void renderLabels(MatrixStack matrixStack, int p_230451_2_, int p_230451_3_) {
+        this.font.draw(matrixStack, this.title, (float)this.titleLabelX, (float)this.titleLabelY, 4210752);
+        this.font.draw(matrixStack, this.inventory.getDisplayName(), (float)this.inventoryLabelX, (float)this.inventoryLabelY, 4210752);
     }
 
     protected void renderBg(MatrixStack matrixStack, float p_230450_2_, int p_230450_3_, int p_230450_4_) {
