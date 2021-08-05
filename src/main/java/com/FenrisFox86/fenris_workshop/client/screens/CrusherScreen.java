@@ -20,6 +20,7 @@ public class CrusherScreen extends AbstractConverterScreen<CrusherContainer> {
 
     public CrusherScreen(CrusherContainer container, PlayerInventory playerInv, ITextComponent name) {
         super(container, playerInv, name, TEXTURE);
+        this.inventoryLabelY ++;
     }
 
 }

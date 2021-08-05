@@ -3,47 +3,54 @@ package com.FenrisFox86.fenris_workshop.common.containers;
 import com.FenrisFox86.fenris_workshop.common.containers.containerSlots.ConversionFuelSlot;
 import com.FenrisFox86.fenris_workshop.common.containers.containerSlots.ConversionResultSlot;
 import com.FenrisFox86.fenris_workshop.common.recipes.AbstractConversionRecipe;
+import com.FenrisFox86.fenris_workshop.common.tileentities.AbstractConverterTileEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.IRecipeHelperPopulator;
 import net.minecraft.inventory.Inventory;
-import net.minecraft.inventory.container.*;
+import net.minecraft.inventory.container.AbstractFurnaceContainer;
+import net.minecraft.inventory.container.Container;
+import net.minecraft.inventory.container.ContainerType;
+import net.minecraft.inventory.container.Slot;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.AbstractCookingRecipe;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.IRecipeType;
-import net.minecraft.item.crafting.RecipeBookCategory;
 import net.minecraft.item.crafting.RecipeItemHelper;
-import net.minecraft.item.crafting.ServerRecipePlacerFurnace;
 import net.minecraft.util.IIntArray;
 import net.minecraft.util.IntArray;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import org.apache.commons.lang3.ArrayUtils;
 
-public abstract class AbstractConverterContainer extends Container {
+import java.util.Arrays;
+import java.util.Set;
+
+public abstract class AbstractConverterContainer<T extends AbstractConverterTileEntity> extends Container {
     private final IInventory container;
     private final IIntArray data;
     protected final World level;
     private final IRecipeType<? extends AbstractConversionRecipe> recipeType;
 
     protected AbstractConverterContainer(ContainerType<?> containerType, IRecipeType<? extends AbstractConversionRecipe> recipeType, int p_i241921_4_, PlayerInventory playerInv) {
-        this(containerType, recipeType, p_i241921_4_, playerInv, new Inventory(3), new IntArray(4));
+        this(containerType, recipeType, p_i241921_4_, playerInv, new Inventory(15), new IntArray(4));
     }
 
     protected AbstractConverterContainer(ContainerType<?> containerType, IRecipeType<? extends AbstractConversionRecipe> recipeType, int p_i241922_4_, PlayerInventory playerInv, IInventory inventory, IIntArray dataAccess) {
         super(containerType, p_i241922_4_);
         this.recipeType = recipeType;
-        checkContainerSize(inventory, 3);
+        checkContainerSize(inventory, 15);
         checkContainerDataCount(dataAccess, 4);
         this.container = inventory;
         this.data = dataAccess;
         this.level = playerInv.player.level;
-        this.addSlot(new Slot(inventory, 0, 56, 17));
-        this.addSlot(new ConversionFuelSlot(this, inventory, 1, 56, 53));
-        this.addSlot(new ConversionResultSlot(playerInv.player, inventory, 2, 116, 35));
+        for (int s: T.INPUT_SLOT_INDEXES) { this.addSlot(new Slot(inventory, s, 8+18*(s-T.INPUT_SLOT_INDEXES[0]), 19)); }
+        for (int s: T.FUEL_SLOT_INDEXES) { this.addSlot(new ConversionFuelSlot(this, inventory, s, 8+18*(s-T.FUEL_SLOT_INDEXES[0]), 55)); }
+        for (int s: T.OUTPUT_SLOT_INDEXES) { int x = (s-T.OUTPUT_SLOT_INDEXES[0])%3; int y = (s-T.OUTPUT_SLOT_INDEXES[0])/3;
+            this.addSlot(new ConversionResultSlot(playerInv.player, inventory, s, 116+x*18, 19+y*18));
+        }
+
 
         for(int i = 0; i < 3; ++i) {
             for(int j = 0; j < 9; ++j) {
@@ -58,91 +65,89 @@ public abstract class AbstractConverterContainer extends Container {
         this.addDataSlots(dataAccess);
     }
 
-    public void fillCraftSlotsStackedContents(RecipeItemHelper p_201771_1_) {
+    public void fillCraftSlotsStackedContents(RecipeItemHelper recipeItemHelper) {
         if (this.container instanceof IRecipeHelperPopulator) {
-            ((IRecipeHelperPopulator)this.container).fillStackedContents(p_201771_1_);
+            ((IRecipeHelperPopulator)this.container).fillStackedContents(recipeItemHelper);
         }
-
     }
 
     public void clearCraftingContent() {
         this.container.clearContent();
     }
 
-    public void handlePlacement(boolean p_217056_1_, IRecipe<?> p_217056_2_, ServerPlayerEntity p_217056_3_) {
-    }
-
-    public boolean recipeMatches(IRecipe<? super IInventory> p_201769_1_) {
-        return p_201769_1_.matches(this.container, this.level);
-    }
-
-    public int getResultSlotIndex() {
-        return 2;
-    }
-
-    public int getGridWidth() {
-        return 1;
-    }
-
-    public int getGridHeight() {
-        return 1;
+    public boolean recipeMatches(IRecipe<? super IInventory> recipe) {
+        return recipe.matches(this.container, this.level);
     }
 
     @OnlyIn(Dist.CLIENT)
     public int getSize() {
-        return 3;
+        return 15;
     }
 
-    public boolean stillValid(PlayerEntity p_75145_1_) {
-        return this.container.stillValid(p_75145_1_);
+    public boolean stillValid(PlayerEntity player) {
+        return this.container.stillValid(player);
     }
 
-    public ItemStack quickMoveStack(PlayerEntity p_82846_1_, int p_82846_2_) {
-        ItemStack itemstack = ItemStack.EMPTY;
-        Slot slot = this.slots.get(p_82846_2_);
+    //public static boolean isIn(int[] ints, int integer) { return Arrays.stream(ints).anyMatch(x -> x == integer); }
+
+    public ItemStack quickMoveStack(PlayerEntity player, int index) {
+        ItemStack newStack = ItemStack.EMPTY;
+        Slot slot = this.slots.get(index);
+        int totalSlots = this.slots.size();
         if (slot != null && slot.hasItem()) {
-            ItemStack itemstack1 = slot.getItem();
-            itemstack = itemstack1.copy();
-            if (p_82846_2_ == 2) {
-                if (!this.moveItemStackTo(itemstack1, 3, 39, true)) {
+            ItemStack slotItem = slot.getItem();
+            newStack = slotItem.copy();
+            if (ArrayUtils.contains(T.OUTPUT_SLOT_INDEXES, index)) {
+                if (!this.moveItemStackTo(slotItem, totalSlots-36, totalSlots, true)) {
                     return ItemStack.EMPTY;
                 }
+                slot.onQuickCraft(slotItem, newStack);
 
-                slot.onQuickCraft(itemstack1, itemstack);
-            } else if (p_82846_2_ != 1 && p_82846_2_ != 0) {
-                if (this.canSmelt(itemstack1)) {
-                    if (!this.moveItemStackTo(itemstack1, 0, 1, false)) {
+            } else if (!ArrayUtils.contains(T.FUEL_SLOT_INDEXES, index) && !ArrayUtils.contains(T.INPUT_SLOT_INDEXES, index)) {
+                boolean moved = false;
+
+                //put smeltable Items in Input
+                if (this.isFuel(slotItem)) {
+                    if (!this.moveItemStackTo(slotItem, T.FUEL_SLOT_INDEXES[0],
+                            T.FUEL_SLOT_INDEXES[T.FUEL_SLOT_INDEXES.length-1], false)) {
                         return ItemStack.EMPTY;
                     }
-                } else if (this.isFuel(itemstack1)) {
-                    if (!this.moveItemStackTo(itemstack1, 1, 2, false)) {
+
+                //put fuel items in Fuel slots
+                } else if (this.canSmelt(slotItem)) {
+                    if (!this.moveItemStackTo(slotItem, T.INPUT_SLOT_INDEXES[0],
+                            T.INPUT_SLOT_INDEXES[T.INPUT_SLOT_INDEXES.length-1], false)) {
                         return ItemStack.EMPTY;
                     }
-                } else if (p_82846_2_ >= 3 && p_82846_2_ < 30) {
-                    if (!this.moveItemStackTo(itemstack1, 30, 39, false)) {
+
+                //put from main inventory slots into hotbar
+                } else if (index >= totalSlots-36 && index < totalSlots-9) {
+                    if (!this.moveItemStackTo(slotItem, totalSlots-9, totalSlots, false)) {
                         return ItemStack.EMPTY;
                     }
-                } else if (p_82846_2_ >= 30 && p_82846_2_ < 39 && !this.moveItemStackTo(itemstack1, 3, 30, false)) {
+
+                //put from hotbar into main inventory
+                } else if (index >= totalSlots-9 && !this.moveItemStackTo(slotItem, totalSlots-36, totalSlots-9, false)) {
                     return ItemStack.EMPTY;
                 }
-            } else if (!this.moveItemStackTo(itemstack1, 3, 39, false)) {
+            } else if (!this.moveItemStackTo(slotItem, totalSlots-36, totalSlots, false)) {
                 return ItemStack.EMPTY;
             }
 
-            if (itemstack1.isEmpty()) {
+            if (slotItem.isEmpty()) {
                 slot.set(ItemStack.EMPTY);
             } else {
                 slot.setChanged();
             }
 
-            if (itemstack1.getCount() == itemstack.getCount()) {
+            if (slotItem.getCount() == newStack.getCount()) {
                 return ItemStack.EMPTY;
             }
 
-            slot.onTake(p_82846_1_, itemstack1);
+            slot.onTake(player, slotItem);
         }
 
-        return itemstack;
+        return newStack;
     }
 
     protected boolean canSmelt(ItemStack p_217057_1_) {

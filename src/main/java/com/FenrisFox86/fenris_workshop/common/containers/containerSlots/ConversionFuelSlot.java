@@ -10,13 +10,13 @@ import net.minecraft.item.Items;
 public class ConversionFuelSlot extends Slot {
     private final AbstractConverterContainer menu;
 
-    public ConversionFuelSlot(AbstractConverterContainer container, IInventory inventory, int p_i50084_3_, int p_i50084_4_, int p_i50084_5_) {
-        super(inventory, p_i50084_3_, p_i50084_4_, p_i50084_5_);
+    public ConversionFuelSlot(AbstractConverterContainer container, IInventory inventory, int slot, int x, int y) {
+        super(inventory, slot, x, y);
         this.menu = container;
     }
 
-    public boolean mayPlace(ItemStack p_75214_1_) {
-        return this.menu.isFuel(p_75214_1_) || isBucket(p_75214_1_);
+    public boolean mayPlace(ItemStack stack) {
+        return this.menu.isFuel(stack) || isBucket(stack);
     }
 
     public int getMaxStackSize(ItemStack p_178170_1_) {

@@ -40,6 +40,7 @@ public class FenrisWorkshop {
         EnchantmentInit.EnchantmentInit();
         TileEntityTypeInit.TileEntityTypeInit();
         ContainerTypeInit.ContainerTypeInit();
+        SoundEventInit.SoundEventInit();
 
         MinecraftForge.EVENT_BUS.register(this);
         AbilityPacketHandler.register();

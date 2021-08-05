@@ -58,11 +58,11 @@ public abstract class AbstractConverterScreen<T extends AbstractConverterContain
         this.blit(matrixStack, i, j, 0, 0, this.imageWidth, this.imageHeight);
         if (this.menu.isLit()) {
             int k = this.menu.getLitProgress();
-            this.blit(matrixStack, i + 56, j + 36 + 12 - k, 176, 12 - k, 14, k + 1);
+            this.blit(matrixStack, i + 26, j + 38 + 12 - k, 176, 12 - k, 14, k + 1);
         }
 
         int l = this.menu.getBurnProgress();
-        this.blit(matrixStack, i + 79, j + 34, 176, 14, l + 1, 16);
+        this.blit(matrixStack, i + 78, j + 36, 176, 14, l + 1, 16);
     }
 
     public boolean mouseClicked(double p_231044_1_, double p_231044_3_, int p_231044_5_) {

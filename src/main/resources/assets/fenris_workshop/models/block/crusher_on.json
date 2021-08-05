@@ -1,0 +1,8 @@
+{
+  "parent": "fenris_workshop:block/orientable",
+  "textures": {
+    "top": "fenris_workshop:blocks/crusher_top",
+    "front": "fenris_workshop:blocks/crusher_front_on",
+    "side": "fenris_workshop:blocks/crusher_side"
+  }
+}

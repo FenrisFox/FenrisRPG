@@ -21,7 +21,10 @@ import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
+
+import javax.annotation.Nonnull;
 
 public abstract class AbstractConverterBlock extends ContainerBlock {
     public static final DirectionProperty FACING = HorizontalBlock.FACING;
@@ -32,11 +35,13 @@ public abstract class AbstractConverterBlock extends ContainerBlock {
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(LIT, Boolean.valueOf(false)));
     }
 
-    public ActionResultType use(BlockState p_225533_1_, World p_225533_2_, BlockPos p_225533_3_, PlayerEntity p_225533_4_, Hand p_225533_5_, BlockRayTraceResult p_225533_6_) {
-        if (p_225533_2_.isClientSide) {
+    @Nonnull
+    public ActionResultType use(@Nonnull BlockState state, @Nonnull World world, @Nonnull BlockPos blockPos, @Nonnull PlayerEntity player,
+                                @Nonnull Hand hand, @Nonnull BlockRayTraceResult rayTraceResult) {
+        if (world.isClientSide) {
             return ActionResultType.SUCCESS;
         } else {
-            this.openContainer(p_225533_2_, p_225533_3_, p_225533_4_);
+            this.openContainer(world, blockPos, player);
             return ActionResultType.CONSUME;
         }
     }
@@ -57,25 +62,25 @@ public abstract class AbstractConverterBlock extends ContainerBlock {
 
     }
 
-    public void onRemove(BlockState p_196243_1_, World p_196243_2_, BlockPos p_196243_3_, BlockState p_196243_4_, boolean p_196243_5_) {
-        if (!p_196243_1_.is(p_196243_4_.getBlock())) {
-            TileEntity tileentity = p_196243_2_.getBlockEntity(p_196243_3_);
+    public void onRemove(BlockState state, @Nonnull World world, @Nonnull BlockPos pos, BlockState newState, boolean p_196243_5_) {
+        if (!state.is(newState.getBlock())) {
+            TileEntity tileentity = world.getBlockEntity(pos);
             if (tileentity instanceof AbstractConverterTileEntity) {
-                InventoryHelper.dropContents(p_196243_2_, p_196243_3_, (AbstractConverterTileEntity) tileentity);
-                ((AbstractConverterTileEntity) tileentity).getRecipesToAwardAndPopExperience(p_196243_2_, Vector3d.atCenterOf(p_196243_3_));
-                p_196243_2_.updateNeighbourForOutputSignal(p_196243_3_, this);
+                InventoryHelper.dropContents(world, pos, (AbstractConverterTileEntity) tileentity);
+                ((AbstractConverterTileEntity) tileentity).getRecipesToAwardAndPopExperience(world, Vector3d.atCenterOf(pos));
+                world.updateNeighbourForOutputSignal(pos, this);
             }
 
-            super.onRemove(p_196243_1_, p_196243_2_, p_196243_3_, p_196243_4_, p_196243_5_);
+            super.onRemove(state, world, pos, newState, p_196243_5_);
         }
     }
 
-    public boolean hasAnalogOutputSignal(BlockState p_149740_1_) {
+    public boolean hasAnalogOutputSignal(BlockState state) {
         return true;
     }
 
-    public int getAnalogOutputSignal(BlockState p_180641_1_, World p_180641_2_, BlockPos p_180641_3_) {
-        return Container.getRedstoneSignalFromBlockEntity(p_180641_2_.getBlockEntity(p_180641_3_));
+    public int getAnalogOutputSignal(@Nonnull BlockState state, @Nonnull World world, @Nonnull BlockPos pos) {
+        return Container.getRedstoneSignalFromBlockEntity(world.getBlockEntity(pos));
     }
 
     public BlockRenderType getRenderShape(BlockState p_149645_1_) {
