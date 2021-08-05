@@ -3,9 +3,12 @@ package com.FenrisFox86.fenris_rpg.world;
 import com.FenrisFox86.fenris_rpg.core.init.BlockInit;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.OreBlock;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.GenerationStage;
+import net.minecraft.world.gen.WorldGenRegion;
 import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.OreFeature;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
 import net.minecraft.world.gen.feature.template.BlockMatchRuleTest;
 import net.minecraft.world.gen.feature.template.RuleTest;
@@ -53,14 +56,13 @@ public class OreGeneration {
 
             generateBlock(event.getGeneration(), OreFeatureConfig.FillerBlockType.NATURAL_STONE,
                     BlockInit.DOLOMITE.get().defaultBlockState(),
-                    30, 0, 255, 10);
+                    30, 0, 255, 00);
 
         } else if (event.getCategory().equals(Biome.Category.THEEND)) {
             generateBlock(event.getGeneration(), new BlockMatchRuleTest(Blocks.END_STONE),
                     BlockInit.ESSENCE_ORE_BLOCK.get().defaultBlockState(),
-                    1, 0, 255, 3);
+                    3, 24, 28, 20);
         }
-
     }
     private static void generateBlock(BiomeGenerationSettingsBuilder settings, RuleTest fillerType, BlockState state,
                                       int veinSize, int minHeight, int maxHeight, int amount) {

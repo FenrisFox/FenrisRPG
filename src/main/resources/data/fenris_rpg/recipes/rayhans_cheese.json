@@ -2,9 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "pattern":
   [
-    "mmm",
+    " m ",
     "mem",
-    "mmm"
+    " m "
   ],
   "key":
   {
@@ -20,6 +20,6 @@
   "result":
   {
     "item": "fenris_rpg:rayhans_cheese",
-    "count": 1
+    "count": 2
   }
 }

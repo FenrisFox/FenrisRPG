@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:smithing",
+
+  "base":{
+    "item": "fenris_rpg:core_vessel_sword"
+  },
+
+  "addition": {
+    "item": "fenris_rpg:magma_core"
+  },
+
+  "result":
+  {
+    "item": "fenris_rpg:magma_core_sword",
+    "count": 1
+  }
+}

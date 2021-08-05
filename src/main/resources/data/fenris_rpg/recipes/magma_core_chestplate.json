@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:smithing",
+
+  "base":{
+    "item": "fenris_rpg:core_vessel_chestplate"
+  },
+
+  "addition": {
+    "item": "fenris_rpg:magma_core"
+  },
+
+  "result":
+  {
+    "item": "fenris_rpg:magma_core_chestplate",
+    "count": 1
+  }
+}

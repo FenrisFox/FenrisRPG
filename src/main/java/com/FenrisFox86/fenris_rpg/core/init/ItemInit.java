@@ -2,7 +2,8 @@ package com.FenrisFox86.fenris_rpg.core.init;
 
 import com.FenrisFox86.fenris_rpg.FenrisRPG;
 import com.FenrisFox86.fenris_rpg.common.items.*;
-import com.FenrisFox86.fenris_rpg.common.items.dynamo_core.*;
+import com.FenrisFox86.fenris_rpg.common.items.core.*;
+import com.FenrisFox86.fenris_rpg.common.items.core.DynamoCore;
 import com.FenrisFox86.fenris_rpg.core.util.tools.ModArmorMaterial;
 import com.FenrisFox86.fenris_rpg.core.util.tools.ModFoods;
 import com.FenrisFox86.fenris_rpg.core.util.tools.ModItemTier;
@@ -82,6 +83,29 @@ public class ItemInit {
         return MAP;
     }
 
+    public static Map<String, RegistryObject<Item>> addCoreSet(AbstractCore core) {
+        Map<String, RegistryObject<Item>> MAP = new HashMap() {};
+
+        MAP.put("CORE", addItem(core.name, core));
+
+        MAP.put("SWORD", addItem(core.name+"_sword", new CoreSword(core, 2, -1.0F)));
+        MAP.put("AXE", addItem(core.name+"_axe", new CoreAxe(core, 3, -2.0F)));
+        MAP.put("PICKAXE", addItem(core.name+"_pickaxe", new CorePickaxe(core, 2, -2.0F)));
+        MAP.put("HOE", addItem(core.name+"_hoe", new CoreHoe(core, 0, -2.0F)));
+        MAP.put("SHOVEL", addItem(core.name+"_shovel", new CoreShovel(core, 1, -2.0F)));
+        MAP.put("KATANA", addItem(core.name+"_katana", new CoreKatana(core, 2, -1.5F)));
+        MAP.put("HAMMER", addItem(core.name+"_hammer", new CoreHammer(core, 4, -1.5F)));
+        MAP.put("BROADSWORD", addItem(core.name+"_broadsword", new CoreBroadsword(core, 6, -3.0F)));
+        MAP.put("DAGGER", addItem(core.name+"_dagger", new CoreDagger(core, 0, -0.0F)));
+
+        MAP.put("HELMET", addItem(core.name+"_helmet", new CoreArmorItem(core, EquipmentSlotType.HEAD)));
+        MAP.put("CHESTPLATE", addItem(core.name+"_chestplate", new CoreArmorItem(core, EquipmentSlotType.CHEST)));
+        MAP.put("LEGGINGS", addItem(core.name+"_leggings", new CoreArmorItem(core, EquipmentSlotType.LEGS)));
+        MAP.put("BOOTS", addItem(core.name+"_boots", new CoreArmorItem(core, EquipmentSlotType.FEET)));
+
+        return MAP;
+    }
+
     public static void ItemInit() {
         ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
     }
@@ -126,26 +150,26 @@ public class ItemInit {
         BRONZE_ROD = addItem("bronze_rod"),
         GOLD_ROD = addItem("gold_rod"),
 
-        DYNAMO_CORE = addItem("dynamo_core", new DynamoCore()),
+        /*DYNAMO_CORE = addItem("dynamo_core", new DynamoCore()),
 
-        DYNAMO_CORE_SWORD = addItem("dynamo_core_sword", new DynamoCoreSword(
-                ModItemTier.DYNAMO_CORE, 2, -1.0F)),
-        DYNAMO_CORE_AXE = addItem("dynamo_core_axe", new DynamoCoreAxe(
-                ModItemTier.DYNAMO_CORE, 3, -2.0F)),
-        DYNAMO_CORE_PICKAXE = addItem("dynamo_core_pickaxe", new DynamoCorePickaxe(
-                ModItemTier.DYNAMO_CORE, 2, -2.0F)),
-        DYNAMO_CORE_HOE = addItem("dynamo_core_hoe", new DynamoCoreHoe(
-                ModItemTier.DYNAMO_CORE, 0, -2.0F)),
-        DYNAMO_CORE_SHOVEL = addItem("dynamo_core_shovel", new DynamoCoreShovel(
-                ModItemTier.DYNAMO_CORE, 1, -2.0F)),
-        DYNAMO_CORE_KATANA = addItem("dynamo_core_katana", new DynamoCoreKatana(
-                ModItemTier.DYNAMO_CORE, 2, -1.5F)),
-        DYNAMO_CORE_HAMMER = addItem("dynamo_core_hammer", new DynamoCoreHammer(
-                ModItemTier.DYNAMO_CORE, 4, -1.5F)),
-        DYNAMO_CORE_BROADSWORD = addItem("dynamo_core_broadsword", new DynamoCoreBroadsword(
-                ModItemTier.DYNAMO_CORE, 6, -3.0F)),
-        DYNAMO_CORE_DAGGER = addItem("dynamo_core_dagger", new DynamoCoreDagger(
-                ModItemTier.DYNAMO_CORE, 0, -1.0F)),
+        DYNAMO_CORE_SWORD = addItem("dynamo_core_sword", new CoreSword(
+                new DynamoCore(), 2, -1.0F)),
+        DYNAMO_CORE_AXE = addItem("dynamo_core_axe", new CoreAxe(
+                new DynamoCore(), 3, -2.0F)),
+        DYNAMO_CORE_PICKAXE = addItem("dynamo_core_pickaxe", new CorePickaxe(
+                new DynamoCore(), 2, -2.0F)),
+        DYNAMO_CORE_HOE = addItem("dynamo_core_hoe", new CoreHoe(
+                new DynamoCore(), 0, -2.0F)),
+        DYNAMO_CORE_SHOVEL = addItem("dynamo_core_shovel", new CoreShovel(
+                new DynamoCore(), 1, -2.0F)),
+        DYNAMO_CORE_KATANA = addItem("dynamo_core_katana", new CoreKatana(
+                new DynamoCore(), 2, -1.5F)),
+        DYNAMO_CORE_HAMMER = addItem("dynamo_core_hammer", new CoreHammer(
+                new DynamoCore(), 4, -1.5F)),
+        DYNAMO_CORE_BROADSWORD = addItem("dynamo_core_broadsword", new CoreBroadsword(
+                new DynamoCore(), 6, -3.0F)),
+        DYNAMO_CORE_DAGGER = addItem("dynamo_core_dagger", new CoreDagger(
+                new DynamoCore(), 0, -1.0F)),
         DYNAMO_CORE_HELMET = addItem("dynamo_core_helmet", new DynamoCoreHelmet(
                 ModArmorMaterial.DYNAMO_CORE_ARMOR)),
         DYNAMO_CORE_CHESTPLATE = addItem("dynamo_core_chestplate", new DynamoCoreChestplate(
@@ -153,7 +177,7 @@ public class ItemInit {
         DYNAMO_CORE_LEGGINGS = addItem("dynamo_core_leggings", new DynamoCoreLeggings(
                 ModArmorMaterial.DYNAMO_CORE_ARMOR)),
         DYNAMO_CORE_BOOTS = addItem("dynamo_core_boots", new DynamoCoreBoots(
-                ModArmorMaterial.DYNAMO_CORE_ARMOR)),
+                ModArmorMaterial.DYNAMO_CORE_ARMOR)),*/
 
         RAYHANS_CHEESE = addItem("rayhans_cheese", new ItemBase((new Item.Properties()).tab(FenrisRPG.MOD_TAB)
                 .rarity(Rarity.EPIC).food(ModFoods.RAYHANS_CHEESE)).foilEffect().description("tooltip.fenris_rpg.rayhans_cheese.lore")
@@ -177,5 +201,8 @@ public class ItemInit {
         IRON_TOOLSET = completeToolSet("iron", ItemTier.IRON, null),
         GOLD_TOOLSET = completeToolSet("gold", ItemTier.GOLD, null),
         DIAMOND_TOOLSET = completeToolSet("diamond", ItemTier.DIAMOND, null),
-        NETHERITE_TOOLSET = completeToolSet("netherite", ItemTier.NETHERITE, null);
+        NETHERITE_TOOLSET = completeToolSet("netherite", ItemTier.NETHERITE, null),
+
+        DYNAMO_CORE_SET = addCoreSet(new DynamoCore()),
+        MAGMA_CORE_SET = addCoreSet(new MagmaCore());
 }

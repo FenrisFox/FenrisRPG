@@ -36,7 +36,11 @@ public enum ModArmorMaterial implements IArmorMaterial {
     }),
     DYNAMO_CORE_ARMOR("dynamo_core", 50, new int[] {20, 20, 30, 30}, ModItemTier.DYNAMO_CORE.getEnchantmentValue(),
             SoundEvents.ARMOR_EQUIP_IRON, 5.0f,0.5f, () -> {
-        return Ingredient.of(ItemInit.DYNAMO_CORE.get());
+        return Ingredient.of(ItemInit.DYNAMO_CORE_SET.get("CORE").get());
+    }),
+    MAGMA_CORE_ARMOR("magma_core", 50, new int[] {20, 20, 30, 30}, ModItemTier.MAGMA_CORE.getEnchantmentValue(),
+            SoundEvents.ARMOR_EQUIP_IRON, 5.0f,0.5f, () -> {
+        return Ingredient.of(ItemInit.MAGMA_CORE_SET.get("CORE").get());
     })
     ;
 
