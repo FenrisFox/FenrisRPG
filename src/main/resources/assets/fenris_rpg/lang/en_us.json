@@ -1,5 +1,5 @@
 {
-  "itemGroup.basic_material_tab": "Fenris' Workshop",
+  "itemGroup.basic_material_tab": "Fenris' RPG",
 
   "tooltip.fenris_rpg.hold_shift": "§7Hold §e[Shift] §7for more information",
   "tooltip.fenris_rpg.dynamo_core.lore": "§5this artifact repairs itself when moving fast! It emits a strange kind of energy",
@@ -32,6 +32,8 @@
   "tooltip.fenris_rpg.dynamo_core_helmet.desc": "§o§7Gives you a luck effect.",
   "tooltip.fenris_rpg.core_vessel_items.lore": "§5An Item created from vessel bronze. It seems empty and doesn't have any functionality.",
   "tooltip.fenris_rpg.core_vessel_items.desc": "§o§7Add a core to a Vessel in the Smithing Table",
+  "tooltip.fenris_rpg.rayhans_cheese.lore":"§5Get me some Cheese! Yummy Cheese!",
+  "tooltip.fenris_rpg.rayhans_cheese.desc":"§o§7Taste a piece of OP Apple's new big bro.",
 
   "block.fenris_rpg.ruby_block": "Block of Ruby",
   "block.fenris_rpg.bronze_block": "Block of Bronze",
@@ -72,6 +74,7 @@
   "item.fenris_rpg.cassiterite": "Cassiterite",
   "item.fenris_rpg.lead": "Lead",
   "item.fenris_rpg.galenite": "Galena",
+  "item.fenris_rpg.rayhans_cheese": "Rayhan's Cheese",
 
   "item.fenris_rpg.core_vessel_sword": "Sword Core Vessel",
   "item.fenris_rpg.core_vessel_axe": "Axe Core Vessel",

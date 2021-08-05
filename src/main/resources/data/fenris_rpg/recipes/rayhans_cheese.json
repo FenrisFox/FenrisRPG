@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "mmm",
+    "mem",
+    "mmm"
+  ],
+  "key":
+  {
+    "m":
+    {
+      "item": "minecraft:milk_bucket"
+    },
+    "e":
+    {
+      "item": "fenris_rpg:essence"
+    }
+  },
+  "result":
+  {
+    "item": "fenris_rpg:rayhans_cheese",
+    "count": 1
+  }
+}

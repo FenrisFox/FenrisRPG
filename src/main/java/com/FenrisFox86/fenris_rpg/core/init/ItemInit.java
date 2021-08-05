@@ -4,6 +4,7 @@ import com.FenrisFox86.fenris_rpg.FenrisRPG;
 import com.FenrisFox86.fenris_rpg.common.items.*;
 import com.FenrisFox86.fenris_rpg.common.items.dynamo_core.*;
 import com.FenrisFox86.fenris_rpg.core.util.tools.ModArmorMaterial;
+import com.FenrisFox86.fenris_rpg.core.util.tools.ModFoods;
 import com.FenrisFox86.fenris_rpg.core.util.tools.ModItemTier;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.*;
@@ -152,7 +153,11 @@ public class ItemInit {
         DYNAMO_CORE_LEGGINGS = addItem("dynamo_core_leggings", new DynamoCoreLeggings(
                 ModArmorMaterial.DYNAMO_CORE_ARMOR)),
         DYNAMO_CORE_BOOTS = addItem("dynamo_core_boots", new DynamoCoreBoots(
-                ModArmorMaterial.DYNAMO_CORE_ARMOR));
+                ModArmorMaterial.DYNAMO_CORE_ARMOR)),
+
+        RAYHANS_CHEESE = addItem("rayhans_cheese", new ItemBase((new Item.Properties()).tab(FenrisRPG.MOD_TAB)
+                .rarity(Rarity.EPIC).food(ModFoods.RAYHANS_CHEESE)).foilEffect().description("tooltip.fenris_rpg.rayhans_cheese.lore")
+                .description("tooltip.fenris_rpg.rayhans_cheese.desc"));
 
     public static final Map<String, RegistryObject<Item>>
         RUBY_TOOLSET = addToolSet("ruby", ModItemTier.RUBY),

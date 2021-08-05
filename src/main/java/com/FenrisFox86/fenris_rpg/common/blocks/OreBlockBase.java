@@ -28,6 +28,7 @@ public class OreBlockBase extends OreBlock{
         .sound(soundTypeIn)
         .harvestLevel(harvestLevelIn)
         .harvestTool(toolTypeIn)
+        .requiresCorrectToolForDrops()
         );
         xpDrop = xpDropIn;
 

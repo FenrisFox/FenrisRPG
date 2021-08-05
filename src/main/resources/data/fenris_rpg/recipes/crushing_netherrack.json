@@ -1,0 +1,10 @@
+{
+  "type": "fenris_rpg:crushing",
+  "input": {
+    "item": "minecraft:netherrack"
+  },
+  "output": {
+    "item": "minecraft:soul_sand",
+    "count": 2
+  }
+}
