@@ -1,7 +1,7 @@
 {
   "replace": false,
   "values": [
-    "fenris_workshop:cassiterite_block",
-    "fenris_workshop:cassiterite"
+    "fenris_rpg:cassiterite_block",
+    "fenris_rpg:cassiterite"
   ]
 }

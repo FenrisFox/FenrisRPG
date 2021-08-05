@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:smithing",
+
+  "base":{
+    "item": "fenris_rpg:diamond_hammer"
+  },
+
+  "addition": {
+    "item": "minecraft:netherite_ingot"
+  },
+
+  "result":
+  {
+    "item": "fenris_rpg:netherite_hammer",
+    "count": 1
+  }
+}

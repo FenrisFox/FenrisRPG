@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    " rr",
+    " sr",
+    " s "
+  ],
+  "key":
+  {
+    "r":
+    {
+      "tag": "forge:gems/sapphire"
+    },
+    "s":
+    {
+      "item": "minecraft:stick"
+    }
+  },
+  "result":
+  {
+    "item": "fenris_rpg:sapphire_axe",
+    "count": 1
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "cr ",
+    "cr ",
+    " s "
+  ],
+  "key":
+  {
+    "c":
+    {
+      "tag": "forge:ingots/bronze"
+    },
+    "r":
+    {
+      "tag": "forge:rods/bronze"
+    },
+    "s":
+    {
+      "item": "minecraft:stick"
+    }
+  },
+  "result":
+  {
+    "item": "fenris_rpg:bronze_broadsword",
+    "count": 1
+  }
+}

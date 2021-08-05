@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "r r",
+    "rrr",
+    "rrr"
+  ],
+  "key":
+  {
+    "r":
+    {
+      "item": "fenris_rpg:vessel_bronze_ingot"
+    }
+  },
+  "result":
+  {
+    "item": "fenris_rpg:core_vessel_chestplate",
+    "count": 1
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "xxx",
+    "xxx",
+    "xxx"
+  ],
+  "key":
+  {
+    "x":
+    {
+      "tag": "forge:gems/sapphire"
+    }
+  },
+  "result":
+  {
+    "item": "fenris_rpg:sapphire_block",
+    "count": 1
+  }
+}

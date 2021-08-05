@@ -1,6 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "fenris_workshop:blocks/essence_ore"
-  }
-}

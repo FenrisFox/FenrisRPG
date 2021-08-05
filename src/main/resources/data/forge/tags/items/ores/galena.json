@@ -1,7 +1,7 @@
 {
   "replace": false,
   "values": [
-    "fenris_workshop:galenite_block",
-    "fenris_workshop:galenite"
+    "fenris_rpg:galenite_block",
+    "fenris_rpg:galenite"
   ]
 }

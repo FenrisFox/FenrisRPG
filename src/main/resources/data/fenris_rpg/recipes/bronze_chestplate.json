@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "r r",
+    "rrr",
+    "rrr"
+  ],
+  "key":
+  {
+    "r":
+    {
+      "tag": "forge:ingots/bronze"
+    }
+  },
+  "result":
+  {
+    "item": "fenris_rpg:bronze_chestplate",
+    "count": 1
+  }
+}

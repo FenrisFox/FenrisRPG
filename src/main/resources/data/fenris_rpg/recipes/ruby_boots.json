@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "   ",
+    "r r",
+    "r r"
+  ],
+  "key":
+  {
+    "r":
+    {
+      "tag": "forge:gems/ruby"
+    }
+  },
+  "result":
+  {
+    "item": "fenris_rpg:ruby_boots",
+    "count": 1
+  }
+}

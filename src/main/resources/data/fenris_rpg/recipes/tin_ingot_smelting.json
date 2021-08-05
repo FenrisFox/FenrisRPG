@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "tag": "forge:ores/tin"
+  },
+  "result": "fenris_rpg:tin",
+  "experience": 1.0,
+  "cookingtime": 200
+}

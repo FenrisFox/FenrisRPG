@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:smithing",
+
+  "base":{
+    "item": "fenris_rpg:diamond_katana"
+  },
+
+  "addition": {
+    "item": "minecraft:netherite_ingot"
+  },
+
+  "result":
+  {
+    "item": "fenris_rpg:netherite_katana",
+    "count": 1
+  }
+}

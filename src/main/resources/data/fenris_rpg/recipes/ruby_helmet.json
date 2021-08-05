@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "rrr",
+    "r r",
+    "   "
+  ],
+  "key":
+  {
+    "r":
+    {
+      "tag": "forge:gems/ruby"
+    }
+  },
+  "result":
+  {
+    "item": "fenris_rpg:ruby_helmet",
+    "count": 1
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "cr ",
+    "cr ",
+    " s "
+  ],
+  "key":
+  {
+    "c":
+    {
+      "item": "minecraft:gold_ingot"
+    },
+    "r":
+    {
+      "tag": "forge:rods/gold"
+    },
+    "s":
+    {
+      "item": "minecraft:stick"
+    }
+  },
+  "result":
+  {
+    "item": "fenris_rpg:gold_broadsword",
+    "count": 1
+  }
+}

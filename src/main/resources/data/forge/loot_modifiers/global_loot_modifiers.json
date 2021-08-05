@@ -1,13 +1,13 @@
 {
   "replace": false,
   "entries": [
-    "fenris_workshop:block_crush",
-    "fenris_workshop:enchantment_block_crush",
-    "fenris_workshop:entity_crush",
-    "fenris_workshop:enchantment_entity_crush",
-    "fenris_workshop:entity_slash_bonus",
-    "fenris_workshop:entity_slash",
-    "fenris_workshop:block_smelt",
-    "fenris_workshop:entity_stab"
+    "fenris_rpg:block_crush",
+    "fenris_rpg:enchantment_block_crush",
+    "fenris_rpg:entity_crush",
+    "fenris_rpg:enchantment_entity_crush",
+    "fenris_rpg:entity_slash_bonus",
+    "fenris_rpg:entity_slash",
+    "fenris_rpg:block_smelt",
+    "fenris_rpg:entity_stab"
   ]
 }

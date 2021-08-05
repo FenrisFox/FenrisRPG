@@ -1,0 +1,12 @@
+{
+  "type": "fenris_rpg:crushing",
+  "input": {
+    "item": "fenris_rpg:dolomite_sand"
+  },
+  "output": {
+    "item": "fenris_rpg:pyrite",
+    "min_count": 1,
+    "max_count": 3,
+    "chance": 0.2
+  }
+}

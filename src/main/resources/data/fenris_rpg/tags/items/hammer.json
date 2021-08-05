@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "fenris_rpg:wood_hammer",
+    "fenris_rpg:stone_hammer",
+    "fenris_rpg:iron_hammer",
+    "fenris_rpg:gold_hammer",
+    "fenris_rpg:diamond_hammer",
+    "fenris_rpg:netherite_hammer",
+    "fenris_rpg:bronze_hammer",
+    "fenris_rpg:silver_hammer",
+    "fenris_rpg:ruby_hammer",
+    "fenris_rpg:sapphire_hammer",
+    "fenris_rpg:essence_hammer",
+    "fenris_rpg:dynamo_core_hammer"
+  ]
+}

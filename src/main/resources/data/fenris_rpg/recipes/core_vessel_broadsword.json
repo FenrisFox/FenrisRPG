@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "rb ",
+    "rb ",
+    " s "
+  ],
+  "key":
+  {
+    "r":
+    {
+      "item": "fenris_rpg:vessel_bronze_ingot"
+    },
+    "s":
+    {
+      "item": "minecraft:stick"
+    },
+    "b":
+    {
+      "tag": "forge:rods/bronze"
+    }
+  },
+  "result":
+  {
+    "item": "fenris_rpg:core_vessel_broadsword",
+    "count": 1
+  }
+}

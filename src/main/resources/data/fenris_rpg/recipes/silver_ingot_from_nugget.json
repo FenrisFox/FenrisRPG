@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "xxx",
+    "xxx",
+    "xxx"
+  ],
+  "key":
+  {
+    "x":
+    {
+      "tag": "forge:nuggets/silver"
+    }
+  },
+  "result":
+  {
+    "item": "fenris_rpg:silver_ingot",
+    "count": 1
+  }
+}

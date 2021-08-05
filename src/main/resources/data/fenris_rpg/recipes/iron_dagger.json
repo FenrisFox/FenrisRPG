@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "   ",
+    " r ",
+    " s "
+  ],
+  "key":
+  {
+    "r":
+    {
+      "item": "minecraft:iron_ingot"
+    },
+    "s":
+    {
+      "item": "minecraft:stick"
+    }
+  },
+  "result":
+  {
+    "item": "fenris_rpg:iron_dagger",
+    "count": 1
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "fenris_rpg:tool_modifier",
+  "conditions": [
+    {
+      "condition": "minecraft:match_tool",
+      "predicate": {
+        "enchantments": [
+          {
+            "enchantment": "fenris_rpg:crushing",
+            "levels": 1
+          }
+        ]
+      }
+    }
+  ],
+  "action": {
+    "recipe": {
+      "type": "fenris_rpg:crushing"
+    }
+  }
+}

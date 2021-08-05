@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    " r ",
+    " r ",
+    " s "
+  ],
+  "key":
+  {
+    "r":
+    {
+      "tag": "forge:gems/ruby"
+    },
+    "s":
+    {
+      "item": "minecraft:stick"
+    }
+  },
+  "result":
+  {
+    "item": "fenris_rpg:ruby_sword",
+    "count": 1
+  }
+}

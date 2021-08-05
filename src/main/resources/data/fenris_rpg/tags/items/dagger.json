@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "fenris_rpg:wood_dagger",
+    "fenris_rpg:stone_dagger",
+    "fenris_rpg:iron_dagger",
+    "fenris_rpg:gold_dagger",
+    "fenris_rpg:diamond_dagger",
+    "fenris_rpg:netherite_dagger",
+    "fenris_rpg:bronze_dagger",
+    "fenris_rpg:silver_dagger",
+    "fenris_rpg:ruby_dagger",
+    "fenris_rpg:sapphire_dagger",
+    "fenris_rpg:essence_dagger",
+    "fenris_rpg:dynamo_core_dagger"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "rr ",
+    "rr ",
+    " s "
+  ],
+  "key":
+  {
+    "r":
+    {
+      "item": "minecraft:diamond"
+    },
+    "s":
+    {
+      "item": "minecraft:stick"
+    }
+  },
+  "result":
+  {
+    "item": "fenris_rpg:diamond_broadsword",
+    "count": 1
+  }
+}

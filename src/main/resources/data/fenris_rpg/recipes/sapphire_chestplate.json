@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "r r",
+    "rrr",
+    "rrr"
+  ],
+  "key":
+  {
+    "r":
+    {
+      "tag": "forge:gems/sapphire"
+    }
+  },
+  "result":
+  {
+    "item": "fenris_rpg:sapphire_chestplate",
+    "count": 1
+  }
+}

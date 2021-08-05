@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "forge:ingots/bronze"
+    }
+  ],
+  "result":
+  {
+    "item": "fenris_rpg:bronze_nugget",
+    "count": 9
+  }
+}

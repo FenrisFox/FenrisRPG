@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "  r",
+    " r ",
+    "s  "
+  ],
+  "key":
+  {
+    "r":
+    {
+      "item": "minecraft:gold_ingot"
+    },
+    "s":
+    {
+      "item": "minecraft:stick"
+    }
+  },
+  "result":
+  {
+    "item": "fenris_rpg:gold_katana",
+    "count": 1
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    " r ",
+    " s ",
+    " s "
+  ],
+  "key":
+  {
+    "r":
+    {
+      "tag": "forge:ingots/bronze"
+    },
+    "s":
+    {
+      "item": "minecraft:stick"
+    }
+  },
+  "result":
+  {
+    "item": "fenris_rpg:bronze_shovel",
+    "count": 1
+  }
+}

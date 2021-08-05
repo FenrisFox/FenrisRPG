@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "forge:blocks/bronze"
+    }
+  ],
+  "result":
+  {
+    "item": "fenris_rpg:bronze_ingot",
+    "count": 9
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    " rr",
+    " sr",
+    " s "
+  ],
+  "key":
+  {
+    "r":
+    {
+      "tag": "forge:ingots/silver"
+    },
+    "s":
+    {
+      "item": "minecraft:stick"
+    }
+  },
+  "result":
+  {
+    "item": "fenris_rpg:silver_axe",
+    "count": 1
+  }
+}

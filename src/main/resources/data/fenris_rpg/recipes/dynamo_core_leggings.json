@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:smithing",
+
+  "base":{
+    "item": "fenris_rpg:core_vessel_leggings"
+  },
+
+  "addition": {
+    "item": "fenris_rpg:dynamo_core"
+  },
+
+  "result":
+  {
+    "item": "fenris_rpg:dynamo_core_leggings",
+    "count": 1
+  }
+}

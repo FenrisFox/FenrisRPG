@@ -1,0 +1,16 @@
+{
+  "type": "fenris_rpg:tool_modifier",
+  "conditions": [
+    {
+      "condition": "minecraft:match_tool",
+      "predicate": {
+        "tag": "fenris_rpg:hammer"
+      }
+    }
+  ],
+  "action": {
+    "recipe": {
+      "type": "fenris_rpg:crushing"
+    }
+  }
+}

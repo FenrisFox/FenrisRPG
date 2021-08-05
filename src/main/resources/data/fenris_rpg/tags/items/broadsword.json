@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "fenris_rpg:wood_broadsword",
+    "fenris_rpg:stone_broadsword",
+    "fenris_rpg:iron_broadsword",
+    "fenris_rpg:gold_broadsword",
+    "fenris_rpg:diamond_broadsword",
+    "fenris_rpg:netherite_broadsword",
+    "fenris_rpg:bronze_broadsword",
+    "fenris_rpg:silver_broadsword",
+    "fenris_rpg:ruby_broadsword",
+    "fenris_rpg:sapphire_broadsword",
+    "fenris_rpg:essence_broadsword",
+    "fenris_rpg:dynamo_core_broadsword"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "r r",
+    "rrr",
+    "rrr"
+  ],
+  "key":
+  {
+    "r":
+    {
+      "tag": "forge:ingots/silver"
+    }
+  },
+  "result":
+  {
+    "item": "fenris_rpg:silver_chestplate",
+    "count": 1
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "fenris_rpg:items/bronze_hoe"
+  }
+}
