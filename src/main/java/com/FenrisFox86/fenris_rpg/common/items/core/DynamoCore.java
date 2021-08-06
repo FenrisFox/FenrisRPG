@@ -30,11 +30,10 @@ import net.minecraftforge.fml.common.Mod;
 
 import javax.annotation.Nonnull;
 import java.util.List;
-import java.util.Objects;
 import java.util.UUID;
 
 @Mod.EventBusSubscriber
-public class DynamoCore extends AbstractCore {
+public class DynamoCore extends AbstractCoreItem {
 
     public DynamoCore() {
         super("dynamo_core", new Properties().tab(FenrisRPG.MOD_TAB).durability(256));
@@ -46,7 +45,7 @@ public class DynamoCore extends AbstractCore {
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
         super.appendHoverText(stack, worldIn, tooltip, flagIn);
-        AbstractCore.appendHoverText(tooltip, name);
+        AbstractCoreItem.appendHoverText(tooltip, name);
     }
 
     @Override

@@ -6,8 +6,6 @@ import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
@@ -19,9 +17,9 @@ import java.util.List;
 public class CoreBroadsword extends BroadswordItem implements ICoreItem {
 
     public final String name;
-    public final AbstractCore core;
+    public final AbstractCoreItem core;
 
-    public CoreBroadsword(AbstractCore core, int attackDamageIn, float attackSpeedIn) {
+    public CoreBroadsword(AbstractCoreItem core, int attackDamageIn, float attackSpeedIn) {
         super(core.itemTier, attackDamageIn, attackSpeedIn, new Properties().tab(FenrisRPG.MOD_TAB));
         this.name = core.name + "_broadsword";
         this.core = core;
@@ -34,7 +32,7 @@ public class CoreBroadsword extends BroadswordItem implements ICoreItem {
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(@Nonnull ItemStack stack, World worldIn, @Nonnull List<ITextComponent> tooltip, @Nonnull ITooltipFlag flagIn) {
         super.appendHoverText(stack, worldIn, tooltip, flagIn);
-        AbstractCore.appendHoverText(tooltip, this.name);
+        AbstractCoreItem.appendPassiveHoverText(tooltip, core.name);
     }
 
     @Override
@@ -53,7 +51,7 @@ public class CoreBroadsword extends BroadswordItem implements ICoreItem {
     }
 
     @Override
-    public AbstractCore getCore() {
+    public AbstractCoreItem getCore() {
         return core;
     }
 }

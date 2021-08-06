@@ -19,9 +19,9 @@ import java.util.List;
 public class CorePickaxe extends PickaxeItem implements ICoreItem {
 
     public final String name;
-    public final AbstractCore core;
+    public final AbstractCoreItem core;
 
-    public CorePickaxe(AbstractCore core, int attackDamageIn, float attackSpeedIn) {
+    public CorePickaxe(AbstractCoreItem core, int attackDamageIn, float attackSpeedIn) {
         super(core.itemTier, attackDamageIn, attackSpeedIn, new Properties().tab(FenrisRPG.MOD_TAB));
         this.name = core.name + "_pickaxe";
         this.core = core;
@@ -34,7 +34,7 @@ public class CorePickaxe extends PickaxeItem implements ICoreItem {
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(@Nonnull ItemStack stack, World worldIn, @Nonnull List<ITextComponent> tooltip, @Nonnull ITooltipFlag flagIn) {
         super.appendHoverText(stack, worldIn, tooltip, flagIn);
-        AbstractCore.appendHoverText(tooltip, this.name, this.core.name);
+        AbstractCoreItem.appendHoverText(tooltip, this.core.name);
     }
 
     @Nonnull
@@ -59,7 +59,7 @@ public class CorePickaxe extends PickaxeItem implements ICoreItem {
     }
 
     @Override
-    public AbstractCore getCore() {
+    public AbstractCoreItem getCore() {
         return core;
     }
 }

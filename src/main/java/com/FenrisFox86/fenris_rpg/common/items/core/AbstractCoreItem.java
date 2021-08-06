@@ -16,23 +16,22 @@ import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import org.lwjgl.glfw.GLFW;
 
 import java.util.List;
 
-public abstract class AbstractCore extends Item{
+public abstract class AbstractCoreItem extends Item{
 
     public IItemTier itemTier;
     public IArmorMaterial armorMaterial;
     public String name;
 
-    public AbstractCore(String name, Properties properties) {
+    public AbstractCoreItem(String name, Properties properties) {
         super(properties);
         this.name = name;
     }
 
-    public static boolean isCoreItem(ItemStack stack, AbstractCore core) {
+    public static boolean isCoreItem(ItemStack stack, AbstractCoreItem core) {
         return stack.getItem() instanceof ICoreItem && ((ICoreItem) stack.getItem()).getCore().equals(core);
     }
 
@@ -60,20 +59,30 @@ public abstract class AbstractCore extends Item{
     }
 
     @OnlyIn(Dist.CLIENT)
-    public static void appendHoverText(List<ITextComponent> tooltip, String toolName, String coreName) {
+    public static void appendHoverText(List<ITextComponent> tooltip, String coreName) {
         if(InputMappings.isKeyDown(Minecraft.getInstance().getWindow().getWindow(), GLFW.GLFW_KEY_LEFT_SHIFT)) {
-            tooltip.add(new TranslationTextComponent("tooltip.fenris_rpg."+toolName+".lore"));
-            tooltip.add(new TranslationTextComponent("tooltip.fenris_rpg."+coreName+"_tool.desc"));
+            tooltip.add(new TranslationTextComponent("tooltip.fenris_rpg."+coreName+"_attack"));
+            tooltip.add(new TranslationTextComponent("tooltip.fenris_rpg."+coreName+"_tool"));
+            tooltip.add(new TranslationTextComponent("tooltip.fenris_rpg."+coreName+"_passive"));
+        } else {
+            tooltip.add(Tooltips.HOLD_SHIFT);
+        }
+    }
+
+    public static void appendPassiveHoverText(List<ITextComponent> tooltip, String coreName) {
+        if(InputMappings.isKeyDown(Minecraft.getInstance().getWindow().getWindow(), GLFW.GLFW_KEY_LEFT_SHIFT)) {
+            tooltip.add(new TranslationTextComponent("tooltip.fenris_rpg."+coreName+"_attack"));
+            tooltip.add(new TranslationTextComponent("tooltip.fenris_rpg."+coreName+"_passive"));
         } else {
             tooltip.add(Tooltips.HOLD_SHIFT);
         }
     }
 
     @OnlyIn(Dist.CLIENT)
-    public static void appendHoverText(List<ITextComponent> tooltip, String itemName) {
+    public static void appendArmorHoverText(List<ITextComponent> tooltip, String coreName, String armorName) {
         if(InputMappings.isKeyDown(Minecraft.getInstance().getWindow().getWindow(), GLFW.GLFW_KEY_LEFT_SHIFT)) {
-            tooltip.add(new TranslationTextComponent("tooltip.fenris_rpg."+itemName+".lore"));
-            tooltip.add(new TranslationTextComponent("tooltip.fenris_rpg."+itemName+".desc"));
+            tooltip.add(new TranslationTextComponent("tooltip.fenris_rpg."+armorName));
+            tooltip.add(new TranslationTextComponent("tooltip.fenris_rpg."+coreName+"_passive"));
         } else {
             tooltip.add(Tooltips.HOLD_SHIFT);
         }

@@ -17,9 +17,9 @@ import java.util.List;
 public class CoreDagger extends SingleHandedSwordItem implements ICoreItem {
 
     public final String name;
-    public final AbstractCore core;
+    public final AbstractCoreItem core;
 
-    public CoreDagger(AbstractCore core, int attackDamageIn, float attackSpeedIn) {
+    public CoreDagger(AbstractCoreItem core, int attackDamageIn, float attackSpeedIn) {
         super(core.itemTier, attackDamageIn, attackSpeedIn, new Properties().tab(FenrisRPG.MOD_TAB));
         this.name = core.name + "_dagger";
         this.core = core;
@@ -32,7 +32,7 @@ public class CoreDagger extends SingleHandedSwordItem implements ICoreItem {
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(@Nonnull ItemStack stack, World worldIn, @Nonnull List<ITextComponent> tooltip, @Nonnull ITooltipFlag flagIn) {
         super.appendHoverText(stack, worldIn, tooltip, flagIn);
-        AbstractCore.appendHoverText(tooltip, this.name);
+        AbstractCoreItem.appendPassiveHoverText(tooltip, core.name);
     }
 
     @Override
@@ -51,7 +51,7 @@ public class CoreDagger extends SingleHandedSwordItem implements ICoreItem {
     }
 
     @Override
-    public AbstractCore getCore() {
+    public AbstractCoreItem getCore() {
         return core;
     }
 }

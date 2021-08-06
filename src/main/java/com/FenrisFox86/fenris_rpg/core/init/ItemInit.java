@@ -83,7 +83,7 @@ public class ItemInit {
         return MAP;
     }
 
-    public static Map<String, RegistryObject<Item>> addCoreSet(AbstractCore core) {
+    public static Map<String, RegistryObject<Item>> addCoreSet(AbstractCoreItem core) {
         Map<String, RegistryObject<Item>> MAP = new HashMap() {};
 
         MAP.put("CORE", addItem(core.name, core));
@@ -121,19 +121,19 @@ public class ItemInit {
         GALENITE = addItem("galenite"),
 
         CORE_VESSEL = addItem("core_vessel"),
-        CORE_VESSEL_HELMET = addItem("core_vessel_helmet", new DescriptionItemBase("tooltip.fenris_rpg.core_vessel_items.lore", "tooltip.fenris_rpg.core_vessel_items.desc")),
-        CORE_VESSEL_CHESTPLATE = addItem("core_vessel_chestplate", new DescriptionItemBase("tooltip.fenris_rpg.core_vessel_items.lore", "tooltip.fenris_rpg.core_vessel_items.desc")),
-        CORE_VESSEL_LEGGINGS = addItem("core_vessel_leggings", new DescriptionItemBase("tooltip.fenris_rpg.core_vessel_items.lore", "tooltip.fenris_rpg.core_vessel_items.desc")),
-        CORE_VESSEL_BOOTS = addItem("core_vessel_boots", new DescriptionItemBase("tooltip.fenris_rpg.core_vessel_items.lore", "tooltip.fenris_rpg.core_vessel_items.desc")),
-        CORE_VESSEL_SWORD = addItem("core_vessel_sword", new DescriptionItemBase("tooltip.fenris_rpg.core_vessel_items.lore", "tooltip.fenris_rpg.core_vessel_items.desc")),
-        CORE_VESSEL_PICKAXE = addItem("core_vessel_pickaxe", new DescriptionItemBase("tooltip.fenris_rpg.core_vessel_items.lore", "tooltip.fenris_rpg.core_vessel_items.desc")),
-        CORE_VESSEL_AXE = addItem("core_vessel_axe", new DescriptionItemBase("tooltip.fenris_rpg.core_vessel_items.lore", "tooltip.fenris_rpg.core_vessel_items.desc")),
-        CORE_VESSEL_SHOVEL = addItem("core_vessel_shovel", new DescriptionItemBase("tooltip.fenris_rpg.core_vessel_items.lore", "tooltip.fenris_rpg.core_vessel_items.desc")),
-        CORE_VESSEL_HOE = addItem("core_vessel_hoe", new DescriptionItemBase("tooltip.fenris_rpg.core_vessel_items.lore", "tooltip.fenris_rpg.core_vessel_items.desc")),
-        CORE_VESSEL_HAMMER = addItem("core_vessel_hammer", new DescriptionItemBase("tooltip.fenris_rpg.core_vessel_items.lore", "tooltip.fenris_rpg.core_vessel_items.desc")),
-        CORE_VESSEL_KATANA = addItem("core_vessel_katana", new DescriptionItemBase("tooltip.fenris_rpg.core_vessel_items.lore", "tooltip.fenris_rpg.core_vessel_items.desc")),
-        CORE_VESSEL_DAGGER = addItem("core_vessel_dagger", new DescriptionItemBase("tooltip.fenris_rpg.core_vessel_items.lore", "tooltip.fenris_rpg.core_vessel_items.desc")),
-        CORE_VESSEL_BROADSWORD = addItem("core_vessel_broadsword", new DescriptionItemBase("tooltip.fenris_rpg.core_vessel_items.lore", "tooltip.fenris_rpg.core_vessel_items.desc")),
+        CORE_VESSEL_HELMET = addItem("core_vessel_helmet", new DescriptionItemBase("tooltip.fenris_rpg.core_vessel_items")),
+        CORE_VESSEL_CHESTPLATE = addItem("core_vessel_chestplate", new DescriptionItemBase("tooltip.fenris_rpg.core_vessel_items")),
+        CORE_VESSEL_LEGGINGS = addItem("core_vessel_leggings", new DescriptionItemBase("tooltip.fenris_rpg.core_vessel_items")),
+        CORE_VESSEL_BOOTS = addItem("core_vessel_boots", new DescriptionItemBase("tooltip.fenris_rpg.core_vessel_items")),
+        CORE_VESSEL_SWORD = addItem("core_vessel_sword", new DescriptionItemBase("tooltip.fenris_rpg.core_vessel_items")),
+        CORE_VESSEL_PICKAXE = addItem("core_vessel_pickaxe", new DescriptionItemBase("tooltip.fenris_rpg.core_vessel_items")),
+        CORE_VESSEL_AXE = addItem("core_vessel_axe", new DescriptionItemBase("tooltip.fenris_rpg.core_vessel_items")),
+        CORE_VESSEL_SHOVEL = addItem("core_vessel_shovel", new DescriptionItemBase("tooltip.fenris_rpg.core_vessel_items")),
+        CORE_VESSEL_HOE = addItem("core_vessel_hoe", new DescriptionItemBase("tooltip.fenris_rpg.core_vessel_items")),
+        CORE_VESSEL_HAMMER = addItem("core_vessel_hammer", new DescriptionItemBase("tooltip.fenris_rpg.core_vessel_items")),
+        CORE_VESSEL_KATANA = addItem("core_vessel_katana", new DescriptionItemBase("tooltip.fenris_rpg.core_vessel_items")),
+        CORE_VESSEL_DAGGER = addItem("core_vessel_dagger", new DescriptionItemBase("tooltip.fenris_rpg.core_vessel_items")),
+        CORE_VESSEL_BROADSWORD = addItem("core_vessel_broadsword", new DescriptionItemBase("tooltip.fenris_rpg.core_vessel_items")),
 
         BRONZE_INGOT = addItem("bronze_ingot"),
         BRONZE_NUGGET = addItem("bronze_nugget"),

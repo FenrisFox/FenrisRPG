@@ -19,9 +19,9 @@ import java.util.List;
 public class CoreAxe extends AxeItem implements ICoreItem {
 
     public final String name;
-    public final AbstractCore core;
+    public final AbstractCoreItem core;
 
-    public CoreAxe(AbstractCore core, int attackDamageIn, float attackSpeedIn) {
+    public CoreAxe(AbstractCoreItem core, int attackDamageIn, float attackSpeedIn) {
         super(core.itemTier, attackDamageIn, attackSpeedIn, new Properties().tab(FenrisRPG.MOD_TAB));
         this.name = core.name + "_axe";
         this.core = core;
@@ -34,7 +34,7 @@ public class CoreAxe extends AxeItem implements ICoreItem {
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(@Nonnull ItemStack stack, World worldIn, @Nonnull List<ITextComponent> tooltip, @Nonnull ITooltipFlag flagIn) {
         super.appendHoverText(stack, worldIn, tooltip, flagIn);
-        AbstractCore.appendHoverText(tooltip, this.name, this.core.name);
+        AbstractCoreItem.appendHoverText(tooltip, this.core.name);
     }
 
     @Nonnull
@@ -59,7 +59,7 @@ public class CoreAxe extends AxeItem implements ICoreItem {
     }
 
     @Override
-    public AbstractCore getCore() {
+    public AbstractCoreItem getCore() {
         return core;
     }
 }

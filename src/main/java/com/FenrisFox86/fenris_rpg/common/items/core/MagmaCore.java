@@ -3,12 +3,10 @@ package com.FenrisFox86.fenris_rpg.common.items.core;
 import com.FenrisFox86.fenris_rpg.FenrisRPG;
 import com.FenrisFox86.fenris_rpg.common.events.MagmaWalkerLogic;
 import com.FenrisFox86.fenris_rpg.core.init.BlockInit;
-import com.FenrisFox86.fenris_rpg.core.init.EnchantmentInit;
 import com.FenrisFox86.fenris_rpg.core.init.ItemInit;
 import com.FenrisFox86.fenris_rpg.core.util.tools.ModArmorMaterial;
 import com.FenrisFox86.fenris_rpg.core.util.tools.ModItemTier;
 import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
@@ -18,28 +16,23 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.potion.EffectInstance;
-import net.minecraft.potion.Effects;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.event.entity.EntityEvent;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.event.entity.living.LivingEquipmentChangeEvent;
-import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nonnull;
 import java.util.List;
 import java.util.UUID;
 
 @Mod.EventBusSubscriber
-public class MagmaCore extends AbstractCore {
+public class MagmaCore extends AbstractCoreItem {
 
     public MagmaCore() {
         super("magma_core", new Properties().tab(FenrisRPG.MOD_TAB).durability(256));
@@ -51,7 +44,7 @@ public class MagmaCore extends AbstractCore {
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
         super.appendHoverText(stack, worldIn, tooltip, flagIn);
-        AbstractCore.appendHoverText(tooltip, name);
+        AbstractCoreItem.appendHoverText(tooltip, name);
     }
 
     @Override
@@ -107,12 +100,12 @@ public class MagmaCore extends AbstractCore {
     public static void onLivingBurn(LivingDamageEvent event) {
         LivingEntity living = event.getEntityLiving();
         for (ItemStack stack: living.getArmorSlots()) {
-            if (AbstractCore.isCoreItem(stack, (AbstractCore) ItemInit.MAGMA_CORE_SET.get("CORE").get())) {
+            if (AbstractCoreItem.isCoreItem(stack, (AbstractCoreItem) ItemInit.MAGMA_CORE_SET.get("CORE").get())) {
                 if (event.getSource().isFire()) event.setCanceled(true);
             }
         }
         for (ItemStack stack: living.getHandSlots()) {
-            if (AbstractCore.isCoreItem(stack, (AbstractCore) ItemInit.MAGMA_CORE_SET.get("CORE").get())) {
+            if (AbstractCoreItem.isCoreItem(stack, (AbstractCoreItem) ItemInit.MAGMA_CORE_SET.get("CORE").get())) {
                 if (event.getSource().isFire()) event.setCanceled(true);
             }
         }
@@ -154,7 +147,7 @@ public class MagmaCore extends AbstractCore {
                     if (((CoreArmorItem)stack.getItem()).equipmentSlotType.equals(EquipmentSlotType.LEGS)) {
                         leggingsAttribute.addTransientModifier(
                                 new AttributeModifier(UUID.fromString("78FA8B01-C328-F9D4-93B2-1C2D7A871A32"),
-                                        "magma_leggings",2.0f, AttributeModifier.Operation.MULTIPLY_TOTAL));
+                                        "magma_leggings",10.0f, AttributeModifier.Operation.MULTIPLY_TOTAL));
                     }
                 }
             }
