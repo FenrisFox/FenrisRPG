@@ -48,6 +48,11 @@ public class CoreHoe extends HoeItem implements ICoreItem {
     }
 
     @Override
+    public boolean isFireResistant() {
+        return core.isFireResistant();
+    }
+
+    @Override
     public AbstractCore getCore() {
         return core;
     }

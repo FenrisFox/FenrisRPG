@@ -71,10 +71,14 @@ public class MagmaCore extends AbstractCore {
     @Override
     public boolean onLeftClickEntity(ItemStack stack, PlayerEntity player, Entity entity) {
         if(entity.isAlive()) {
-            ((LivingEntity) entity).addEffect(new EffectInstance(Effects.GLOWING, 100));
             entity.setSecondsOnFire(2000);
         }
         return false;
+    }
+
+    @Override
+    public boolean isFireResistant() {
+        return true;
     }
 
     @Override

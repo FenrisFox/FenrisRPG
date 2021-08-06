@@ -37,6 +37,11 @@ public abstract class AbstractCore extends Item{
     }
 
     @Override
+    public boolean isFireResistant() {
+        return true;
+    }
+
+    @Override
     public boolean isFoil(ItemStack stack) { return true; }
 
     @Override

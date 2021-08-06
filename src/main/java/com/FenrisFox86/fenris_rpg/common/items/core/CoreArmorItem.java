@@ -35,6 +35,11 @@ public class CoreArmorItem extends ArmorItem implements ICoreItem {
     }
 
     @Override
+    public boolean isFireResistant() {
+        return core.isFireResistant();
+    }
+
+    @Override
     public boolean isFoil(ItemStack stack) {
         return true;
     }

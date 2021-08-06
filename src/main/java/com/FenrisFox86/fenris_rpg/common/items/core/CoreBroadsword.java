@@ -48,6 +48,11 @@ public class CoreBroadsword extends BroadswordItem implements ICoreItem {
     }
 
     @Override
+    public boolean isFireResistant() {
+        return core.isFireResistant();
+    }
+
+    @Override
     public AbstractCore getCore() {
         return core;
     }
