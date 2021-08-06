@@ -104,12 +104,12 @@ public class MagmaCore extends AbstractCore {
         LivingEntity living = event.getEntityLiving();
         for (ItemStack stack: living.getArmorSlots()) {
             if (AbstractCore.isCoreItem(stack, (AbstractCore) ItemInit.MAGMA_CORE_SET.get("CORE").get())) {
-                event.setCanceled(true);
+                if (event.getSource().isFire()) event.setCanceled(true);
             }
         }
         for (ItemStack stack: living.getHandSlots()) {
             if (AbstractCore.isCoreItem(stack, (AbstractCore) ItemInit.MAGMA_CORE_SET.get("CORE").get())) {
-                event.setCanceled(true);
+                if (event.getSource().isFire()) event.setCanceled(true);
             }
         }
     }
