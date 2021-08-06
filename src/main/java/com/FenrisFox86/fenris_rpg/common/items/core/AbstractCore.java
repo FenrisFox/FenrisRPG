@@ -32,6 +32,10 @@ public abstract class AbstractCore extends Item{
         this.name = name;
     }
 
+    public static boolean isCoreItem(ItemStack stack, AbstractCore core) {
+        return stack.getItem() instanceof ICoreItem && ((ICoreItem) stack.getItem()).getCore().equals(core);
+    }
+
     @Override
     public boolean isFoil(ItemStack stack) { return true; }
 

@@ -98,19 +98,19 @@ public class DynamoCore extends AbstractCore {
     public static void onLivingArmorEquip(LivingEquipmentChangeEvent event) {
         if (!event.getEntityLiving().level.isClientSide() && event.getEntityLiving() instanceof PlayerEntity) {
             LivingEntity living = event.getEntityLiving();
-            ModifiableAttributeInstance damageAttribute = living.getAttribute(Attributes.ATTACK_KNOCKBACK);
-            ModifiableAttributeInstance luckAttribute = living.getAttribute(Attributes.ATTACK_SPEED);
+            ModifiableAttributeInstance knockbackAttribute = living.getAttribute(Attributes.ATTACK_KNOCKBACK);
+            ModifiableAttributeInstance attackSpeedAttribute = living.getAttribute(Attributes.ATTACK_SPEED);
             ModifiableAttributeInstance speedAttribute = living.getAttribute(Attributes.MOVEMENT_SPEED);
 
-            assert damageAttribute != null;
-            assert luckAttribute != null;
+            assert knockbackAttribute != null;
+            assert attackSpeedAttribute != null;
             assert speedAttribute != null;
-            for (AttributeModifier modifier : luckAttribute.getModifiers()) {
+            for (AttributeModifier modifier : attackSpeedAttribute.getModifiers()) {
                 if (modifier.getId().equals(UUID.fromString("76FA8B01-C328-F9D4-9AB2-1C2D7A871A31"))) {
-                    luckAttribute.removeModifier(modifier); }}
-            for (AttributeModifier modifier : damageAttribute.getModifiers()) {
+                    attackSpeedAttribute.removeModifier(modifier); }}
+            for (AttributeModifier modifier : knockbackAttribute.getModifiers()) {
                 if (modifier.getId().equals(UUID.fromString("76FA8B01-C328-F9D4-9AB2-1C2D7A871A3F"))) {
-                    damageAttribute.removeModifier(modifier); }}
+                    knockbackAttribute.removeModifier(modifier); }}
             for (AttributeModifier modifier : speedAttribute.getModifiers()) {
                 if (modifier.getId().equals(UUID.fromString("76FA8B01-C328-F9D4-9AB2-1C2D7A871A32"))) {
                     speedAttribute.removeModifier(modifier); }}
@@ -118,12 +118,12 @@ public class DynamoCore extends AbstractCore {
             for (ItemStack stack : living.getArmorSlots()) {
                 if (stack.getItem() instanceof CoreArmorItem && ((CoreArmorItem)stack.getItem()).core instanceof DynamoCore) {
                     if (((CoreArmorItem)stack.getItem()).equipmentSlotType.equals(EquipmentSlotType.HEAD)) {
-                        luckAttribute.addTransientModifier(
+                        attackSpeedAttribute.addTransientModifier(
                                 new AttributeModifier(UUID.fromString("76FA8B01-C328-F9D4-9AB2-1C2D7A871A31"),
                                         "dynamo_helmet", 4.0f, AttributeModifier.Operation.MULTIPLY_TOTAL));
                     }
                     if (((CoreArmorItem)stack.getItem()).equipmentSlotType.equals(EquipmentSlotType.CHEST)) {
-                        damageAttribute.addTransientModifier(
+                        knockbackAttribute.addTransientModifier(
                                 new AttributeModifier(UUID.fromString("76FA8B01-C328-F9D4-9AB2-1C2D7A871A3F"),
                                         "dynamo_chestplate",4.0f, AttributeModifier.Operation.MULTIPLY_TOTAL));
                     }

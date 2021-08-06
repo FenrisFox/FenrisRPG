@@ -27,10 +27,12 @@ import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.event.entity.EntityEvent;
+import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.event.entity.living.LivingEquipmentChangeEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.annotation.Nonnull;
 import java.util.List;
@@ -59,7 +61,7 @@ public class MagmaCore extends AbstractCore {
 
     public ActionResult<ItemStack> useCoreItem(World worldIn, PlayerEntity playerIn, Hand handIn, Item item) {
         if(!playerIn.getCooldowns().isOnCooldown(item)) {
-            playerIn.setSecondsOnFire(0);
+            playerIn.setRemainingFireTicks(0);
             playerIn.getItemInHand(handIn).hurtAndBreak(16, playerIn, p -> p.broadcastBreakEvent(p.getUsedItemHand()));
             return ActionResult.success(playerIn.getItemInHand(handIn));
         }
@@ -97,52 +99,58 @@ public class MagmaCore extends AbstractCore {
         }
     }
 
-    /*@SubscribeEvent
-    public void livingUpdate(LivingEvent.LivingUpdateEvent event) {
+    @SubscribeEvent
+    public static void onLivingBurn(LivingDamageEvent event) {
         LivingEntity living = event.getEntityLiving();
-        Item boots = living.getItemBySlot(EquipmentSlotType.FEET).getItem();
-        if (boots instanceof ICoreItem &&  ((ICoreItem) boots).getCore().equals(ItemInit.MAGMA_CORE_SET.get("CORE").get())) {
-            MagmaWalkerLogic.replaceField(BlockInit.MAGMA_FLOOR.get().defaultBlockState(), living.blockPosition().below(), living.level, 3);
+        for (ItemStack stack: living.getArmorSlots()) {
+            if (AbstractCore.isCoreItem(stack, (AbstractCore) ItemInit.MAGMA_CORE_SET.get("CORE").get())) {
+                event.setCanceled(true);
+            }
         }
-    }*/
+        for (ItemStack stack: living.getHandSlots()) {
+            if (AbstractCore.isCoreItem(stack, (AbstractCore) ItemInit.MAGMA_CORE_SET.get("CORE").get())) {
+                event.setCanceled(true);
+            }
+        }
+    }
 
     @SubscribeEvent
     public static void onLivingArmorEquip(LivingEquipmentChangeEvent event) {
         if (!event.getEntityLiving().level.isClientSide() && event.getEntityLiving() instanceof PlayerEntity) {
             LivingEntity living = event.getEntityLiving();
-            ModifiableAttributeInstance damageAttribute = living.getAttribute(Attributes.ATTACK_KNOCKBACK);
-            ModifiableAttributeInstance luckAttribute = living.getAttribute(Attributes.ATTACK_SPEED);
-            ModifiableAttributeInstance speedAttribute = living.getAttribute(Attributes.MOVEMENT_SPEED);
+            ModifiableAttributeInstance chestplateAttribute = living.getAttribute(Attributes.ATTACK_DAMAGE);
+            ModifiableAttributeInstance helmetAttribute = living.getAttribute(Attributes.MAX_HEALTH);
+            ModifiableAttributeInstance leggingsAttribute = living.getAttribute(Attributes.KNOCKBACK_RESISTANCE);
 
-            assert damageAttribute != null;
-            assert luckAttribute != null;
-            assert speedAttribute != null;
-            for (AttributeModifier modifier : luckAttribute.getModifiers()) {
-                if (modifier.getId().equals(UUID.fromString("76FA8B01-C328-F9D4-91B2-1C2D7A871A31"))) {
-                    luckAttribute.removeModifier(modifier); }}
-            for (AttributeModifier modifier : damageAttribute.getModifiers()) {
-                if (modifier.getId().equals(UUID.fromString("76FA8B01-C328-F9D4-92B2-1C2D7A871A3F"))) {
-                    damageAttribute.removeModifier(modifier); }}
-            for (AttributeModifier modifier : speedAttribute.getModifiers()) {
-                if (modifier.getId().equals(UUID.fromString("76FA8B01-C328-F9D4-93B2-1C2D7A871A32"))) {
-                    speedAttribute.removeModifier(modifier); }}
+            assert chestplateAttribute != null;
+            assert helmetAttribute != null;
+            assert leggingsAttribute != null;
+            for (AttributeModifier modifier : helmetAttribute.getModifiers()) {
+                if (modifier.getId().equals(UUID.fromString("78FA8B01-C328-F9D4-91B2-1C2D7A871A31"))) {
+                    helmetAttribute.removeModifier(modifier); }}
+            for (AttributeModifier modifier : chestplateAttribute.getModifiers()) {
+                if (modifier.getId().equals(UUID.fromString("78FA8B01-C328-F9D4-92B2-1C2D7A871A3F"))) {
+                    chestplateAttribute.removeModifier(modifier); }}
+            for (AttributeModifier modifier : leggingsAttribute.getModifiers()) {
+                if (modifier.getId().equals(UUID.fromString("78FA8B01-C328-F9D4-93B2-1C2D7A871A32"))) {
+                    leggingsAttribute.removeModifier(modifier); }}
 
             for (ItemStack stack : living.getArmorSlots()) {
                 if (stack.getItem() instanceof CoreArmorItem && ((CoreArmorItem)stack.getItem()).core instanceof MagmaCore) {
                     if (((CoreArmorItem)stack.getItem()).equipmentSlotType.equals(EquipmentSlotType.HEAD)) {
-                        luckAttribute.addTransientModifier(
-                                new AttributeModifier(UUID.fromString("76FA8B01-C328-F9D4-91B2-1C2D7A871A31"),
-                                        "magma_helmet", 4.0f, AttributeModifier.Operation.MULTIPLY_TOTAL));
+                        helmetAttribute.addTransientModifier(
+                                new AttributeModifier(UUID.fromString("78FA8B01-C328-F9D4-91B2-1C2D7A871A31"),
+                                        "magma_helmet", 0.5f, AttributeModifier.Operation.MULTIPLY_BASE));
                     }
                     if (((CoreArmorItem)stack.getItem()).equipmentSlotType.equals(EquipmentSlotType.CHEST)) {
-                        damageAttribute.addTransientModifier(
-                                new AttributeModifier(UUID.fromString("76FA8B01-C328-F9D4-92B2-1C2D7A871A3F"),
-                                        "magma_chestplate",4.0f, AttributeModifier.Operation.MULTIPLY_TOTAL));
+                        chestplateAttribute.addTransientModifier(
+                                new AttributeModifier(UUID.fromString("78FA8B01-C328-F9D4-92B2-1C2D7A871A3F"),
+                                        "magma_chestplate",2.0f, AttributeModifier.Operation.MULTIPLY_TOTAL));
                     }
                     if (((CoreArmorItem)stack.getItem()).equipmentSlotType.equals(EquipmentSlotType.LEGS)) {
-                        speedAttribute.addTransientModifier(
-                                new AttributeModifier(UUID.fromString("76FA8B01-C328-F9D4-93B2-1C2D7A871A32"),
-                                        "magma_leggings",4.0f, AttributeModifier.Operation.MULTIPLY_TOTAL));
+                        leggingsAttribute.addTransientModifier(
+                                new AttributeModifier(UUID.fromString("78FA8B01-C328-F9D4-93B2-1C2D7A871A32"),
+                                        "magma_leggings",2.0f, AttributeModifier.Operation.MULTIPLY_TOTAL));
                     }
                 }
             }
