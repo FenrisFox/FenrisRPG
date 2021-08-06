@@ -1,7 +1,7 @@
 {
   "crusher_crush": {
     "sounds": [
-      "fenris_rpg:blocks/crusher_crush"
+      "fenris_rpg:block/crusher_crush"
     ]
   }
 }

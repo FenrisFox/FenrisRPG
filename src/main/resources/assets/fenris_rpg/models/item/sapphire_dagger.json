@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "fenris_rpg:items/sapphire_dagger"
+    "layer0": "fenris_rpg:item/sapphire_dagger"
   }
 }

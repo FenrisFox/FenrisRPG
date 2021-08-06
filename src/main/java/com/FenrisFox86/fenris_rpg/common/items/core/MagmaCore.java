@@ -1,9 +1,14 @@
 package com.FenrisFox86.fenris_rpg.common.items.core;
 
 import com.FenrisFox86.fenris_rpg.FenrisRPG;
+import com.FenrisFox86.fenris_rpg.common.events.MagmaWalkerLogic;
+import com.FenrisFox86.fenris_rpg.core.init.BlockInit;
+import com.FenrisFox86.fenris_rpg.core.init.EnchantmentInit;
+import com.FenrisFox86.fenris_rpg.core.init.ItemInit;
 import com.FenrisFox86.fenris_rpg.core.util.tools.ModArmorMaterial;
 import com.FenrisFox86.fenris_rpg.core.util.tools.ModItemTier;
 import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
@@ -17,14 +22,13 @@ import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
-import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.event.entity.EntityEvent;
 import net.minecraftforge.event.entity.living.LivingEquipmentChangeEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
-import net.minecraftforge.event.entity.living.LivingFallEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
@@ -73,10 +77,16 @@ public class MagmaCore extends AbstractCore {
 
     @Override
     public void inventoryTick(@Nonnull ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
-        if(worldIn.getDayTime()%10 == 0) {
-            if(stack.getItem() instanceof ICoreItem && entityIn instanceof PlayerEntity && ((ICoreItem)stack.getItem()).getCore() instanceof MagmaCore) {
-                if(entityIn.isOnFire()) {
-                    LivingEntity living = (LivingEntity) entityIn;
+        if (entityIn instanceof LivingEntity) {
+            LivingEntity living = (LivingEntity) entityIn;
+
+            if (stack.getItem() instanceof CoreArmorItem && ((ICoreItem) stack.getItem()).getCore().equals(ItemInit.MAGMA_CORE_SET.get("CORE").get())
+                    && ((CoreArmorItem) stack.getItem()).equipmentSlotType.equals(EquipmentSlotType.FEET) && living.getItemBySlot(EquipmentSlotType.FEET) == stack) {
+                MagmaWalkerLogic.replaceField(BlockInit.MAGMA_FLOOR.get().defaultBlockState(), living.blockPosition().below(), worldIn, 3, 1);
+            }
+
+            if (stack.getItem() instanceof ICoreItem && ((ICoreItem) stack.getItem()).getCore().equals(ItemInit.MAGMA_CORE_SET.get("CORE").get())) {
+                if (entityIn.isOnFire()) {
                     if (living.getOffhandItem() == stack) {
                         stack.hurtAndBreak(-8, living, p -> p.broadcastBreakEvent(Hand.OFF_HAND));
                     } else if (living.getMainHandItem() == stack) {
@@ -86,6 +96,15 @@ public class MagmaCore extends AbstractCore {
             }
         }
     }
+
+    /*@SubscribeEvent
+    public void livingUpdate(LivingEvent.LivingUpdateEvent event) {
+        LivingEntity living = event.getEntityLiving();
+        Item boots = living.getItemBySlot(EquipmentSlotType.FEET).getItem();
+        if (boots instanceof ICoreItem &&  ((ICoreItem) boots).getCore().equals(ItemInit.MAGMA_CORE_SET.get("CORE").get())) {
+            MagmaWalkerLogic.replaceField(BlockInit.MAGMA_FLOOR.get().defaultBlockState(), living.blockPosition().below(), living.level, 3);
+        }
+    }*/
 
     @SubscribeEvent
     public static void onLivingArmorEquip(LivingEquipmentChangeEvent event) {

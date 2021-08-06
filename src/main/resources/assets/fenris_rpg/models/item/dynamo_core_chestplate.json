@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "fenris_rpg:items/dynamo_core_chestplate"
+    "layer0": "fenris_rpg:item/dynamo_core_chestplate"
   }
 }

@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "fenris_rpg:items/silver_helmet"
+    "layer0": "fenris_rpg:item/silver_helmet"
   }
 }

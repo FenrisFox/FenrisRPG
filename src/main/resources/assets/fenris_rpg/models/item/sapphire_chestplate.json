@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "fenris_rpg:items/sapphire_chestplate"
+    "layer0": "fenris_rpg:item/sapphire_chestplate"
   }
 }

@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "fenris_rpg:items/bronze_nugget"
+    "layer0": "fenris_rpg:item/bronze_nugget"
   }
 }

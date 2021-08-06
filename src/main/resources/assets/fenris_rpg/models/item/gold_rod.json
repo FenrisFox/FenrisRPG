@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "fenris_rpg:items/gold_rod"
+    "layer0": "fenris_rpg:item/gold_rod"
   }
 }

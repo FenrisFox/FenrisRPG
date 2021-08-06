@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "minecraft:blocks/basalt_top"
+    "all": "minecraft:block/basalt_top"
   }
 }

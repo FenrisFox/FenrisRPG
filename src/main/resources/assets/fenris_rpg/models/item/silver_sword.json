@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "fenris_rpg:items/silver_sword"
+    "layer0": "fenris_rpg:item/silver_sword"
   }
 }

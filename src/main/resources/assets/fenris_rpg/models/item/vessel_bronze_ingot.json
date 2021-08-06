@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "fenris_rpg:items/vessel_bronze_ingot"
+    "layer0": "fenris_rpg:item/vessel_bronze_ingot"
   }
 }

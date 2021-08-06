@@ -55,4 +55,6 @@ public class MagmaFloor extends Block  implements ITileEntityProvider {
             super.onRemove(state, world, pos, newState, p_196243_5_);
         }
     }
+
+
 }

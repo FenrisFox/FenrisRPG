@@ -1,7 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "fenris_rpg:items/ruby_leggings"
+    "layer0": "fenris_rpg:item/ruby_leggings"
 
   }
 }

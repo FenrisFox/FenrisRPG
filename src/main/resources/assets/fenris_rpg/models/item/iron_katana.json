@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "fenris_rpg:items/iron_katana"
+    "layer0": "fenris_rpg:item/iron_katana"
   }
 }

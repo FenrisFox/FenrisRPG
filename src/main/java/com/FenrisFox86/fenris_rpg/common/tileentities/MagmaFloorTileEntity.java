@@ -39,15 +39,26 @@ import java.util.Map;
 public class MagmaFloorTileEntity extends TileEntity implements ITickableTileEntity {
 
     public int decayStage;
+    public int defaultDecayStage;
 
     public MagmaFloorTileEntity() {
         super(TileEntityTypeInit.MAGMA_FLOOR_TILE_ENTITY.get());
+        this.defaultDecayStage = 100;
         this.decayStage = 100;
+    }
+
+    public MagmaFloorTileEntity(int defaultDecayStage) {
+        super(TileEntityTypeInit.MAGMA_FLOOR_TILE_ENTITY.get());
+        this.defaultDecayStage = defaultDecayStage;
+        this.decayStage = defaultDecayStage;
+    }
+
+    public void resetDecay() {
+        this.decayStage = defaultDecayStage;
     }
 
     public void tick() {
         decayStage--;
-        System.out.println(decayStage);
         if (decayStage < 1) {
             assert this.level != null;
             this.level.setBlock(this.worldPosition, Blocks.LAVA.defaultBlockState(), 0);

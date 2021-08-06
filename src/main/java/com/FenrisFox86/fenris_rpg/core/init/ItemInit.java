@@ -150,35 +150,6 @@ public class ItemInit {
         BRONZE_ROD = addItem("bronze_rod"),
         GOLD_ROD = addItem("gold_rod"),
 
-        /*DYNAMO_CORE = addItem("dynamo_core", new DynamoCore()),
-
-        DYNAMO_CORE_SWORD = addItem("dynamo_core_sword", new CoreSword(
-                new DynamoCore(), 2, -1.0F)),
-        DYNAMO_CORE_AXE = addItem("dynamo_core_axe", new CoreAxe(
-                new DynamoCore(), 3, -2.0F)),
-        DYNAMO_CORE_PICKAXE = addItem("dynamo_core_pickaxe", new CorePickaxe(
-                new DynamoCore(), 2, -2.0F)),
-        DYNAMO_CORE_HOE = addItem("dynamo_core_hoe", new CoreHoe(
-                new DynamoCore(), 0, -2.0F)),
-        DYNAMO_CORE_SHOVEL = addItem("dynamo_core_shovel", new CoreShovel(
-                new DynamoCore(), 1, -2.0F)),
-        DYNAMO_CORE_KATANA = addItem("dynamo_core_katana", new CoreKatana(
-                new DynamoCore(), 2, -1.5F)),
-        DYNAMO_CORE_HAMMER = addItem("dynamo_core_hammer", new CoreHammer(
-                new DynamoCore(), 4, -1.5F)),
-        DYNAMO_CORE_BROADSWORD = addItem("dynamo_core_broadsword", new CoreBroadsword(
-                new DynamoCore(), 6, -3.0F)),
-        DYNAMO_CORE_DAGGER = addItem("dynamo_core_dagger", new CoreDagger(
-                new DynamoCore(), 0, -1.0F)),
-        DYNAMO_CORE_HELMET = addItem("dynamo_core_helmet", new DynamoCoreHelmet(
-                ModArmorMaterial.DYNAMO_CORE_ARMOR)),
-        DYNAMO_CORE_CHESTPLATE = addItem("dynamo_core_chestplate", new DynamoCoreChestplate(
-                ModArmorMaterial.DYNAMO_CORE_ARMOR)),
-        DYNAMO_CORE_LEGGINGS = addItem("dynamo_core_leggings", new DynamoCoreLeggings(
-                ModArmorMaterial.DYNAMO_CORE_ARMOR)),
-        DYNAMO_CORE_BOOTS = addItem("dynamo_core_boots", new DynamoCoreBoots(
-                ModArmorMaterial.DYNAMO_CORE_ARMOR)),*/
-
         RAYHANS_CHEESE = addItem("rayhans_cheese", new ItemBase((new Item.Properties()).tab(FenrisRPG.MOD_TAB)
                 .rarity(Rarity.EPIC).food(ModFoods.RAYHANS_CHEESE)).foilEffect().description("tooltip.fenris_rpg.rayhans_cheese.lore")
                 .description("tooltip.fenris_rpg.rayhans_cheese.desc"));

@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "fenris_rpg:items/iron_broadsword"
+    "layer0": "fenris_rpg:item/iron_broadsword"
   }
 }

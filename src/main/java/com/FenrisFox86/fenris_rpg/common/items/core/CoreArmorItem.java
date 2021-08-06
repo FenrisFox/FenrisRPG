@@ -50,4 +50,9 @@ public class CoreArmorItem extends ArmorItem implements ICoreItem {
     public AbstractCore getCore() {
         return this.core;
     }
+
+    @Override
+    public void inventoryTick(@Nonnull ItemStack stack, @Nonnull World worldIn, @Nonnull Entity entityIn, int itemSlot, boolean isSelected) {
+        this.core.inventoryTick(stack, worldIn, entityIn, itemSlot, isSelected);
+    }
 }

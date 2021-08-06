@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "fenris_rpg:blocks/dolomite_sand"
+    "all": "fenris_rpg:block/dolomite_sand"
   }
 }

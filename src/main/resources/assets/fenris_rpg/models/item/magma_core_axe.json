@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "fenris_rpg:items/magma_core_axe"
+    "layer0": "fenris_rpg:item/magma_core_axe"
   }
 }

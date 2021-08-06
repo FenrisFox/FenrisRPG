@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "fenris_rpg:items/core_vessel_leggings"
+    "layer0": "fenris_rpg:item/core_vessel_leggings"
   }
 }

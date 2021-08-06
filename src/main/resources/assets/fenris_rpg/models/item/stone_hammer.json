@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "fenris_rpg:items/stone_hammer"
+    "layer0": "fenris_rpg:item/stone_hammer"
   }
 }

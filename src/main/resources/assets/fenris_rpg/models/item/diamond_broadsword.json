@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "fenris_rpg:items/diamond_broadsword"
+    "layer0": "fenris_rpg:item/diamond_broadsword"
   }
 }

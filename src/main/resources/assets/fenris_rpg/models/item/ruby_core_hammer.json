@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "fenris_rpg:items/ruby_core_hammer"
+    "layer0": "fenris_rpg:item/ruby_core_hammer"
   }
 }

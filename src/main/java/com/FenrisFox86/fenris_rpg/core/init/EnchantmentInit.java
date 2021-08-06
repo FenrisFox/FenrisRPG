@@ -4,6 +4,7 @@ import com.FenrisFox86.fenris_rpg.FenrisRPG;
 import com.FenrisFox86.fenris_rpg.common.enchantments.*;
 import com.FenrisFox86.fenris_rpg.common.events.ItemDamageEvent;
 import com.FenrisFox86.fenris_rpg.common.capabilities.CapabilityReader;
+import com.FenrisFox86.fenris_rpg.common.events.MagmaWalkerLogic;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -128,26 +129,20 @@ public class EnchantmentInit {
     public static void OnUpdate(LivingEvent.LivingUpdateEvent event) {
         LivingEntity living = event.getEntityLiving();
         World world = event.getEntity().level;
+        Iterable<ItemStack> equipment = living.getAllSlots();
 
         //Magma Walker
-        BlockPos pos = living.blockPosition().below();
-        BlockState state = world.getBlockState(pos);
-        Block block = state.getBlock();
-        if(block == Blocks.LAVA) {
-            Iterable<ItemStack> equipment = living.getAllSlots();
-            for(ItemStack stack: equipment) {
-                int level = EnchantmentHelper.getItemEnchantmentLevel(MAGMA_WALKER.get(), stack);
-                if(level > 0) {
-                    world.setBlock(pos, Blocks.BASALT.defaultBlockState(), 0);
-                }
+        for(ItemStack stack: equipment) {
+            if (EnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.MAGMA_WALKER.get(), stack) > 0) {
+                MagmaWalkerLogic.replaceField(BlockInit.MAGMA_FLOOR.get().defaultBlockState(), living.blockPosition().below(), world, 2, 1);
             }
         }
+
 
         if(world.getDayTime()%20 == 0) {
 
             //Dynamo
             if(living.isSprinting()) {
-                Iterable<ItemStack> equipment = living.getAllSlots();
                 for(ItemStack stack: equipment) {
                     int level = EnchantmentHelper.getItemEnchantmentLevel(DYNAMO_REPAIR.get(), stack);
                     if(level > 0) {
