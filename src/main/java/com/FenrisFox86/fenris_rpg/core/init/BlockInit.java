@@ -2,9 +2,11 @@ package com.FenrisFox86.fenris_rpg.core.init;
 
 import com.FenrisFox86.fenris_rpg.FenrisRPG;
 import com.FenrisFox86.fenris_rpg.common.blocks.*;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.fml.RegistryObject;
@@ -24,10 +26,14 @@ public class BlockInit {
         return new Item.Properties().tab(FenrisRPG.MOD_TAB);
     }
 
-    public static RegistryObject<Block> addBlock(String name, Block block) {
+    public static RegistryObject<Block> addBlock(String name, Block block, Item.Properties properties) {
         BLOCK_MAP.put(name, block);
-        final RegistryObject<Item> item = ItemInit.addItem(name, new BlockItemBase(block));
+        final RegistryObject<Item> item = ItemInit.addItem(name, new BlockItemBase(block, properties));
         return BLOCKS.register(name, () -> block);
+    }
+
+    public static RegistryObject<Block> addBlock(String name, Block block) {
+        return addBlock(name, block, new Item.Properties().tab(FenrisRPG.MOD_TAB));
     }
 
     public static void BlockInit() {
@@ -45,6 +51,8 @@ public class BlockInit {
 
         DOLOMITE = addBlock("dolomite", new DolomiteBlock()),
         DOLOMITE_SAND = addBlock("dolomite_sand", new DolomiteSandBlock()),
+
+        MAGMA_FLOOR = addBlock("magma_floor", new MagmaFloor(), new Item.Properties()),
 
         COPPER_ORE_BLOCK = addBlock("copper_ore", new OreBlockBase(Material.STONE, 3.0F, 4.0F,
                 1, ToolType.PICKAXE, SoundType.STONE, 0)),

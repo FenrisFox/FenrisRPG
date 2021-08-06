@@ -17,7 +17,6 @@
   "tooltip.fenris_rpg.dynamo_core_katana.lore": "§5This katana repairs itself when moving fast! Its core emits a strange kind of energy",
   "tooltip.fenris_rpg.dynamo_core_katana.desc": "§o§7Normal attacks Remove certain effects from enemies and make them glow.",
   "tooltip.fenris_rpg.dynamo_core_hammer.lore": "§5This hammer repairs itself when moving fast! Its core emits a strange kind of energy",
-
   "tooltip.fenris_rpg.dynamo_core_chestplate.lore": "§5This Chestplate repairs itself when moving fast! Its core emits a strange kind of energy",
   "tooltip.fenris_rpg.dynamo_core_chestplate.desc": "§o§7Gives you additional Knockback",
   "tooltip.fenris_rpg.dynamo_core_leggings.lore": "§5These leggings repair themselves when moving fast! Their cores emit a strange kind of energy",
@@ -26,7 +25,6 @@
   "tooltip.fenris_rpg.dynamo_core_boots.desc": "§o§7Give you an extreme Jump boost and make you completely resistant to fall damage",
   "tooltip.fenris_rpg.dynamo_core_helmet.lore": "§5This helmet repairs itself when moving fast! Its core emits a strange kind of energy",
   "tooltip.fenris_rpg.dynamo_core_helmet.desc": "§o§7Gives you additional Attack Speed.",
-
   "tooltip.fenris_rpg.dynamo_core_tool.desc": "§o§7Right click to gain speed, haste and jump boost. Normal make enemies glow and Remove certain effects from them.",
 
   "tooltip.fenris_rpg.core_vessel_items.lore": "§5An Item created from vessel bronze. It seems empty and doesn't have any functionality.",
@@ -49,6 +47,7 @@
   "block.fenris_rpg.galenite_block": "Galena Block",
   "block.fenris_rpg.dolomite": "Dolomite",
   "block.fenris_rpg.dolomite_sand": "Dolomite Sand",
+  "block.fenris_rpg.magma_floor": "Magma Floor",
 
   "block.fenris_rpg.crusher": "Crusher",
 
@@ -182,10 +181,24 @@
   "item.fenris_rpg.dynamo_core_hammer": "Dynamo Hammer",
   "item.fenris_rpg.dynamo_core_katana": "Dynamo Katana",
   "item.fenris_rpg.dynamo_core_broadsword": "Dynamo Broadsword",
-  "item.fenris_rpg.dynamo_core_chestplate": "Dynamo Core Chestplate",
-  "item.fenris_rpg.dynamo_core_leggings": "Dynamo Core Leggings",
-  "item.fenris_rpg.dynamo_core_boots": "Dynamo Core Boots",
-  "item.fenris_rpg.dynamo_core_helmet": "Dynamo Core Helmet",
+  "item.fenris_rpg.dynamo_core_chestplate": "Dynamo Chestplate",
+  "item.fenris_rpg.dynamo_core_leggings": "Dynamo Leggings",
+  "item.fenris_rpg.dynamo_core_boots": "Dynamo Boots",
+  "item.fenris_rpg.dynamo_core_helmet": "Dynamo Helmet",
+
+  "item.fenris_rpg.magma_core_sword": "Magma Core Sword",
+  "item.fenris_rpg.magma_core_axe": "Magma Core  Axe",
+  "item.fenris_rpg.magma_core_pickaxe": "Magma Core  Pickaxe",
+  "item.fenris_rpg.magma_core_shovel": "Magma Core  Shovel",
+  "item.fenris_rpg.magma_core_hoe": "Magma Core  Hoe",
+  "item.fenris_rpg.magma_core_dagger": "Magma Core  Dagger",
+  "item.fenris_rpg.magma_core_hammer": "Magma Core  Hammer",
+  "item.fenris_rpg.magma_core_katana": "Magma Core  Katana",
+  "item.fenris_rpg.magma_core_broadsword": "Magma Core  Broadsword",
+  "item.fenris_rpg.magma_core_chestplate": "Magma Core Chestplate",
+  "item.fenris_rpg.magma_core_leggings": "Magma Core Leggings",
+  "item.fenris_rpg.magma_core_boots": "Magma Core Boots",
+  "item.fenris_rpg.magma_core_helmet": "Magma Core Helmet",
 
   "item.fenris_rpg.netherite_dagger": "Netherite Dagger",
   "item.fenris_rpg.netherite_hammer": "Netherite Hammer",

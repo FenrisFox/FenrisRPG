@@ -6,7 +6,7 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 
 public class BlockItemBase extends BlockItem {
-    public BlockItemBase(Block block) {
-        super(block, new Item.Properties().tab(FenrisRPG.MOD_TAB));
+    public BlockItemBase(Block block, Properties properties) {
+        super(block, properties);
     }
 }

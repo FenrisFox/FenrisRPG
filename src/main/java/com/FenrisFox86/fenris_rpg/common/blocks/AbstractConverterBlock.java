@@ -58,7 +58,6 @@ public abstract class AbstractConverterBlock extends ContainerBlock {
                 ((AbstractConverterTileEntity) tileentity).setCustomName(p_180633_5_.getHoverName());
             }
         }
-
     }
 
     public void onRemove(BlockState state, @Nonnull World world, @Nonnull BlockPos pos, BlockState newState, boolean p_196243_5_) {
