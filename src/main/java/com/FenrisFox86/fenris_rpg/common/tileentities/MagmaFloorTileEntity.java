@@ -40,6 +40,7 @@ public class MagmaFloorTileEntity extends TileEntity implements ITickableTileEnt
 
     public int decayStage;
     public int defaultDecayStage;
+    public boolean isSource = true;
 
     public MagmaFloorTileEntity() {
         super(TileEntityTypeInit.MAGMA_FLOOR_TILE_ENTITY.get());
@@ -61,7 +62,8 @@ public class MagmaFloorTileEntity extends TileEntity implements ITickableTileEnt
         decayStage--;
         if (decayStage < 1) {
             assert this.level != null;
-            this.level.setBlock(this.worldPosition, Blocks.LAVA.defaultBlockState(), 0);
+            this.level.setBlock(this.worldPosition, this.isSource ? Blocks.LAVA.defaultBlockState() : Blocks.AIR.defaultBlockState(), 0);
         }
     }
 }
+

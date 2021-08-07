@@ -1,7 +1,7 @@
 package com.FenrisFox86.fenris_rpg.common.events;
 
 import com.FenrisFox86.fenris_rpg.FenrisRPG;
-import com.FenrisFox86.fenris_rpg.common.capabilities.CapabilityReader;
+import com.FenrisFox86.fenris_rpg.common.capabilities.FenrisPlayerReader;
 import com.FenrisFox86.fenris_rpg.common.capabilities.FenrisStateProvider;
 import com.FenrisFox86.fenris_rpg.common.items.BroadswordItem;
 import net.minecraft.entity.Entity;
@@ -36,9 +36,9 @@ public class FenrisStateRefresh {
 
         if (event.side.isServer()) {
 
-            float dashing = CapabilityReader.getFenrisState(player, "dashing");
+            float dashing = FenrisPlayerReader.getFenrisRpgFloat(player, "dashing");
             if (dashing > 0) {
-                CapabilityReader.setFenrisState(player, "dashing", dashing - 1);
+                FenrisPlayerReader.setFenrisRpgFloat(player, "dashing", dashing - 1);
                 World world = player.level;
                 double
                         x = player.getX(),
@@ -57,7 +57,7 @@ public class FenrisStateRefresh {
                     }
                 }
             } else if (dashing < 0) {
-                CapabilityReader.setFenrisState(player, "dashing", 0.0f);
+                FenrisPlayerReader.setFenrisRpgFloat(player, "dashing", 0.0f);
             }
         }
     }

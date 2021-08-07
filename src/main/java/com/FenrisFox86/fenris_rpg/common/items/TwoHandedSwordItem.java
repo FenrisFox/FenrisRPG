@@ -1,6 +1,6 @@
 package com.FenrisFox86.fenris_rpg.common.items;
 
-import com.FenrisFox86.fenris_rpg.common.capabilities.CapabilityReader;
+import com.FenrisFox86.fenris_rpg.common.capabilities.FenrisPlayerReader;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.ImmutableMultimap.Builder;
 import com.google.common.collect.Multimap;
@@ -63,7 +63,7 @@ public class TwoHandedSwordItem extends TieredItem implements IVanishable {
             attacker.broadcastBreakEvent(Hand.MAIN_HAND);
         });
         if (attacker instanceof PlayerEntity) {
-            CapabilityReader.setFenrisState((PlayerEntity) attacker, "offhand_used", 0f);
+            FenrisPlayerReader.setFenrisRpgFloat((PlayerEntity) attacker, "offhand_used", 0f);
         }
         return true;
     }

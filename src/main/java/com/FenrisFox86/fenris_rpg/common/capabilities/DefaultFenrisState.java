@@ -4,21 +4,21 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class DefaultFenrisState implements IFenrisState {
-    private Map<String, Float> combatState = new HashMap<String, Float> () {};
+    private Map<String, Float> fenrisState = new HashMap<String, Float> () {};
 
     @Override
-    public Float getFenrisState(String key) {
-        if (!this.combatState.containsKey(key)) {
-            this.combatState.put(key, 0f);
+    public Float getFenrisRpgFloat(String key) {
+        if (!this.fenrisState.containsKey(key)) {
+            this.fenrisState.put(key, 0f);
         }
-        return this.combatState.get(key);
+        return this.fenrisState.get(key);
     }
 
     @Override
-    public void setFenrisState(String key, Float stateIn) {
-        if (!this.combatState.containsKey(key)) {
-            this.combatState.put(key, 0f);
+    public void setFenrisRpgFloat(String key, Float stateIn) {
+        if (!this.fenrisState.containsKey(key)) {
+            this.fenrisState.put(key, 0f);
         }
-        this.combatState.replace(key, stateIn);
+        this.fenrisState.replace(key, stateIn);
     }
 }

@@ -1,6 +1,6 @@
 package com.FenrisFox86.fenris_rpg.common.items;
 
-import com.FenrisFox86.fenris_rpg.common.capabilities.CapabilityReader;
+import com.FenrisFox86.fenris_rpg.common.capabilities.FenrisPlayerReader;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
@@ -58,7 +58,7 @@ public class BroadswordItem extends SingleHandedSwordItem {
             Vector3d vector = player.getViewVector(1f).normalize().multiply(factor, 1, factor);
             player.setDeltaMovement(vector);
             player.getCooldowns().addCooldown(stack.getItem(), 50);
-            CapabilityReader.setFenrisState(player, "dashing", ((float)(int)charge)*20 + 0.5f);
+            FenrisPlayerReader.setFenrisRpgFloat(player, "dashing", ((float)(int)charge)*20 + 0.5f);
             stack.hurtAndBreak(8, player, p -> p.broadcastBreakEvent(Hand.MAIN_HAND));
         }
     }

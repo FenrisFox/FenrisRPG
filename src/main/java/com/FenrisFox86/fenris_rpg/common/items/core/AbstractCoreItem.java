@@ -12,6 +12,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
@@ -64,6 +65,7 @@ public abstract class AbstractCoreItem extends Item{
             tooltip.add(new TranslationTextComponent("tooltip.fenris_rpg."+coreName+"_attack"));
             tooltip.add(new TranslationTextComponent("tooltip.fenris_rpg."+coreName+"_tool"));
             tooltip.add(new TranslationTextComponent("tooltip.fenris_rpg."+coreName+"_passive"));
+            tooltip.add(new StringTextComponent(" "));
         } else {
             tooltip.add(Tooltips.HOLD_SHIFT);
         }
@@ -73,6 +75,7 @@ public abstract class AbstractCoreItem extends Item{
         if(InputMappings.isKeyDown(Minecraft.getInstance().getWindow().getWindow(), GLFW.GLFW_KEY_LEFT_SHIFT)) {
             tooltip.add(new TranslationTextComponent("tooltip.fenris_rpg."+coreName+"_attack"));
             tooltip.add(new TranslationTextComponent("tooltip.fenris_rpg."+coreName+"_passive"));
+            tooltip.add(new StringTextComponent(" "));
         } else {
             tooltip.add(Tooltips.HOLD_SHIFT);
         }
@@ -83,6 +86,7 @@ public abstract class AbstractCoreItem extends Item{
         if(InputMappings.isKeyDown(Minecraft.getInstance().getWindow().getWindow(), GLFW.GLFW_KEY_LEFT_SHIFT)) {
             tooltip.add(new TranslationTextComponent("tooltip.fenris_rpg."+armorName));
             tooltip.add(new TranslationTextComponent("tooltip.fenris_rpg."+coreName+"_passive"));
+            tooltip.add(new StringTextComponent(" "));
         } else {
             tooltip.add(Tooltips.HOLD_SHIFT);
         }

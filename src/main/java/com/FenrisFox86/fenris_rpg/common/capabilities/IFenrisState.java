@@ -1,6 +1,6 @@
 package com.FenrisFox86.fenris_rpg.common.capabilities;
 
 public interface IFenrisState {
-    public Float getFenrisState(String key);
-    public void setFenrisState(String key, Float stateIn);
+    public Float getFenrisRpgFloat(String key);
+    public void setFenrisRpgFloat(String key, Float stateIn);
 }

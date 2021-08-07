@@ -2,22 +2,22 @@ package com.FenrisFox86.fenris_rpg.common.capabilities;
 
 import net.minecraft.entity.player.PlayerEntity;
 
-public class CapabilityReader {
+public class FenrisPlayerReader {
 
-    public static Float getFenrisState(PlayerEntity player, String key) {
+    public static Float getFenrisRpgFloat(PlayerEntity player, String key) {
         Float stateIn = player.getCapability(FenrisStateProvider.CAPABILITY).orElseThrow(() ->
                 new IllegalArgumentException("LazyOptional cannot be empty! (reading LastHandUsed)"))
-                .getFenrisState(key);
+                .getFenrisRpgFloat(key);
         return stateIn;
     }
 
-    public static void setFenrisState(PlayerEntity player, String key, Float stateIn) {
+    public static void setFenrisRpgFloat(PlayerEntity player, String key, Float stateIn) {
         player.getCapability(FenrisStateProvider.CAPABILITY).orElseThrow(() ->
                 new IllegalArgumentException("LazyOptional cannot be empty! (writing LastHandUsed)"))
-                .setFenrisState(key, stateIn);
+                .setFenrisRpgFloat(key, stateIn);
     }
 
     public static void addFenrisState(PlayerEntity player, String key, Float add) {
-        setFenrisState(player, key, getFenrisState(player, key) + add);
+        setFenrisRpgFloat(player, key, getFenrisRpgFloat(player, key) + add);
     }
 }

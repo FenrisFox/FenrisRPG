@@ -124,17 +124,17 @@ public class DynamoCore extends AbstractCoreItem {
                     if (((CoreArmorItem)stack.getItem()).equipmentSlotType.equals(EquipmentSlotType.HEAD)) {
                         attackSpeedAttribute.addTransientModifier(
                                 new AttributeModifier(UUID.fromString("76FA8B01-C328-F9D4-9AB2-1C2D7A871A31"),
-                                        "dynamo_helmet", 4.0f, AttributeModifier.Operation.MULTIPLY_TOTAL));
+                                        "dynamo_helmet", 3.0f, AttributeModifier.Operation.MULTIPLY_TOTAL));
                     }
                     if (((CoreArmorItem)stack.getItem()).equipmentSlotType.equals(EquipmentSlotType.CHEST)) {
                         knockbackAttribute.addTransientModifier(
                                 new AttributeModifier(UUID.fromString("76FA8B01-C328-F9D4-9AB2-1C2D7A871A3F"),
-                                        "dynamo_chestplate",4.0f, AttributeModifier.Operation.MULTIPLY_TOTAL));
+                                        "dynamo_chestplate",3.0f, AttributeModifier.Operation.MULTIPLY_TOTAL));
                     }
                     if (((CoreArmorItem)stack.getItem()).equipmentSlotType.equals(EquipmentSlotType.LEGS)) {
                         speedAttribute.addTransientModifier(
                                 new AttributeModifier(UUID.fromString("76FA8B01-C328-F9D4-9AB2-1C2D7A871A32"),
-                                        "dynamo_leggings",4.0f, AttributeModifier.Operation.MULTIPLY_TOTAL));
+                                        "dynamo_leggings",2.0f, AttributeModifier.Operation.MULTIPLY_TOTAL));
                     }
                 }
             }

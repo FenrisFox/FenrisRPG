@@ -1,7 +1,7 @@
 package com.FenrisFox86.fenris_rpg.common.items.core;
 
 import com.FenrisFox86.fenris_rpg.FenrisRPG;
-import com.FenrisFox86.fenris_rpg.common.events.MagmaWalkerLogic;
+import com.FenrisFox86.fenris_rpg.common.enchantments.logic.MagmaWalkerLogic;
 import com.FenrisFox86.fenris_rpg.core.init.BlockInit;
 import com.FenrisFox86.fenris_rpg.core.init.ItemInit;
 import com.FenrisFox86.fenris_rpg.core.util.tools.ModArmorMaterial;

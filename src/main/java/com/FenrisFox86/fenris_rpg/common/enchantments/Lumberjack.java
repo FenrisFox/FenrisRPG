@@ -2,25 +2,21 @@ package com.FenrisFox86.fenris_rpg.common.enchantments;
 
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentType;
-import net.minecraft.enchantment.Enchantments;
 import net.minecraft.inventory.EquipmentSlotType;
 
-public class VampiricRepair extends Enchantment {
+public class Lumberjack extends Enchantment {
 
-    public VampiricRepair(Rarity rarityIn, EnchantmentType typeIn, EquipmentSlotType[] slots) {
+    public Lumberjack(Rarity rarityIn, EnchantmentType typeIn, EquipmentSlotType[] slots) {
         super(rarityIn, typeIn, slots);
     }
 
     @Override
     public int getMaxLevel() {
-        return 3;
+        return 1;
     }
 
     @Override
     protected boolean checkCompatibility(Enchantment ench) {
-        if (ench instanceof DynamoRepair) {
-            return false;
-        }
         return super.checkCompatibility(ench);
     }
 }

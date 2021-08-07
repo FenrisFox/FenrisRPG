@@ -3,11 +3,8 @@ package com.FenrisFox86.fenris_rpg.core.init;
 import com.FenrisFox86.fenris_rpg.FenrisRPG;
 import com.FenrisFox86.fenris_rpg.common.enchantments.*;
 import com.FenrisFox86.fenris_rpg.common.events.ItemDamageEvent;
-import com.FenrisFox86.fenris_rpg.common.capabilities.CapabilityReader;
-import com.FenrisFox86.fenris_rpg.common.events.MagmaWalkerLogic;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
+import com.FenrisFox86.fenris_rpg.common.capabilities.FenrisPlayerReader;
+import com.FenrisFox86.fenris_rpg.common.enchantments.logic.MagmaWalkerLogic;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.EnchantmentType;
@@ -15,12 +12,13 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.item.AxeItem;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.Hand;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
@@ -32,6 +30,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.Objects;
+import java.util.function.Predicate;
 
 @Mod.EventBusSubscriber
 public class EnchantmentInit {
@@ -40,6 +39,13 @@ public class EnchantmentInit {
     public static void EnchantmentInit() {
         ENCHANTMENTS.register(FMLJavaModLoadingContext.get().getModEventBus());
     }
+
+    public static final EnchantmentType AXE_TYPE = EnchantmentType.create("axe", new Predicate<Item>() {
+        @Override
+        public boolean test(Item item) {
+            return item instanceof AxeItem;
+        }
+    });
 
     //Enchantments
     public static final RegistryObject<Enchantment> DYNAMO_REPAIR = ENCHANTMENTS.register("dynamo_repair", ()
@@ -96,6 +102,14 @@ public class EnchantmentInit {
             -> new Crushing(
             Enchantment.Rarity.RARE,
             EnchantmentType.DIGGER,
+            new EquipmentSlotType[]{
+                    EquipmentSlotType.MAINHAND
+            }));
+
+    public static final RegistryObject<Enchantment> LUMBERJACK = ENCHANTMENTS.register("lumberjack", ()
+            -> new Lumberjack(
+            Enchantment.Rarity.UNCOMMON,
+            AXE_TYPE,
             new EquipmentSlotType[]{
                     EquipmentSlotType.MAINHAND
             }));
@@ -169,7 +183,7 @@ public class EnchantmentInit {
 
             Boolean offhand_used = false;
             if (living instanceof PlayerEntity) {
-                offhand_used = CapabilityReader.getFenrisState((PlayerEntity) living, "offhand_used")==1;
+                offhand_used = FenrisPlayerReader.getFenrisRpgFloat((PlayerEntity) living, "offhand_used")==1;
             }
             Hand hand = offhand_used ? Hand.OFF_HAND : Hand.MAIN_HAND;
             ItemStack stack = living.getItemInHand(hand);

@@ -17,6 +17,9 @@ public class DynamoRepair extends Enchantment {
 
     @Override
     protected boolean checkCompatibility(Enchantment ench) {
+        if (ench instanceof VampiricRepair) {
+            return false;
+        }
         return super.checkCompatibility(ench);
     }
 }

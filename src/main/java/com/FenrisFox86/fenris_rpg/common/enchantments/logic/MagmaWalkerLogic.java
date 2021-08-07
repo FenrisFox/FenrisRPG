@@ -1,10 +1,12 @@
-package com.FenrisFox86.fenris_rpg.common.events;
+package com.FenrisFox86.fenris_rpg.common.enchantments.logic;
 
 import com.FenrisFox86.fenris_rpg.common.tileentities.MagmaFloorTileEntity;
 import com.FenrisFox86.fenris_rpg.core.init.BlockInit;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.fluid.FlowingFluid;
+import net.minecraft.fluid.LavaFluid;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.Mod;
@@ -49,11 +51,17 @@ public class MagmaWalkerLogic {
     }
 
     public static void replaceBlockIfType(World worldIn, BlockPos pos, BlockState state, Block requiredBlock) {
-        if (worldIn.getBlockState(pos).getBlock().equals(requiredBlock) || worldIn.getBlockState(pos).getBlock().equals(state.getBlock())) {
+        BlockState oldState = (worldIn.getBlockState(pos));
+        if (oldState.getBlock().equals(requiredBlock) || oldState.getBlock().equals(state.getBlock())) {
             if (worldIn.getBlockEntity(pos) != null && worldIn.getBlockEntity(pos) instanceof MagmaFloorTileEntity) {
                 ((MagmaFloorTileEntity) Objects.requireNonNull(worldIn.getBlockEntity(pos))).resetDecay();
             }
             worldIn.setBlock(pos, state, 0);
+            if (oldState.getBlock().equals(Blocks.LAVA) && worldIn.getBlockEntity(pos) instanceof MagmaFloorTileEntity) {
+                if (!oldState.getFluidState().isSource()) {
+                    ((MagmaFloorTileEntity) Objects.requireNonNull(worldIn.getBlockEntity(pos))).isSource = false;
+                }
+            }
         }
     }
 }
