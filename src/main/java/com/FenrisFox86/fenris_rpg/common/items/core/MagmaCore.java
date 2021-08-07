@@ -55,7 +55,7 @@ public class MagmaCore extends AbstractCoreItem {
     public ActionResult<ItemStack> useCoreItem(World worldIn, PlayerEntity playerIn, Hand handIn, Item item) {
         if(!playerIn.getCooldowns().isOnCooldown(item)) {
             playerIn.setRemainingFireTicks(0);
-            playerIn.getItemInHand(handIn).hurtAndBreak(16, playerIn, p -> p.broadcastBreakEvent(p.getUsedItemHand()));
+            playerIn.getItemInHand(handIn).hurtAndBreak(2, playerIn, p -> p.broadcastBreakEvent(p.getUsedItemHand()));
             return ActionResult.success(playerIn.getItemInHand(handIn));
         }
         return ActionResult.fail(playerIn.getItemInHand(handIn));

@@ -17,7 +17,7 @@ public class Crushing extends Enchantment {
 
     @Override
     protected boolean checkCompatibility(Enchantment enchantment) {
+        if (enchantment instanceof Lumberjack) return false;
         return super.checkCompatibility(enchantment);
     }
-
 }

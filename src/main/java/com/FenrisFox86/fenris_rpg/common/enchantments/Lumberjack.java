@@ -17,6 +17,7 @@ public class Lumberjack extends Enchantment {
 
     @Override
     protected boolean checkCompatibility(Enchantment ench) {
+        if (ench instanceof Crushing || ench instanceof Smelting) return false;
         return super.checkCompatibility(ench);
     }
 }

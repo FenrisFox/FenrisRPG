@@ -17,6 +17,7 @@ public class Smelting extends Enchantment {
 
     @Override
     protected boolean checkCompatibility(Enchantment ench) {
+        if (ench instanceof Lumberjack) return false;
         return super.checkCompatibility(ench);
     }
 }
