@@ -1,6 +1,5 @@
 package com.FenrisFox86.fenris_rpg.common.items;
 
-import com.FenrisFox86.fenris_rpg.common.capabilities.FenrisPlayerReader;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import com.google.common.collect.ImmutableMultimap.Builder;
@@ -95,7 +94,6 @@ public class SingleHandedSwordItem extends TieredItem implements IVanishable {
     //Allows double wielding
     @Override
     public ActionResultType interactLivingEntity(ItemStack stack, PlayerEntity playerIn, LivingEntity target, Hand hand) {
-        FenrisPlayerReader.setFenrisRpgFloat(playerIn, "offhand_used", 1f);
         ItemStack offStack = playerIn.getItemInHand(Hand.OFF_HAND);
         if (offStack.getItem() instanceof SingleHandedSwordItem) {
             SingleHandedSwordItem offItem = (SingleHandedSwordItem) offStack.getItem();
@@ -116,7 +114,6 @@ public class SingleHandedSwordItem extends TieredItem implements IVanishable {
     public ActionResult<ItemStack> use(World worldIn, PlayerEntity playerIn, Hand handIn) {
 
         if (handIn == Hand.OFF_HAND) {
-            FenrisPlayerReader.setFenrisRpgFloat(playerIn, "offhand_used", 1f);
             return ActionResult.success(playerIn.getOffhandItem());
         }
         return ActionResult.fail(playerIn.getMainHandItem());
@@ -130,7 +127,6 @@ public class SingleHandedSwordItem extends TieredItem implements IVanishable {
     @Override
     public boolean onLeftClickEntity(ItemStack stack, PlayerEntity player, Entity entity) {
         if (stack == player.getMainHandItem()) {
-            FenrisPlayerReader.setFenrisRpgFloat(player, "offhand_used", 0f);
             return false;
         }
         return false;

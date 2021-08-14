@@ -63,9 +63,9 @@ public class BlockInit {
         SAPPHIRE_ORE_BLOCK = addBlock("sapphire_ore", new OreBlockBase(Material.STONE, 5.0F, 6.0F,
                 3, ToolType.PICKAXE, SoundType.STONE, 10)),
         CASSITERITE_BLOCK = addBlock("cassiterite_block", new OreBlockBase(Material.STONE, 4.0F, 4.0F,
-                3, ToolType.PICKAXE, SoundType.STONE, 10)),
+                2, ToolType.PICKAXE, SoundType.STONE, 10)),
         GALENITE_BLOCK = addBlock("galenite_block", new OreBlockBase(Material.STONE, 4.0F, 4.0F,
-                3, ToolType.PICKAXE, SoundType.STONE, 10)),
+                2, ToolType.PICKAXE, SoundType.STONE, 10)),
         ESSENCE_ORE_BLOCK = addBlock("essence_ore", new EssenceOreBlock()),
 
         CRUSHER_BLOCK = addBlock("crusher", new CrusherBlock(Block.Properties.of(Material.STONE).strength(2f).sound(SoundType.STONE).harvestLevel(1).harvestTool(ToolType.PICKAXE)));

@@ -2,9 +2,9 @@ package com.FenrisFox86.fenris_rpg.core.init;
 
 import com.FenrisFox86.fenris_rpg.FenrisRPG;
 import com.FenrisFox86.fenris_rpg.common.enchantments.*;
-import com.FenrisFox86.fenris_rpg.common.events.ItemDamageEvent;
-import com.FenrisFox86.fenris_rpg.common.capabilities.FenrisPlayerReader;
 import com.FenrisFox86.fenris_rpg.common.enchantments.logic.MagmaWalkerLogic;
+import com.google.common.collect.Iterables;
+import it.unimi.dsi.fastutil.objects.ObjectCollection;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.EnchantmentType;
@@ -28,7 +28,11 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import org.apache.commons.lang3.ArrayUtils;
 
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Objects;
 import java.util.function.Predicate;
 
@@ -169,11 +173,6 @@ public class EnchantmentInit {
     }
 
     @SubscribeEvent
-    public static void OnItemHit(ItemDamageEvent event) {
-        event.getAttacker().setSecondsOnFire(5);
-    }
-
-    @SubscribeEvent
     public static void OnHurtEntity(LivingHurtEvent event) throws Throwable {
         Entity entity = event.getSource().getEntity();
         if(entity instanceof LivingEntity) {
@@ -181,11 +180,7 @@ public class EnchantmentInit {
             LivingEntity living = (LivingEntity) entity;
             LivingEntity target = event.getEntityLiving();
 
-            Boolean offhand_used = false;
-            if (living instanceof PlayerEntity) {
-                offhand_used = FenrisPlayerReader.getFenrisRpgFloat((PlayerEntity) living, "offhand_used")==1;
-            }
-            Hand hand = offhand_used ? Hand.OFF_HAND : Hand.MAIN_HAND;
+            Hand hand = Hand.MAIN_HAND;
             ItemStack stack = living.getItemInHand(hand);
 
             //Spectral
@@ -195,7 +190,8 @@ public class EnchantmentInit {
             }
 
             //Vampiric Repair
-            Iterable<ItemStack> equipment = living.getHandSlots();
+            Iterable<ItemStack> equipment = living.getAllSlots();
+
             for (ItemStack equippedStack: equipment) {
                 level = EnchantmentHelper.getItemEnchantmentLevel(VAMPIRIC_REPAIR.get(), equippedStack);
                 if(level > 0) {

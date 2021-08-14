@@ -30,6 +30,7 @@ import net.minecraftforge.fml.common.Mod;
 
 import javax.annotation.Nonnull;
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 
 @Mod.EventBusSubscriber
@@ -88,11 +89,8 @@ public class DynamoCore extends AbstractCoreItem {
             if(stack.getItem() instanceof ICoreItem && entityIn instanceof PlayerEntity && ((ICoreItem)stack.getItem()).getCore() instanceof DynamoCore) {
                 if(entityIn.isSprinting()) {
                     LivingEntity living = (LivingEntity) entityIn;
-                    if (living.getOffhandItem() == stack) {
-                        stack.hurtAndBreak(-8, living, p -> p.broadcastBreakEvent(Hand.OFF_HAND));
-                    } else if (living.getMainHandItem() == stack) {
-                        stack.hurtAndBreak(-8, living, p -> p.broadcastBreakEvent(Hand.MAIN_HAND));
-                    }
+                    stack.hurtAndBreak(-8, living, p ->
+                            p.broadcastBreakEvent(Objects.requireNonNull(stack.getEquipmentSlot())));
                 }
             }
         }

@@ -5,15 +5,13 @@ import net.minecraft.entity.player.PlayerEntity;
 public class FenrisPlayerReader {
 
     public static Float getFenrisRpgFloat(PlayerEntity player, String key) {
-        Float stateIn = player.getCapability(FenrisStateProvider.CAPABILITY).orElseThrow(() ->
-                new IllegalArgumentException("LazyOptional cannot be empty! (reading LastHandUsed)"))
+        Float stateIn = player.getCapability(FenrisStateProvider.CAPABILITY).orElse(new DefaultFenrisState())
                 .getFenrisRpgFloat(key);
         return stateIn;
     }
 
     public static void setFenrisRpgFloat(PlayerEntity player, String key, Float stateIn) {
-        player.getCapability(FenrisStateProvider.CAPABILITY).orElseThrow(() ->
-                new IllegalArgumentException("LazyOptional cannot be empty! (writing LastHandUsed)"))
+        player.getCapability(FenrisStateProvider.CAPABILITY).orElse(new DefaultFenrisState())
                 .setFenrisRpgFloat(key, stateIn);
     }
 

@@ -56,7 +56,7 @@ public class OreGeneration {
 
             generateBlock(event.getGeneration(), OreFeatureConfig.FillerBlockType.NATURAL_STONE,
                     BlockInit.DOLOMITE.get().defaultBlockState(),
-                    30, 0, 255, 00);
+                    30, 0, 255, 20);
 
         } else if (event.getCategory().equals(Biome.Category.THEEND)) {
             generateBlock(event.getGeneration(), new BlockMatchRuleTest(Blocks.END_STONE),

@@ -22,7 +22,7 @@ public enum ModArmorMaterial implements IArmorMaterial {
     SoundEvents.ARMOR_EQUIP_IRON, 5.0f,0.2f, () -> {
         return Ingredient.of(ItemInit.ESSENCE.get());
     }),
-    BRONZE_ARMOR("bronze", 2, new int[] {1, 4, 5, 1}, ModItemTier.BRONZE.getEnchantmentValue(),
+    BRONZE_ARMOR("bronze", 4, new int[] {2, 4, 5, 3}, ModItemTier.BRONZE.getEnchantmentValue(),
             SoundEvents.ARMOR_EQUIP_IRON, 0.0f,0.0f, () -> {
                 return Ingredient.of(ItemInit.BRONZE_INGOT.get());
             }),

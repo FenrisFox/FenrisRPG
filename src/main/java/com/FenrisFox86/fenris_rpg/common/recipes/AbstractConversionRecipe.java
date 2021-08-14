@@ -120,9 +120,14 @@ public abstract class AbstractConversionRecipe implements IRecipe<IInventory> {
         @Override
         public T fromNetwork(ResourceLocation recipeId, PacketBuffer buffer) {
             final Ingredient input = Ingredient.fromNetwork(buffer);
-            final ItemStack stack = buffer.readItem();
+            final CompoundNBT output = buffer.readNbt();
+            assert output != null;
+            final Item item = ForgeRegistries.ITEMS.getValue(new ResourceLocation(output.getString("item")));
+            final int min_output = output.getInt("min_count");
+            final int max_output = output.getInt("max_count");
+            final float chance = output.getFloat("chance");
 
-            return null;
+            return this.factory.create(recipeId, input, item, min_output, max_output, chance);
         }
 
         @Override

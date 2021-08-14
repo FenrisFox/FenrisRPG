@@ -20,11 +20,11 @@ public enum ModItemTier implements IItemTier {
         return Ingredient.of(ItemInit.ESSENCE.get());
     }),
 
-    BRONZE(2, 132, 4.0F, 3.0F, 12, () -> {
+    BRONZE(2, 264, 5.0F, 3.0F, 12, () -> {
         return Ingredient.of(ItemInit.BRONZE_INGOT.get());
     }),
 
-    SILVER(2, 264, 5.0F, 3.0F, 24, () -> {
+    SILVER(2, 264, 6.0F, 3.0F, 24, () -> {
         return Ingredient.of(ItemInit.SILVER_INGOT.get());
     }),
 

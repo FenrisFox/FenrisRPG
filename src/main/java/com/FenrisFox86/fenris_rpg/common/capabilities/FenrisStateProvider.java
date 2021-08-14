@@ -5,6 +5,8 @@ import net.minecraft.util.Direction;
 import net.minecraftforge.common.capabilities.*;
 import net.minecraftforge.common.util.LazyOptional;
 
+import javax.annotation.Nonnull;
+
 public class FenrisStateProvider implements ICapabilityProvider, ICapabilitySerializable<CompoundNBT> {
 
     @CapabilityInject(IFenrisState.class)
@@ -12,6 +14,7 @@ public class FenrisStateProvider implements ICapabilityProvider, ICapabilitySeri
 
     IFenrisState instance = new DefaultFenrisState();
 
+    @Nonnull
     @Override
     public <T> LazyOptional<T> getCapability(Capability<T> cap, Direction side) {
         return cap == CAPABILITY ? LazyOptional.of(() -> (T)instance) : LazyOptional.empty();

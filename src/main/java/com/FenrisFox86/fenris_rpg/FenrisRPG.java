@@ -1,7 +1,7 @@
 package com.FenrisFox86.fenris_rpg;
 
-import com.FenrisFox86.fenris_rpg.common.capabilities.FenrisStateStorage;
 import com.FenrisFox86.fenris_rpg.common.capabilities.DefaultFenrisState;
+import com.FenrisFox86.fenris_rpg.common.capabilities.FenrisStateStorage;
 import com.FenrisFox86.fenris_rpg.common.capabilities.IFenrisState;
 import com.FenrisFox86.fenris_rpg.core.init.*;
 import com.FenrisFox86.fenris_rpg.network.AbilityPacketHandler;

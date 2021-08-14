@@ -1,6 +1,5 @@
 package com.FenrisFox86.fenris_rpg.common.events;
 
-import com.FenrisFox86.fenris_rpg.common.capabilities.FenrisPlayerReader;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -25,7 +24,7 @@ public class ItemDamageHandlers {
             if (source instanceof PlayerEntity) {
 
                 PlayerEntity attacker = (PlayerEntity) event.getSource().getDirectEntity();
-                ItemStack stack = FenrisPlayerReader.getFenrisRpgFloat(attacker, "offhand_used") >= 1 ? attacker.getOffhandItem() : attacker.getMainHandItem();
+                ItemStack stack = attacker.getMainHandItem();
 
                 MinecraftForge.EVENT_BUS.post(new ItemDamageEvent(stack, target, attacker));
 
@@ -37,12 +36,12 @@ public class ItemDamageHandlers {
         }
     }
 
-    @SubscribeEvent
+    /*@SubscribeEvent
     public static void SetAttackHand(PlayerInteractEvent event) {
         if (event.getHand() == Hand.MAIN_HAND) {
             FenrisPlayerReader.setFenrisRpgFloat(event.getPlayer(), "offhand_used", 0f);
         } else {
             FenrisPlayerReader.setFenrisRpgFloat(event.getPlayer(), "offhand_used", 1f);
         }
-    }
+    }*/
 }
