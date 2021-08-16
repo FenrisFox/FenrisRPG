@@ -28,7 +28,7 @@ public class OreGeneration {
 
             generateBlock(event.getGeneration(), OreFeatureConfig.FillerBlockType.NATURAL_STONE,
                     BlockInit.COPPER_ORE_BLOCK.get().defaultBlockState(),
-                    10, 0, 80, 30);
+                    10, 0, 80, 20);
 
             generateBlock(event.getGeneration(), OreFeatureConfig.FillerBlockType.NATURAL_STONE,
                     BlockInit.CASSITERITE_BLOCK.get().defaultBlockState(),
@@ -44,11 +44,11 @@ public class OreGeneration {
 
             generateBlock(event.getGeneration(), OreFeatureConfig.FillerBlockType.NATURAL_STONE,
                     BlockInit.RUBY_ORE_BLOCK.get().defaultBlockState(),
-                    8, 0, 15, 3);
+                    4, 0, 15, 2);
 
             generateBlock(event.getGeneration(), OreFeatureConfig.FillerBlockType.NATURAL_STONE,
                     BlockInit.SAPPHIRE_ORE_BLOCK.get().defaultBlockState(),
-                    8, 0, 15, 3);
+                    4, 0, 15, 2);
 
             generateBlock(event.getGeneration(), OreFeatureConfig.FillerBlockType.NATURAL_STONE,
                     Blocks.SPONGE.defaultBlockState(),
@@ -61,7 +61,7 @@ public class OreGeneration {
         } else if (event.getCategory().equals(Biome.Category.THEEND)) {
             generateBlock(event.getGeneration(), new BlockMatchRuleTest(Blocks.END_STONE),
                     BlockInit.ESSENCE_ORE_BLOCK.get().defaultBlockState(),
-                    3, 24, 28, 20);
+                    3, 24, 28, 10);
         }
     }
     private static void generateBlock(BiomeGenerationSettingsBuilder settings, RuleTest fillerType, BlockState state,

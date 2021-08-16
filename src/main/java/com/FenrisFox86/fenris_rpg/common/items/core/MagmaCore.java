@@ -29,6 +29,7 @@ import net.minecraftforge.fml.common.Mod;
 
 import javax.annotation.Nonnull;
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 
 @Mod.EventBusSubscriber
@@ -86,11 +87,7 @@ public class MagmaCore extends AbstractCoreItem {
 
             if (stack.getItem() instanceof ICoreItem && ((ICoreItem) stack.getItem()).getCore().equals(ItemInit.MAGMA_CORE_SET.get("CORE").get())) {
                 if (entityIn.isOnFire()) {
-                    if (living.getOffhandItem() == stack) {
-                        stack.hurtAndBreak(-8, living, p -> p.broadcastBreakEvent(Hand.OFF_HAND));
-                    } else if (living.getMainHandItem() == stack) {
-                        stack.hurtAndBreak(-8, living, p -> p.broadcastBreakEvent(Hand.MAIN_HAND));
-                    }
+                    stack.hurtAndBreak(-8, living, p -> p.broadcastBreakEvent(Objects.requireNonNull(stack.getEquipmentSlot())));
                 }
             }
         }
@@ -99,16 +96,11 @@ public class MagmaCore extends AbstractCoreItem {
     @SubscribeEvent
     public static void onLivingBurn(LivingDamageEvent event) {
         LivingEntity living = event.getEntityLiving();
-        for (ItemStack stack: living.getArmorSlots()) {
+        for (ItemStack stack: living.getAllSlots()) {
             if (AbstractCoreItem.isCoreItem(stack, (AbstractCoreItem) ItemInit.MAGMA_CORE_SET.get("CORE").get())) {
                 if (event.getSource().isFire()) event.setCanceled(true);
             }
-        }
-        for (ItemStack stack: living.getHandSlots()) {
-            if (AbstractCoreItem.isCoreItem(stack, (AbstractCoreItem) ItemInit.MAGMA_CORE_SET.get("CORE").get())) {
-                if (event.getSource().isFire()) event.setCanceled(true);
-            }
-        }
+        } 
     }
 
     @SubscribeEvent
